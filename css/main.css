@@ -1558,7 +1558,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #42ffff;
+  background: #c2b9ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2234,19 +2234,19 @@ body {
   float: right;
   box-sizing: border-box;
   padding: 40px;
-  width: 80%;
+  width: calc(100% - 260px);
   background: #fff;
   min-height: 700px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .content-wrap {
-    width: 100%;
+    width: calc(100% - 260px);
     padding: 20px;
   }
 }
 @media (max-width: 767px) {
   .content-wrap {
-    width: 100%;
+    width: 700px;
     padding: 20px;
     min-height: auto;
   }
