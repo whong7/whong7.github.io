@@ -1558,7 +1558,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #c2b9ff;
+  background: #ff2fe5;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2246,7 +2246,7 @@ body {
 }
 @media (max-width: 767px) {
   .content-wrap {
-    width: 700px;
+    width: 80%;
     padding: 20px;
     min-height: auto;
   }
