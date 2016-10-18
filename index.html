@@ -597,6 +597,381 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2014/12/22/进阶05/" itemprop="url">
+                  欢迎使用马克飞象
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2014-12-22T12:39:04+08:00" content="2014-12-22">
+              2014-12-22
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2014/12/22/进阶05/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/12/22/进阶05/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2014/12/22/进阶05/" class="leancloud_visitors" data-flag-title="欢迎使用马克飞象">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>###01-复习预习</p>
+<p>###02-Quartz2D/Core Graphics介绍</p>
+<ul>
+<li>Quartz2D的API是哪个语言的?<ul>
+<li>c语言 </li>
+</ul>
+</li>
+<li>Quartz2D的API来自于哪个框架?<ul>
+<li>Core Graphics</li>
+</ul>
+</li>
+<li>Quartz2D可以做什么?<ul>
+<li>饼状图,柱状图,折线图</li>
+<li>自定义控件</li>
+</ul>
+</li>
+<li>Quartz2D 支持 iOS 开发, mac 开发, 跨平台</li>
+</ul>
+<p>###03-图形上下文介绍</p>
+<ul>
+<li>图形上下文也叫做绘图上下文</li>
+<li>图形上下文的类型?<ul>
+<li>CGContextRef</li>
+</ul>
+</li>
+<li>图形上下文包含的主要信息?<ul>
+<li>路径(圆,方,线条)</li>
+<li>状态(红色,多宽)</li>
+<li>输出目标(在哪显示)</li>
+</ul>
+</li>
+</ul>
+<p>###04-绘图的步骤/方式/静态分析工具</p>
+<ul>
+<li>绘图的步骤有哪些?<ul>
+<li>获取当前上下文</li>
+<li>拼接路径 同时 把路径添加到上下文当中</li>
+<li>渲染 </li>
+</ul>
+</li>
+<li>静态分析工具的作用?<ul>
+<li>不仅能够检测内存泄漏的问题,还能检测其他的问题. </li>
+<li>这个工具仅仅是静态的在分析内存的问题,并不能真正的检测内存泄漏的问题.</li>
+</ul>
+</li>
+<li>如何释放路径?<ul>
+<li>CGPathRelease(path);</li>
+<li>CFRelease(path);</li>
+</ul>
+</li>
+<li>ARC仅仅是处理oc的引用计数的问题</li>
+<li>在c中如果看到了create/copy/retain,一般都需要释放    </li>
+</ul>
+<p>###05-绘图的练习</p>
+<ul>
+<li>矩形<ul>
+<li>addRect</li>
+</ul>
+</li>
+<li>椭圆<ul>
+<li>addEllipse</li>
+</ul>
+</li>
+<li>弧<ul>
+<li>addArc</li>
+</ul>
+</li>
+</ul>
+<p>###06-绘图的样式</p>
+<ul>
+<li>线宽?<ul>
+<li>CGContextSetLineWidth </li>
+</ul>
+</li>
+<li>头尾样式?<ul>
+<li>CGContextSetLineCap</li>
+</ul>
+</li>
+<li>连接处样式?<ul>
+<li>CGContextSetLineJoin </li>
+</ul>
+</li>
+<li>虚线?<ul>
+<li>CGContextSetLineDash </li>
+</ul>
+</li>
+</ul>
+<p>###07-渲染的方式/绘图的颜色</p>
+<ul>
+<li>关闭路径?<ul>
+<li>CGContextClosePath(ctx); // 从当前的位置 连线 到初始的位置 </li>
+</ul>
+</li>
+<li>描边?<ul>
+<li>stork</li>
+</ul>
+</li>
+<li>填充?<ul>
+<li>fill</li>
+</ul>
+</li>
+<li>color对象的 set/setFill/setStrok 区别?<ul>
+<li>setFill 仅仅是设置填充的颜色</li>
+<li>setStrok 仅仅是设置描边的颜色</li>
+<li>set 两个都设置</li>
+</ul>
+</li>
+</ul>
+<p>###08-补充-不同样式的线    </p>
+<ul>
+<li>如果想要出现不同样式的线<ul>
+<li>需要渲染多次</li>
+</ul>
+</li>
+<li>渲染的过程,仅仅是把路径信息,渲染上去.这个时候,当前上下文还在,路径信息,如果被渲染以后,就没有了.但是,状态信息和目标信息都还在    </li>
+</ul>
+<p>###09-奇偶填充规则</p>
+<ul>
+<li>even odd</li>
+<li>不是默认的填充规则,如果需要使用需要调用 EOFill</li>
+<li>奇填偶不填</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">参考代码:        CGContextRef ctx = UIGraphicsGetCurrentContext();</div><div class="line"></div><div class="line">    CGContextAddArc(ctx, 150, 150, 100, 0, 2 * M_PI, 0);</div><div class="line"></div><div class="line">    CGContextAddRect(ctx, CGRectMake(100, 100, 100, 100));</div><div class="line"></div><div class="line">    CGContextDrawPath(ctx, kCGPathFill);</div></pre></td></tr></table></figure>
+<p>###10-非零环绕数规则(了解)</p>
+<ul>
+<li>如果是从右往左 +1</li>
+<li>如果是从左往右 -1</li>
+<li>如果最终结果不为0 那么填充</li>
+<li>非零环绕数是默认的填充规则</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">参考代码:</div><div class="line"></div><div class="line">    CGContextRef ctx = UIGraphicsGetCurrentContext();</div><div class="line"></div><div class="line">    CGMutablePathRef path1 = CGPathCreateMutable();</div><div class="line">    CGMutablePathRef path2 = CGPathCreateMutable();</div><div class="line"></div><div class="line">    CGPathAddArc(path1, NULL, 150, 150, 100, 0, 2 * M_PI, 1);</div><div class="line">    CGPathAddArc(path2, NULL, 150, 150, 80, 0, 2 * M_PI, 0);</div><div class="line"></div><div class="line">    CGContextAddPath(ctx, path1);</div><div class="line">    CGContextAddPath(ctx, path2);</div><div class="line"></div><div class="line">    CGContextFillPath(ctx);</div><div class="line">    </div><div class="line">    CGPathRelease(path1);</div><div class="line">    CGPathRelease(path2);</div></pre></td></tr></table></figure>
+<p>###11-关于drawRect</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//- 为什么要把代码写在drawRect当中?</div><div class="line">// 因为这个方法可以获取到正确的上下文</div><div class="line"></div><div class="line">//- drawrect方法中rect参数的含义是什么?</div><div class="line">// 当前view的bounds</div><div class="line"></div><div class="line">//- drawrect什么时候调用?</div><div class="line">// 这个方法是系统自动调用,不要手动调用</div><div class="line">// 1.当这个view第一次显示的时候会调用</div><div class="line">// 2.当重绘的时候会调用</div><div class="line"></div><div class="line">//- 如何重绘?</div><div class="line">// 1.调用需要重绘的对象的 setNeedsDisplay</div><div class="line">// 2.调用需要重绘的对象的 setNeedsDisplayInRect</div></pre></td></tr></table></figure>
+<p>###12-UIKit绘制图形</p>
+<ul>
+<li>矩形<ul>
+<li>bezierPathWithRect </li>
+</ul>
+</li>
+<li>椭圆<ul>
+<li>bezierPathWithOvalInRect     </li>
+</ul>
+</li>
+<li>圆角矩形<ul>
+<li>bezierPathWithRoundedRect</li>
+<li>圆角矩形 超过了半径的三分之二 会变成一个圆</li>
+</ul>
+</li>
+<li>圆<ul>
+<li>bezierPathWithArcCenter </li>
+</ul>
+</li>
+<li>c 和 oc 的区别?<ul>
+<li>Quartz2d是C的api</li>
+<li>c的功能比oc的强大</li>
+<li>oc仅仅是封装了一部分c的api</li>
+<li>从代码量上来说 oc比c 简单</li>
+<li>一般情况,工作中用oc.如果oc实现不了的功能用c</li>
+</ul>
+</li>
+</ul>
+<p>###13-oc和c混用</p>
+<ul>
+<li>c和oc可以混用</li>
+<li>c如何转成oc的path<ul>
+<li>通过类方法 传入 CGPath</li>
+</ul>
+</li>
+<li>oc如何转成c的path<ul>
+<li>直接通过ocPath的.CGPath即可 </li>
+</ul>
+</li>
+</ul>
+<p>###14-UIKit绘制字符串</p>
+<ul>
+<li>drawInRect?<ul>
+<li>drawInRect 绘制到指定的区域</li>
+</ul>
+</li>
+<li>drawAtPoint?<ul>
+<li>// drawAtPoint 从某个点开始画</li>
+</ul>
+</li>
+<li>NSShadow</li>
+</ul>
+<pre><code>s.shadowOffset = CGSizeMake(100, 100); // 影子的位置的偏移量
+s.shadowBlurRadius = 2; // 影子模糊程度, 越大越模糊
+s.shadowColor = [UIColor yellowColor]; // 影子的颜色
+</code></pre><p>###15-UIKit绘制图像</p>
+<ul>
+<li>drawInRect?<ul>
+<li>拉伸到指定的区域, 小图会变大 大图会变小 </li>
+</ul>
+</li>
+<li>drawAtPoint?<ul>
+<li>从某一个点开始绘制 不变形 </li>
+</ul>
+</li>
+<li>drawAsPatternInRect?<ul>
+<li>平铺到某个区域 不变形 </li>
+</ul>
+</li>
+<li>可以做水印相关的东西    </li>
+</ul>
+<p>###16-小画板-界面</p>
+<ul>
+<li>画画的地方-UIView</li>
+<li>UIView<ul>
+<li>UISlider</li>
+<li>保存 按钮</li>
+</ul>
+</li>
+<li>UIToolBar<ul>
+<li>按钮-弹簧-按钮-弹簧-按钮</li>
+</ul>
+</li>
+</ul>
+<p>###17-小画板-画线</p>
+<ul>
+<li>方法1(有问题)<ul>
+<li>尝试使用一个路径去做,</li>
+<li>began : <strong>UIBezierPath* path = [UIBezierPath bezierPath]; </strong></li>
+<li>发现在move拿不到, 所有把这个路径 变成全局的.</li>
+<li>结果: 一条线 可以画.但是当第二条线开始的时候 ,这个全局的属性会被替换.所以只能画一条</li>
+</ul>
+</li>
+<li>方法2<ul>
+<li>如果想有多条线,应该使用多条路径.通过一个数组进行管理</li>
+<li>每一在began的时候 创建路径 同时添加到 数组当中</li>
+<li>在move的时候 把数组中的最后一个路径进行 addLineToPoint的连线</li>
+</ul>
+</li>
+</ul>
+<p>###18-小画板-线宽</p>
+<ul>
+<li>监听UISlider的value属性</li>
+<li>它是继承自UIControl的控件,可以通过addtarget监听</li>
+<li>把这个value传入到view中,让view在每次创建路径的时候直接设置线宽</li>
+<li>注意:之所有能够看到,每一条线有不同的宽度.是因为我们对每一个路径设置的</li>
+</ul>
+<p>###19-小画板-颜色</p>
+<ul>
+<li>想让不同的路径有不同的颜色,那么需要让不同路径和设置宽度一样,能够记录不同的颜色(宽度),关于宽度,系统已经提供了一个记录宽度的属性.而颜色并没有.所有需要自定义一个path记录这个颜色.</li>
+</ul>
+<p>###20-图片类型的上下文</p>
+<ul>
+<li>在view的drawRect当中获取的是layer类型的上下文</li>
+<li>在控制器中,如果想要获取图片,那么需要自己开启,有开启就有关闭</li>
+<li>图片上下文的特点就是可以把上下文画的东西变成图片</li>
+<li>UIGraphicsGetImageFromCurrentImageContext(); 获取当前图片类型上下文中的图片</li>
+<li>如何截图<ul>
+<li>把当前的view的层次结构画到某一个图片类型的上下文当中</li>
+<li>再取出来</li>
+</ul>
+</li>
+</ul>
+<p>###21-图片类型的开启的方式</p>
+<ul>
+<li>开启图片类型的上下文使用下面这句话</li>
+<li>UIGraphicsBeginImageContextWithOptions(CGSizeMake(300, 300), NO, 0);</li>
+</ul>
+<p>###22-小画板-保存</p>
+<ul>
+<li>UIImageWriteToSavedPhotosAlbum</li>
+<li>参数分别为 保存的图片/回调target/回调方法/标记</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -638,7 +1013,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -648,7 +1023,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
