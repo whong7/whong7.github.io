@@ -384,120 +384,6 @@
             
               
                 
-                <a class="post-title-link" href="/2014/12/22/mv/" itemprop="url">
-                  欢迎使用马克飞象
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-12-22T12:39:04+08:00" content="2014-12-22">
-              2014-12-22
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2014/12/22/mv/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/12/22/mv/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2014/12/22/mv/" class="leancloud_visitors" data-flag-title="欢迎使用马克飞象">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Markdown-syntax-guide-and-writing-on-MWeb"><a href="#Markdown-syntax-guide-and-writing-on-MWeb" class="headerlink" title="Markdown syntax guide and writing on MWeb"></a>Markdown syntax guide and writing on MWeb</h1><h2 id="Philosophy"><a href="#Philosophy" class="headerlink" title="Philosophy"></a>Philosophy</h2><blockquote>
-<p>Markdown is intended to be as easy-to-read and easy-to-write as is feasible.<br>Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions.<br>Markdown’s syntax is intended for one purpose: to be used as a format for <em>writing</em> for the web.</p>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2014/12/22/mv/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-tags " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2014/12/22/图像绘制/" itemprop="url">
                   图像绘制
                 </a>
@@ -757,8 +643,123 @@
 </ul>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">IBAction</span>)save:(<span class="keyword">id</span>)sender &#123;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">//开启创建上下文 图片类型 的 图形上下文</span></div><div class="line">    <span class="built_in">UIGraphicsBeginImageContext</span>(<span class="keyword">self</span>.DrawView.bounds.size);</div><div class="line"></div><div class="line">    <span class="comment">//获取上下文，不用获取就可以画</span></div><div class="line"><span class="comment">//    CGContextRef ctx = UIGraphicsGetCurrentContext();</span></div><div class="line"></div><div class="line">    <span class="comment">//把这个view 画到当前的上下文当中 并进行渲染</span></div><div class="line">    [<span class="keyword">self</span>.DrawView drawViewHierarchyInRect:<span class="keyword">self</span>.DrawView.bounds afterScreenUpdates:<span class="literal">YES</span>];</div><div class="line"></div><div class="line">    <span class="comment">//获取图片</span></div><div class="line">    <span class="built_in">UIImage</span> *image = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</div><div class="line"></div><div class="line">    <span class="comment">//关闭</span></div><div class="line">    <span class="built_in">UIGraphicsEndImageContext</span>();</div><div class="line"></div><div class="line">    <span class="comment">// 保存相册 - 完成的是有一定要使用系统的方法</span></div><div class="line">    <span class="built_in">UIImageWriteToSavedPhotosAlbum</span>(image, <span class="keyword">self</span>, <span class="keyword">@selector</span>(image:didFinishSavingWithError:contextInfo:), <span class="string">@"123123123"</span>);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)image:(<span class="built_in">UIImage</span>*)image didFinishSavingWithError:(<span class="built_in">NSError</span>*)error contextInfo:(<span class="keyword">void</span>*)contextInfo</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"保存成功"</span>);</div><div class="line"></div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>, contextInfo);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="整体思维导图"><a href="#整体思维导图" class="headerlink" title="整体思维导图"></a>整体思维导图</h2><p><img src="http://ww3.sinaimg.cn/large/9632d3f5jw1f8xdug15y0j21kw1yaaxd.jpg" alt=""></p>
+<p>高清思维导图下载地址<br><a href="https://raw.githubusercontent.com/whong7/whong7.github.io/master/MindNotePictures/绘图.png" target="_blank" rel="external">https://raw.githubusercontent.com/whong7/whong7.github.io/master/MindNotePictures/绘图.png</a></p>
 
           
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2014/12/22/mv/" itemprop="url">
+                  欢迎使用马克飞象
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2014-12-22T12:39:04+08:00" content="2014-12-22">
+              2014-12-22
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2014/12/22/mv/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/12/22/mv/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2014/12/22/mv/" class="leancloud_visitors" data-flag-title="欢迎使用马克飞象">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="Markdown-syntax-guide-and-writing-on-MWeb"><a href="#Markdown-syntax-guide-and-writing-on-MWeb" class="headerlink" title="Markdown syntax guide and writing on MWeb"></a>Markdown syntax guide and writing on MWeb</h1><h2 id="Philosophy"><a href="#Philosophy" class="headerlink" title="Philosophy"></a>Philosophy</h2><blockquote>
+<p>Markdown is intended to be as easy-to-read and easy-to-write as is feasible.<br>Readability, however, is emphasized above all else. A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions.<br>Markdown’s syntax is intended for one purpose: to be used as a format for <em>writing</em> for the web.</p>
+</blockquote>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014/12/22/mv/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
