@@ -48,7 +48,7 @@
     <link href="http://yoursite.com/2014/12/22/%E5%9B%BE%E5%83%8F%E7%BB%98%E5%88%B6/"/>
     <id>http://yoursite.com/2014/12/22/图像绘制/</id>
     <published>2014-12-22T04:39:04.000Z</published>
-    <updated>2016-10-19T04:33:11.000Z</updated>
+    <updated>2016-10-19T04:35:28.000Z</updated>
     
     <content type="html"><![CDATA[<p>本文简单介绍了图像绘制的方法以及相应的代码示例，并附上整体思维导图，如有纰漏之处还望指正<br><a id="more"></a></p>
 <h2 id="Quartz2D-Core-Graphics介绍"><a href="#Quartz2D-Core-Graphics介绍" class="headerlink" title="Quartz2D/Core Graphics介绍"></a>Quartz2D/Core Graphics介绍</h2><ul>
@@ -270,7 +270,7 @@
 <p>MindNode源文件下载地址<br><a href="https://github.com/whong7/whong7.github.io/blob/master/MindNote/1%20%E7%BB%98%E5%9B%BE.zip?raw=true" target="_blank" rel="external">https://github.com/whong7/whong7.github.io/blob/master/MindNote/1%20%E7%BB%98%E5%9B%BE.zip?raw=true</a></p>
 <h2 id="反馈与建议"><a href="#反馈与建议" class="headerlink" title="反馈与建议"></a>反馈与建议</h2><ul>
 <li>微博：<a href="http://weibo.com/u/2519913461" target="_blank" rel="external">@whong77</a></li>
-<li>邮箱：<a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#119;&#104;&#111;&#110;&#103;&#55;&#57;&#49;&#x31;&#x32;&#x30;&#55;&#x40;&#x31;&#54;&#x33;&#x2e;&#x63;&#111;&#x6d;">&#119;&#104;&#111;&#110;&#103;&#55;&#57;&#49;&#x31;&#x32;&#x30;&#55;&#x40;&#x31;&#54;&#x33;&#x2e;&#x63;&#111;&#x6d;</a></li>
+<li>邮箱：<a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#119;&#104;&#111;&#x6e;&#103;&#x37;&#x39;&#49;&#x31;&#x32;&#x30;&#55;&#x40;&#49;&#x36;&#51;&#46;&#x63;&#111;&#109;">&#119;&#104;&#111;&#x6e;&#103;&#x37;&#x39;&#49;&#x31;&#x32;&#x30;&#55;&#x40;&#49;&#x36;&#51;&#46;&#x63;&#111;&#109;</a></li>
 </ul>
 ]]></content>
     
