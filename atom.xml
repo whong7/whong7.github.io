@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://whong7.github.io/"/>
-  <updated>2016-10-21T11:34:46.000Z</updated>
+  <updated>2016-10-21T12:27:59.000Z</updated>
   <id>http://whong7.github.io/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://whong7.github.io/2014/12/27/1.%E6%8E%A7%E5%88%B6%E5%99%A8%E5%88%9B%E5%BB%BA%E6%96%B9%E5%BC%8F/"/>
     <id>http://whong7.github.io/2014/12/27/1.控制器创建方式/</id>
     <published>2014-12-27T04:23:04.000Z</published>
-    <updated>2016-10-21T11:34:46.000Z</updated>
+    <updated>2016-10-21T12:27:59.000Z</updated>
     
-    <content type="html"><![CDATA[<p>[TOC]</p>
+    <content type="html"><![CDATA[<p>控制器的三种创建方式-代码<br>控制器的三种创建方式-sb<br>控制器的三种创建方式-xib<br>用 XIB 加载控制器的细节</p>
 <a id="more"></a>
 <hr>
 <h3 id="控制器的三种创建方式-代码"><a href="#控制器的三种创建方式-代码" class="headerlink" title="控制器的三种创建方式-代码"></a>控制器的三种创建方式-代码</h3><ul>
@@ -77,7 +77,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;[TOC]&lt;/p&gt;
+      &lt;p&gt;控制器的三种创建方式-代码&lt;br&gt;控制器的三种创建方式-sb&lt;br&gt;控制器的三种创建方式-xib&lt;br&gt;用 XIB 加载控制器的细节&lt;/p&gt;
     
     </summary>
     
@@ -87,39 +87,11 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://whong7.github.io/2014/12/22/hello-world/"/>
-    <id>http://whong7.github.io/2014/12/22/hello-world/</id>
-    <published>2014-12-22T04:39:04.000Z</published>
-    <updated>2016-10-19T03:01:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>图像绘制</title>
     <link href="http://whong7.github.io/2014/12/22/%E5%9B%BE%E5%83%8F%E7%BB%98%E5%88%B6/"/>
     <id>http://whong7.github.io/2014/12/22/图像绘制/</id>
     <published>2014-12-22T04:39:04.000Z</published>
-    <updated>2016-10-19T04:52:57.000Z</updated>
+    <updated>2016-10-21T12:27:15.000Z</updated>
     
     <content type="html"><![CDATA[<p>本文简单介绍了图像绘制的方法以及相应的代码示例，并附上整体思维导图，如有纰漏之处还望指正<br><a id="more"></a></p>
 <h2 id="Quartz2D-Core-Graphics介绍"><a href="#Quartz2D-Core-Graphics介绍" class="headerlink" title="Quartz2D/Core Graphics介绍"></a>Quartz2D/Core Graphics介绍</h2><ul>
@@ -337,10 +309,10 @@
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">IBAction</span>)save:(<span class="keyword">id</span>)sender &#123;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">//开启创建上下文 图片类型 的 图形上下文</span></div><div class="line">    <span class="built_in">UIGraphicsBeginImageContext</span>(<span class="keyword">self</span>.DrawView.bounds.size);</div><div class="line"></div><div class="line">    <span class="comment">//获取上下文，不用获取就可以画</span></div><div class="line"><span class="comment">//    CGContextRef ctx = UIGraphicsGetCurrentContext();</span></div><div class="line"></div><div class="line">    <span class="comment">//把这个view 画到当前的上下文当中 并进行渲染</span></div><div class="line">    [<span class="keyword">self</span>.DrawView drawViewHierarchyInRect:<span class="keyword">self</span>.DrawView.bounds afterScreenUpdates:<span class="literal">YES</span>];</div><div class="line"></div><div class="line">    <span class="comment">//获取图片</span></div><div class="line">    <span class="built_in">UIImage</span> *image = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</div><div class="line"></div><div class="line">    <span class="comment">//关闭</span></div><div class="line">    <span class="built_in">UIGraphicsEndImageContext</span>();</div><div class="line"></div><div class="line">    <span class="comment">// 保存相册 - 完成的是有一定要使用系统的方法</span></div><div class="line">    <span class="built_in">UIImageWriteToSavedPhotosAlbum</span>(image, <span class="keyword">self</span>, <span class="keyword">@selector</span>(image:didFinishSavingWithError:contextInfo:), <span class="string">@"123123123"</span>);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)image:(<span class="built_in">UIImage</span>*)image didFinishSavingWithError:(<span class="built_in">NSError</span>*)error contextInfo:(<span class="keyword">void</span>*)contextInfo</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"保存成功"</span>);</div><div class="line"></div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>, contextInfo);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="整体思维导图"><a href="#整体思维导图" class="headerlink" title="整体思维导图"></a>整体思维导图</h2><p><img src="http://ww3.sinaimg.cn/large/9632d3f5jw1f8xdug15y0j21kw1yaaxd.jpg" alt=""></p>
 <p>高清思维导图下载地址<br><a href="https://raw.githubusercontent.com/whong7/whong7.github.io/master/MindNotePictures/绘图.png" target="_blank" rel="external">绘图.png</a></p>
-<p>MindNode源文件下载地址<br><a href="https://github.com/whong7/whong7.github.io/blob/master/MindNote/1%20%E7%BB%98%E5%9B%BE.zip?raw=true" target="_blank" rel="external">绘图.mindnode</a></p>
+<p>MindNode源文件下载地址<br><a href="https://raw.githubusercontent.com/whong7/whong7.github.io/master/MindNote/绘图.zip" target="_blank" rel="external">绘图.mindnode</a></p>
 <h2 id="反馈与建议"><a href="#反馈与建议" class="headerlink" title="反馈与建议"></a>反馈与建议</h2><ul>
 <li>微博：<a href="http://weibo.com/u/2519913461" target="_blank" rel="external">@whong77</a></li>
-<li>邮箱：<a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#119;&#104;&#x6f;&#110;&#x67;&#x37;&#57;&#49;&#x31;&#x32;&#48;&#x37;&#64;&#49;&#x36;&#x33;&#46;&#x63;&#111;&#109;">&#119;&#104;&#x6f;&#110;&#x67;&#x37;&#57;&#49;&#x31;&#x32;&#48;&#x37;&#64;&#49;&#x36;&#x33;&#46;&#x63;&#111;&#109;</a></li>
+<li>邮箱：<a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#119;&#x68;&#111;&#x6e;&#x67;&#55;&#57;&#49;&#49;&#50;&#x30;&#55;&#x40;&#x31;&#x36;&#51;&#x2e;&#x63;&#x6f;&#109;">&#119;&#x68;&#111;&#x6e;&#x67;&#55;&#57;&#49;&#49;&#50;&#x30;&#55;&#x40;&#x31;&#x36;&#51;&#x2e;&#x63;&#x6f;&#109;</a></li>
 </ul>
 ]]></content>
     
@@ -381,9 +353,9 @@
     <link href="http://whong7.github.io/2014/04/19/2.%E6%8E%A7%E5%88%B6%E5%99%A8%E4%B8%8E%E8%A7%86%E5%9B%BE%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
     <id>http://whong7.github.io/2014/04/19/2.控制器与视图的生命周期/</id>
     <published>2014-04-19T08:31:02.000Z</published>
-    <updated>2016-10-21T12:06:08.000Z</updated>
+    <updated>2016-10-21T12:28:21.000Z</updated>
     
-    <content type="html"><![CDATA[<p>[TOC]</p>
+    <content type="html"><![CDATA[<p>控制器在导航控制器的生命周期<br>控制器在标签控制器的生命周期<br>控制器在nav的生命周期<br>视图的生命周期方法</p>
 <a id="more"></a>
 <h2 id="控制器在导航控制器的生命周期"><a href="#控制器在导航控制器的生命周期" class="headerlink" title="控制器在导航控制器的生命周期"></a>控制器在导航控制器的生命周期</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// 控制器在nav中 push的时候 的过程</div><div class="line">// one 将要消失</div><div class="line">// two view加载完成</div><div class="line">// two 将要显示</div><div class="line">// one 已经消失</div><div class="line">// two 已经显示</div><div class="line"></div><div class="line">// 控制器在nav中 拖拽返回的时候</div><div class="line">// 拖拽的时候  two 将要消失 one 将要显示</div><div class="line">// 松手返回到上一个页面 two 已经消失 one 已经显示</div><div class="line"></div><div class="line">// 控制器在nav中 拖拽返回的时候</div><div class="line">// 拖拽的时候  two 将要消失 one 将要显示</div><div class="line">// 松手没有返回上一个页面  one 将要消失 one 已经消失 two 将要显示 two 已经显示</div></pre></td></tr></table></figure>
 <h2 id="控制器在标签控制器的生命周期"><a href="#控制器在标签控制器的生命周期" class="headerlink" title="控制器在标签控制器的生命周期"></a>控制器在标签控制器的生命周期</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 控制器在tabbarController中的声明周期</div><div class="line">// two view加载完成</div><div class="line">// two view将要显示</div><div class="line">// one view将要消失</div><div class="line">// one view已经消失</div><div class="line">// two view已经显示</div></pre></td></tr></table></figure>
@@ -401,17 +373,17 @@
 <li>这四个方法显示和消失的时候都会调用,只不过是移动到不同的view和不同window</li>
 </ul>
 <h2 id="整体思维导图"><a href="#整体思维导图" class="headerlink" title="整体思维导图"></a>整体思维导图</h2><p><img src="http://ww2.sinaimg.cn/large/9632d3f5jw1f905677xa0j21kw1qnh36.jpg" alt=""></p>
-<p>高清思维导图下载地址<br>[绘图.png]</p>
-<p>MindNode源文件下载地址<br>[绘图.mindnode]</p>
+<p>高清思维导图下载地址<br><a href="https://raw.githubusercontent.com/whong7/whong7.github.io/master/MindNotePictures/生命周期.png" target="_blank" rel="external">绘图.png</a></p>
+<p>MindNode源文件下载地址<br><a href="https://raw.githubusercontent.com/whong7/whong7.github.io/master/MindNote/%20生命周期.zip" target="_blank" rel="external">绘图.mindnode</a></p>
 <h2 id="反馈与建议"><a href="#反馈与建议" class="headerlink" title="反馈与建议"></a>反馈与建议</h2><ul>
 <li>微博：<a href="http://weibo.com/u/2519913461" target="_blank" rel="external">@whong77</a></li>
-<li>邮箱：<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#119;&#104;&#111;&#110;&#103;&#55;&#x39;&#49;&#x31;&#50;&#48;&#x37;&#x40;&#x31;&#x36;&#x33;&#x2e;&#x63;&#x6f;&#109;">&#119;&#104;&#111;&#110;&#103;&#55;&#x39;&#49;&#x31;&#50;&#48;&#x37;&#x40;&#x31;&#x36;&#x33;&#x2e;&#x63;&#x6f;&#109;</a></li>
+<li>邮箱：<a href="&#x6d;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#119;&#x68;&#x6f;&#110;&#x67;&#55;&#57;&#49;&#49;&#50;&#x30;&#x37;&#x40;&#x31;&#x36;&#x33;&#x2e;&#99;&#111;&#109;">&#119;&#x68;&#x6f;&#110;&#x67;&#55;&#57;&#49;&#49;&#50;&#x30;&#x37;&#x40;&#x31;&#x36;&#x33;&#x2e;&#99;&#111;&#109;</a></li>
 </ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;[TOC]&lt;/p&gt;
+      &lt;p&gt;控制器在导航控制器的生命周期&lt;br&gt;控制器在标签控制器的生命周期&lt;br&gt;控制器在nav的生命周期&lt;br&gt;视图的生命周期方法&lt;/p&gt;
     
     </summary>
     

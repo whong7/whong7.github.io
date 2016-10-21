@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="[TOC]">
+<meta name="description" content="控制器在导航控制器的生命周期控制器在标签控制器的生命周期控制器在nav的生命周期视图的生命周期方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="控制器与视图的生命周期">
 <meta property="og:url" content="http://whong7.github.io/2014/04/19/2.控制器与视图的生命周期/index.html">
 <meta property="og:site_name" content="A piece of pure land">
-<meta property="og:description" content="[TOC]">
+<meta property="og:description" content="控制器在导航控制器的生命周期控制器在标签控制器的生命周期控制器在nav的生命周期视图的生命周期方法">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/9632d3f5jw1f905677xa0j21kw1qnh36.jpg">
-<meta property="og:updated_time" content="2016-10-21T12:06:08.000Z">
+<meta property="og:updated_time" content="2016-10-21T12:28:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="控制器与视图的生命周期">
-<meta name="twitter:description" content="[TOC]">
+<meta name="twitter:description" content="控制器在导航控制器的生命周期控制器在标签控制器的生命周期控制器在nav的生命周期视图的生命周期方法">
 <meta name="twitter:image" content="http://ww2.sinaimg.cn/large/9632d3f5jw1f905677xa0j21kw1qnh36.jpg">
 
 
@@ -328,7 +328,7 @@
       
 
       
-        <p>[TOC]</p>
+        <p>控制器在导航控制器的生命周期<br>控制器在标签控制器的生命周期<br>控制器在nav的生命周期<br>视图的生命周期方法</p>
 <a id="more"></a>
 <h2 id="控制器在导航控制器的生命周期"><a href="#控制器在导航控制器的生命周期" class="headerlink" title="控制器在导航控制器的生命周期"></a>控制器在导航控制器的生命周期</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// 控制器在nav中 push的时候 的过程</div><div class="line">// one 将要消失</div><div class="line">// two view加载完成</div><div class="line">// two 将要显示</div><div class="line">// one 已经消失</div><div class="line">// two 已经显示</div><div class="line"></div><div class="line">// 控制器在nav中 拖拽返回的时候</div><div class="line">// 拖拽的时候  two 将要消失 one 将要显示</div><div class="line">// 松手返回到上一个页面 two 已经消失 one 已经显示</div><div class="line"></div><div class="line">// 控制器在nav中 拖拽返回的时候</div><div class="line">// 拖拽的时候  two 将要消失 one 将要显示</div><div class="line">// 松手没有返回上一个页面  one 将要消失 one 已经消失 two 将要显示 two 已经显示</div></pre></td></tr></table></figure>
 <h2 id="控制器在标签控制器的生命周期"><a href="#控制器在标签控制器的生命周期" class="headerlink" title="控制器在标签控制器的生命周期"></a>控制器在标签控制器的生命周期</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 控制器在tabbarController中的声明周期</div><div class="line">// two view加载完成</div><div class="line">// two view将要显示</div><div class="line">// one view将要消失</div><div class="line">// one view已经消失</div><div class="line">// two view已经显示</div></pre></td></tr></table></figure>
@@ -346,11 +346,11 @@
 <li>这四个方法显示和消失的时候都会调用,只不过是移动到不同的view和不同window</li>
 </ul>
 <h2 id="整体思维导图"><a href="#整体思维导图" class="headerlink" title="整体思维导图"></a>整体思维导图</h2><p><img src="http://ww2.sinaimg.cn/large/9632d3f5jw1f905677xa0j21kw1qnh36.jpg" alt=""></p>
-<p>高清思维导图下载地址<br>[绘图.png]</p>
-<p>MindNode源文件下载地址<br>[绘图.mindnode]</p>
+<p>高清思维导图下载地址<br><a href="https://raw.githubusercontent.com/whong7/whong7.github.io/master/MindNotePictures/生命周期.png" target="_blank" rel="external">绘图.png</a></p>
+<p>MindNode源文件下载地址<br><a href="https://raw.githubusercontent.com/whong7/whong7.github.io/master/MindNote/%20生命周期.zip" target="_blank" rel="external">绘图.mindnode</a></p>
 <h2 id="反馈与建议"><a href="#反馈与建议" class="headerlink" title="反馈与建议"></a>反馈与建议</h2><ul>
 <li>微博：<a href="http://weibo.com/u/2519913461" target="_blank" rel="external">@whong77</a></li>
-<li>邮箱：<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#119;&#104;&#111;&#110;&#103;&#55;&#x39;&#49;&#x31;&#50;&#48;&#x37;&#x40;&#x31;&#x36;&#x33;&#x2e;&#x63;&#x6f;&#109;">&#119;&#104;&#111;&#110;&#103;&#55;&#x39;&#49;&#x31;&#50;&#48;&#x37;&#x40;&#x31;&#x36;&#x33;&#x2e;&#x63;&#x6f;&#109;</a></li>
+<li>邮箱：<a href="&#x6d;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#119;&#x68;&#x6f;&#110;&#x67;&#55;&#57;&#49;&#49;&#50;&#x30;&#x37;&#x40;&#x31;&#x36;&#x33;&#x2e;&#99;&#111;&#109;">&#119;&#x68;&#x6f;&#110;&#x67;&#55;&#57;&#49;&#49;&#50;&#x30;&#x37;&#x40;&#x31;&#x36;&#x33;&#x2e;&#99;&#111;&#109;</a></li>
 </ul>
 
       
@@ -461,7 +461,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
