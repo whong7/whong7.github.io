@@ -89,7 +89,7 @@
 
 加速计:
 检测力在某个方向上有作用 (检测到方向和大小) –&amp;gt; 沿着轴上下快速运动
-加速度计的原理很简单，现在手机里面基本配备的都是3维线传感器，也就是说，用来测量x，y，z三个轴上的加速力。加速力就是当物体在加速过程中">
+加速度计的原理很简单，现在手机里面基本配备的都是3维线传感器，也就是说，用来测量x，y，z三个轴上的加速力。加速力就是当物体在加速过程中作">
 <meta property="og:type" content="article">
 <meta property="og:title" content="传感器：加速计,陀螺仪,磁力计 push获取方式 pull获取方式">
 <meta property="og:url" content="http://whong7.github.io/2015/06/28/传感器：加速计,陀螺仪,磁力计 push获取方式/index.html">
@@ -99,10 +99,10 @@
 
 加速计:
 检测力在某个方向上有作用 (检测到方向和大小) –&amp;gt; 沿着轴上下快速运动
-加速度计的原理很简单，现在手机里面基本配备的都是3维线传感器，也就是说，用来测量x，y，z三个轴上的加速力。加速力就是当物体在加速过程中">
+加速度计的原理很简单，现在手机里面基本配备的都是3维线传感器，也就是说，用来测量x，y，z三个轴上的加速力。加速力就是当物体在加速过程中作">
 <meta property="og:image" content="http://g.hiphotos.baidu.com/baike/s%3D220/sign=4f93e8cb75094b36df921cef93cc7c00/0823dd54564e9258af3790fa9f82d158ccbf4ea6.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/9632d3f5jw1f91hzfgwxfj20a00bjaaq.jpg">
-<meta property="og:updated_time" content="2016-10-23T01:47:23.000Z">
+<meta property="og:updated_time" content="2016-10-23T01:53:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="传感器：加速计,陀螺仪,磁力计 push获取方式 pull获取方式">
 <meta name="twitter:description" content="传感器：加速计,陀螺仪,磁力计 push获取方式
@@ -110,7 +110,7 @@
 
 加速计:
 检测力在某个方向上有作用 (检测到方向和大小) –&amp;gt; 沿着轴上下快速运动
-加速度计的原理很简单，现在手机里面基本配备的都是3维线传感器，也就是说，用来测量x，y，z三个轴上的加速力。加速力就是当物体在加速过程中">
+加速度计的原理很简单，现在手机里面基本配备的都是3维线传感器，也就是说，用来测量x，y，z三个轴上的加速力。加速力就是当物体在加速过程中作">
 <meta name="twitter:image" content="http://g.hiphotos.baidu.com/baike/s%3D220/sign=4f93e8cb75094b36df921cef93cc7c00/0823dd54564e9258af3790fa9f82d158ccbf4ea6.jpg">
 
 
@@ -344,8 +344,7 @@
       
 
       
-        <a id="more"></a>
-<h2 id="传感器：加速计-陀螺仪-磁力计-push获取方式"><a href="#传感器：加速计-陀螺仪-磁力计-push获取方式" class="headerlink" title="传感器：加速计,陀螺仪,磁力计 push获取方式"></a>传感器：加速计,陀螺仪,磁力计 push获取方式</h2><ul>
+        <h2 id="传感器：加速计-陀螺仪-磁力计-push获取方式"><a href="#传感器：加速计-陀螺仪-磁力计-push获取方式" class="headerlink" title="传感器：加速计,陀螺仪,磁力计 push获取方式"></a>传感器：加速计,陀螺仪,磁力计 push获取方式</h2><ul>
 <li>获取方式分为2种: push(系统会按照一定的时间间隔, 不停的返回数据) / pull (在需要的时候再来获取数据)</li>
 </ul>
 <h3 id="加速计"><a href="#加速计" class="headerlink" title="加速计:"></a>加速计:</h3><ul>
@@ -354,6 +353,7 @@
 <li>可以用于监测设备的摇晃</li>
 </ul>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)accelerometerPush &#123;</div><div class="line">    <span class="comment">//加速器push (频繁获取数据)</span></div><div class="line">    <span class="comment">//Accelerometer</span></div><div class="line">    <span class="comment">//1. 创建运动管理器</span></div><div class="line">    <span class="keyword">self</span>.motionMgr = [<span class="built_in">CMMotionManager</span> new];</div><div class="line"></div><div class="line">    <span class="comment">//2. 判断能否使用加速计</span></div><div class="line">    <span class="keyword">if</span> (![<span class="keyword">self</span>.motionMgr isAccelerometerAvailable]) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//3. 设置采样间隔(更新间隔/推送间隔) --&gt; push方式才需要设置</span></div><div class="line">    <span class="comment">//单位是秒</span></div><div class="line">    <span class="keyword">self</span>.motionMgr.accelerometerUpdateInterval = <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="comment">//4. 开始更新 --&gt; 如果是push方式, 那么使用带有bolck的方法</span></div><div class="line">    [<span class="keyword">self</span>.motionMgr startAccelerometerUpdatesToQueue:[<span class="built_in">NSOperationQueue</span> mainQueue] withHandler:^(<span class="built_in">CMAccelerometerData</span> * _Nullable accelerometerData, <span class="built_in">NSError</span> * _Nullable error) &#123;</div><div class="line"></div><div class="line">        <span class="comment">/**</span></div><div class="line">         1. 哪个轴方向指向地面方向, 就会打印哪个轴方向的值.</div><div class="line">         2. 默认的大小 1~-1之间</div><div class="line">         3. 沿着轴方向运动, 会改变大小</div><div class="line"></div><div class="line">         如果要实现摇一摇, 可以判断三个轴的任何一个, 只要大于某个数值, 就可以判定发生了摇一摇</div><div class="line">         */</div><div class="line">        <span class="built_in">CMAcceleration</span> acceleration = accelerometerData.acceleration;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"x: %f, y: %f, z: %f "</span>, acceleration.x, acceleration.y, acceleration.z);</div><div class="line">    &#125;];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="陀螺仪-检测转动的角速度-–-gt-只有转动才会有值"><a href="#陀螺仪-检测转动的角速度-–-gt-只有转动才会有值" class="headerlink" title="陀螺仪: 检测转动的角速度  –&gt; 只有转动才会有值"></a>陀螺仪: 检测转动的角速度  –&gt; 只有转动才会有值</h3><ul>
 <li><p>陀螺仪原理是指陀螺仪工作的原理，螺旋仪是一种用来传感与维持方向的装置，基于角动量守恒的理论设计出来的。陀螺仪主要是由一个位于轴心且可旋转的转子构成。 陀螺仪一旦开始旋转，由于转子的角动量，陀螺仪有抗拒方向改变的趋向。</p>
 </li>
