@@ -84,16 +84,91 @@
 
 
 
-<meta name="description" content="控制器的三种创建方式-代码控制器的三种创建方式-sb控制器的三种创建方式-xib用 XIB 加载控制器的细节">
+<meta name="description" content="控制器的三种创建方式-代码
+直接alloc init
+
+控制器的三种创建方式-sb
+首先都要获取 sb 对象
+两种方式:
+获取箭头所指向的控制器
+(不带参数的)
+
+
+获取指定sbID的控制器
+(带参数的)
+
+
+
+
+
+控制器的三种创建方式-xib
+三种:
+指定xib的名字 (创建控制器的时候的init的方法)
+同名xib
+同名去掉Controller的xib
+
+
+注意:
+xib的filesOwne">
 <meta property="og:type" content="article">
 <meta property="og:title" content="控制器创建方式">
 <meta property="og:url" content="http://whong7.github.io/2014/12/27/1.控制器创建方式/index.html">
 <meta property="og:site_name" content="A piece of pure land">
-<meta property="og:description" content="控制器的三种创建方式-代码控制器的三种创建方式-sb控制器的三种创建方式-xib用 XIB 加载控制器的细节">
-<meta property="og:updated_time" content="2016-10-21T12:27:59.000Z">
+<meta property="og:description" content="控制器的三种创建方式-代码
+直接alloc init
+
+控制器的三种创建方式-sb
+首先都要获取 sb 对象
+两种方式:
+获取箭头所指向的控制器
+(不带参数的)
+
+
+获取指定sbID的控制器
+(带参数的)
+
+
+
+
+
+控制器的三种创建方式-xib
+三种:
+指定xib的名字 (创建控制器的时候的init的方法)
+同名xib
+同名去掉Controller的xib
+
+
+注意:
+xib的filesOwne">
+<meta property="og:updated_time" content="2016-10-23T01:56:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="控制器创建方式">
-<meta name="twitter:description" content="控制器的三种创建方式-代码控制器的三种创建方式-sb控制器的三种创建方式-xib用 XIB 加载控制器的细节">
+<meta name="twitter:description" content="控制器的三种创建方式-代码
+直接alloc init
+
+控制器的三种创建方式-sb
+首先都要获取 sb 对象
+两种方式:
+获取箭头所指向的控制器
+(不带参数的)
+
+
+获取指定sbID的控制器
+(带参数的)
+
+
+
+
+
+控制器的三种创建方式-xib
+三种:
+指定xib的名字 (创建控制器的时候的init的方法)
+同名xib
+同名去掉Controller的xib
+
+
+注意:
+xib的filesOwne">
 
 
 
@@ -326,9 +401,7 @@
       
 
       
-        <p>控制器的三种创建方式-代码<br>控制器的三种创建方式-sb<br>控制器的三种创建方式-xib<br>用 XIB 加载控制器的细节</p>
-<a id="more"></a>
-<hr>
+        <hr>
 <h3 id="控制器的三种创建方式-代码"><a href="#控制器的三种创建方式-代码" class="headerlink" title="控制器的三种创建方式-代码"></a>控制器的三种创建方式-代码</h3><ul>
 <li>直接alloc init</li>
 </ul>
@@ -355,11 +428,10 @@
 </li>
 <li>注意:<ul>
 <li>xib的filesOwner为类名</li>
-<li>view要记得连线     </li>
+<li>view要记得连线     <a id="more"></a>
+<h3 id="用-XIB-加载控制器的细节"><a href="#用-XIB-加载控制器的细节" class="headerlink" title="用 XIB 加载控制器的细节"></a>用 XIB 加载控制器的细节</h3></li>
 </ul>
 </li>
-</ul>
-<h3 id="用-XIB-加载控制器的细节"><a href="#用-XIB-加载控制器的细节" class="headerlink" title="用 XIB 加载控制器的细节"></a>用 XIB 加载控制器的细节</h3><ul>
 <li>优先级:<ul>
 <li>如果指定的xib的名字,回去加载执行的xib</li>
 <li>如果没有指定xib的名字<ul>
