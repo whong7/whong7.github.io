@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="生命周期," />
+  <meta name="keywords" content="传感器," />
 
 
 
@@ -84,18 +84,34 @@
 
 
 
-<meta name="description" content="控制器在导航控制器的生命周期控制器在标签控制器的生命周期控制器在nav的生命周期视图的生命周期方法">
+<meta name="description" content="传感器：加速计,陀螺仪,磁力计 push获取方式
+获取方式分为2种: push(系统会按照一定的时间间隔, 不停的返回数据) / pull (在需要的时候再来获取数据)
+
+加速计:
+检测力在某个方向上有作用 (检测到方向和大小) –&amp;gt; 沿着轴上下快速运动
+加速度计的原理很简单，现在手机里面基本配备的都是3维线传感器，也就是说，用来测量x，y，z三个轴上的加速力。加速力就是当物体在加速过程中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="控制器与视图的生命周期">
-<meta property="og:url" content="http://whong7.github.io/2014/04/19/2.控制器与视图的生命周期/index.html">
+<meta property="og:title" content="传感器：加速计,陀螺仪,磁力计 push获取方式 pull获取方式">
+<meta property="og:url" content="http://whong7.github.io/2015/06/28/传感器：加速计,陀螺仪,磁力计 push获取方式/index.html">
 <meta property="og:site_name" content="A piece of pure land">
-<meta property="og:description" content="控制器在导航控制器的生命周期控制器在标签控制器的生命周期控制器在nav的生命周期视图的生命周期方法">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/9632d3f5jw1f905677xa0j21kw1qnh36.jpg">
-<meta property="og:updated_time" content="2016-10-21T12:28:21.000Z">
+<meta property="og:description" content="传感器：加速计,陀螺仪,磁力计 push获取方式
+获取方式分为2种: push(系统会按照一定的时间间隔, 不停的返回数据) / pull (在需要的时候再来获取数据)
+
+加速计:
+检测力在某个方向上有作用 (检测到方向和大小) –&amp;gt; 沿着轴上下快速运动
+加速度计的原理很简单，现在手机里面基本配备的都是3维线传感器，也就是说，用来测量x，y，z三个轴上的加速力。加速力就是当物体在加速过程中">
+<meta property="og:image" content="http://g.hiphotos.baidu.com/baike/s%3D220/sign=4f93e8cb75094b36df921cef93cc7c00/0823dd54564e9258af3790fa9f82d158ccbf4ea6.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/9632d3f5jw1f91hzfgwxfj20a00bjaaq.jpg">
+<meta property="og:updated_time" content="2016-10-23T01:47:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="控制器与视图的生命周期">
-<meta name="twitter:description" content="控制器在导航控制器的生命周期控制器在标签控制器的生命周期控制器在nav的生命周期视图的生命周期方法">
-<meta name="twitter:image" content="http://ww2.sinaimg.cn/large/9632d3f5jw1f905677xa0j21kw1qnh36.jpg">
+<meta name="twitter:title" content="传感器：加速计,陀螺仪,磁力计 push获取方式 pull获取方式">
+<meta name="twitter:description" content="传感器：加速计,陀螺仪,磁力计 push获取方式
+获取方式分为2种: push(系统会按照一定的时间间隔, 不停的返回数据) / pull (在需要的时候再来获取数据)
+
+加速计:
+检测力在某个方向上有作用 (检测到方向和大小) –&amp;gt; 沿着轴上下快速运动
+加速度计的原理很简单，现在手机里面基本配备的都是3维线传感器，也就是说，用来测量x，y，z三个轴上的加速力。加速力就是当物体在加速过程中">
+<meta name="twitter:image" content="http://g.hiphotos.baidu.com/baike/s%3D220/sign=4f93e8cb75094b36df921cef93cc7c00/0823dd54564e9258af3790fa9f82d158ccbf4ea6.jpg">
 
 
 
@@ -116,10 +132,10 @@
 
 
 
-  <link rel="canonical" href="http://whong7.github.io/2014/04/19/2.控制器与视图的生命周期/"/>
+  <link rel="canonical" href="http://whong7.github.io/2015/06/28/传感器：加速计,陀螺仪,磁力计 push获取方式/"/>
 
 
-  <title> 控制器与视图的生命周期 | A piece of pure land </title>
+  <title> 传感器：加速计,陀螺仪,磁力计 push获取方式 pull获取方式 | A piece of pure land </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -272,7 +288,7 @@
             
             
               
-                控制器与视图的生命周期
+                传感器：加速计,陀螺仪,磁力计 push获取方式 pull获取方式
               
             
           </h1>
@@ -284,8 +300,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-04-19T16:31:02+08:00" content="2014-04-19">
-              2014-04-19
+            <time itemprop="dateCreated" datetime="2015-06-28T10:13:04+08:00" content="2015-06-28">
+              2015-06-28
             </time>
           </span>
 
@@ -295,8 +311,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2014/04/19/2.控制器与视图的生命周期/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/04/19/2.控制器与视图的生命周期/" itemprop="commentsCount"></span>
+                <a href="/2015/06/28/传感器：加速计,陀螺仪,磁力计 push获取方式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/28/传感器：加速计,陀螺仪,磁力计 push获取方式/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -306,7 +322,7 @@
 
           
           
-             <span id="/2014/04/19/2.控制器与视图的生命周期/" class="leancloud_visitors" data-flag-title="控制器与视图的生命周期">
+             <span id="/2015/06/28/传感器：加速计,陀螺仪,磁力计 push获取方式/" class="leancloud_visitors" data-flag-title="传感器：加速计,陀螺仪,磁力计 push获取方式 pull获取方式">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -328,30 +344,35 @@
       
 
       
-        <p>控制器在导航控制器的生命周期<br>控制器在标签控制器的生命周期<br>控制器在nav的生命周期<br>视图的生命周期方法</p>
-<a id="more"></a>
-<h2 id="控制器在导航控制器的生命周期"><a href="#控制器在导航控制器的生命周期" class="headerlink" title="控制器在导航控制器的生命周期"></a>控制器在导航控制器的生命周期</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// 控制器在nav中 push的时候 的过程</div><div class="line">// one 将要消失</div><div class="line">// two view加载完成</div><div class="line">// two 将要显示</div><div class="line">// one 已经消失</div><div class="line">// two 已经显示</div><div class="line"></div><div class="line">// 控制器在nav中 拖拽返回的时候</div><div class="line">// 拖拽的时候  two 将要消失 one 将要显示</div><div class="line">// 松手返回到上一个页面 two 已经消失 one 已经显示</div><div class="line"></div><div class="line">// 控制器在nav中 拖拽返回的时候</div><div class="line">// 拖拽的时候  two 将要消失 one 将要显示</div><div class="line">// 松手没有返回上一个页面  one 将要消失 one 已经消失 two 将要显示 two 已经显示</div></pre></td></tr></table></figure>
-<h2 id="控制器在标签控制器的生命周期"><a href="#控制器在标签控制器的生命周期" class="headerlink" title="控制器在标签控制器的生命周期"></a>控制器在标签控制器的生命周期</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 控制器在tabbarController中的声明周期</div><div class="line">// two view加载完成</div><div class="line">// two view将要显示</div><div class="line">// one view将要消失</div><div class="line">// one view已经消失</div><div class="line">// two view已经显示</div></pre></td></tr></table></figure>
-<h2 id="控制器在nav的生命周期"><a href="#控制器在nav的生命周期" class="headerlink" title="控制器在nav的生命周期"></a>控制器在nav的生命周期</h2><hr>
-<p><strong>控制器在nav中push的时候的过程</strong><br>// one 将要消失<br>// two view加载完成<br>// two 将要显示<br>// one 已经消失<br>// two 已经显示</p>
-<p><strong>控制器在nav中 拖拽返回的时候</strong><br>// 拖拽的时候  two 将要消失 one 将要显示<br>// 松手返回到上一个页面 two 已经消失 one 已经显示</p>
-<p><strong>控制器在nav中 拖拽返回的时候</strong><br>// 拖拽的时候  two 将要消失 one 将要显示<br>// 松手没有返回上一个页面  one 将要消失 one 已经消失 two 将要显示 two 已经显示</p>
-<hr>
-<h2 id="视图的生命周期方法"><a href="#视图的生命周期方法" class="headerlink" title="视图的生命周期方法"></a>视图的生命周期方法</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"DemoView.h"</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">DemoView</span></span></div><div class="line"></div><div class="line"><span class="comment">// 将要移动到superView 通过'addSubView'</span></div><div class="line">- (<span class="keyword">void</span>)willMoveToSuperview:(<span class="keyword">nullable</span> <span class="built_in">UIView</span>*)newSuperview</div><div class="line">&#123;</div><div class="line">    [<span class="keyword">super</span> willMoveToSuperview:newSuperview];</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@ -- %s"</span>, <span class="keyword">self</span>.class, __FUNCTION__);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 已经移动到superView</span></div><div class="line">- (<span class="keyword">void</span>)didMoveToSuperview</div><div class="line">&#123;</div><div class="line">    [<span class="keyword">super</span> didMoveToSuperview];</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@ -- %s"</span>, <span class="keyword">self</span>.class, __FUNCTION__);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 将要移动到window '显示/消失'</span></div><div class="line">- (<span class="keyword">void</span>)willMoveToWindow:(<span class="keyword">nullable</span> <span class="built_in">UIWindow</span>*)newWindow</div><div class="line">&#123;</div><div class="line"></div><div class="line">    [<span class="keyword">super</span> willMoveToWindow:newWindow];</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@ -- %s"</span>, <span class="keyword">self</span>.class, __FUNCTION__);</div><div class="line"></div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"willMoveToWindow ------- &gt; %@"</span>, newWindow);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 已经移动到window '显示/消失'</span></div><div class="line">- (<span class="keyword">void</span>)didMoveToWindow</div><div class="line">&#123;</div><div class="line">    [<span class="keyword">super</span> didMoveToWindow];</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@ -- %s"</span>, <span class="keyword">self</span>.class, __FUNCTION__);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
-<p><strong>输出结果：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">2016-07-09 13:17:27.255 05-控制器生命周期[31547:3527271] OneViewController -- -[ViewController viewDidLoad]</div><div class="line">2016-07-09 13:17:27.256 05-控制器生命周期[31547:3527271] DemoView -- -[DemoView willMoveToSuperview:]</div><div class="line">2016-07-09 13:17:27.256 05-控制器生命周期[31547:3527271] DemoView -- -[DemoView didMoveToSuperview]</div><div class="line">2016-07-09 13:17:27.258 05-控制器生命周期[31547:3527271] OneViewController -- -[ViewController viewWillAppear:]</div><div class="line">2016-07-09 13:17:27.258 05-控制器生命周期[31547:3527271] DemoView -- -[DemoView willMoveToWindow:]</div><div class="line">2016-07-09 13:17:27.258 05-控制器生命周期[31547:3527271] willMoveToWindow ------- &gt; &lt;UIWindow: 0x7f8d88cbd2d0; frame = (0 0; 375 667); gestureRecognizers = &lt;NSArray: 0x7f8d88cbe4d0&gt;; layer = &lt;UIWindowLayer: 0x7f8d88cb1fc0&gt;&gt;</div><div class="line">2016-07-09 13:17:27.259 05-控制器生命周期[31547:3527271] DemoView -- -[DemoView didMoveToWindow]</div><div class="line">2016-07-09 13:17:27.266 05-控制器生命周期[31547:3527271] OneViewController -- -[ViewController viewDidAppear:]</div></pre></td></tr></table></figure>
+        <a id="more"></a>
+<h2 id="传感器：加速计-陀螺仪-磁力计-push获取方式"><a href="#传感器：加速计-陀螺仪-磁力计-push获取方式" class="headerlink" title="传感器：加速计,陀螺仪,磁力计 push获取方式"></a>传感器：加速计,陀螺仪,磁力计 push获取方式</h2><ul>
+<li>获取方式分为2种: push(系统会按照一定的时间间隔, 不停的返回数据) / pull (在需要的时候再来获取数据)</li>
+</ul>
+<h3 id="加速计"><a href="#加速计" class="headerlink" title="加速计:"></a>加速计:</h3><ul>
+<li>检测力在某个方向上有作用 (检测到方向和大小) –&gt; 沿着轴上下快速运动</li>
+<li>加速度计的原理很简单，现在手机里面基本配备的都是3维线传感器，也就是说，用来测量x，y，z三个轴上的加速力。加速力就是当物体在加速过程中作用在物体上的力，就好比地球引力，也就是重力。</li>
+<li>可以用于监测设备的摇晃</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)accelerometerPush &#123;</div><div class="line">    <span class="comment">//加速器push (频繁获取数据)</span></div><div class="line">    <span class="comment">//Accelerometer</span></div><div class="line">    <span class="comment">//1. 创建运动管理器</span></div><div class="line">    <span class="keyword">self</span>.motionMgr = [<span class="built_in">CMMotionManager</span> new];</div><div class="line"></div><div class="line">    <span class="comment">//2. 判断能否使用加速计</span></div><div class="line">    <span class="keyword">if</span> (![<span class="keyword">self</span>.motionMgr isAccelerometerAvailable]) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//3. 设置采样间隔(更新间隔/推送间隔) --&gt; push方式才需要设置</span></div><div class="line">    <span class="comment">//单位是秒</span></div><div class="line">    <span class="keyword">self</span>.motionMgr.accelerometerUpdateInterval = <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="comment">//4. 开始更新 --&gt; 如果是push方式, 那么使用带有bolck的方法</span></div><div class="line">    [<span class="keyword">self</span>.motionMgr startAccelerometerUpdatesToQueue:[<span class="built_in">NSOperationQueue</span> mainQueue] withHandler:^(<span class="built_in">CMAccelerometerData</span> * _Nullable accelerometerData, <span class="built_in">NSError</span> * _Nullable error) &#123;</div><div class="line"></div><div class="line">        <span class="comment">/**</span></div><div class="line">         1. 哪个轴方向指向地面方向, 就会打印哪个轴方向的值.</div><div class="line">         2. 默认的大小 1~-1之间</div><div class="line">         3. 沿着轴方向运动, 会改变大小</div><div class="line"></div><div class="line">         如果要实现摇一摇, 可以判断三个轴的任何一个, 只要大于某个数值, 就可以判定发生了摇一摇</div><div class="line">         */</div><div class="line">        <span class="built_in">CMAcceleration</span> acceleration = accelerometerData.acceleration;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"x: %f, y: %f, z: %f "</span>, acceleration.x, acceleration.y, acceleration.z);</div><div class="line">    &#125;];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="陀螺仪-检测转动的角速度-–-gt-只有转动才会有值"><a href="#陀螺仪-检测转动的角速度-–-gt-只有转动才会有值" class="headerlink" title="陀螺仪: 检测转动的角速度  –&gt; 只有转动才会有值"></a>陀螺仪: 检测转动的角速度  –&gt; 只有转动才会有值</h3><ul>
+<li><p>陀螺仪原理是指陀螺仪工作的原理，螺旋仪是一种用来传感与维持方向的装置，基于角动量守恒的理论设计出来的。陀螺仪主要是由一个位于轴心且可旋转的转子构成。 陀螺仪一旦开始旋转，由于转子的角动量，陀螺仪有抗拒方向改变的趋向。</p>
+</li>
+<li><p>现象解释[百度百科]</p>
 <ul>
-<li>如何判断一个view是否显示在屏幕上,如果这个view的.window属性,有值,证明他已经显示在当前的屏幕上,如果没有值的话,表示当前没有显示在屏幕上</li>
-<li>addSubView 会触发’willMoveToSuperview’’didMoveToSuperview’的方法</li>
-<li>这四个方法显示和消失的时候都会调用,只不过是移动到不同的view和不同window</li>
+<li>高速旋转的物体的旋转轴，对于改变其方向的外力作用有趋向于垂直方向的倾向。而且，旋转物体在横向倾斜时，重力会向增加倾斜的方向作用，而轴则向垂直方向运动，就产生了摇头的运动（岁差运动）。当陀螺经纬仪的陀螺旋转轴以水平轴旋转时，由于地球的旋转而受到铅直方向旋转力，陀螺的旋转体向水平面内的子午线方向产生岁差运动。当轴平行于子午线而静止时可加以应用。</li>
+<li>陀螺仪基本上就是运用物体高速旋转时，角动量很大，旋转轴会一直稳定指向一个方向的性质，所制造出来的定向仪器。不过它必需转得够快，或者惯量够大(也可以说是角动量要够大)。不然，只要一个很小的力矩，就会严重影响到它的稳定性。</li>
 </ul>
-<h2 id="整体思维导图"><a href="#整体思维导图" class="headerlink" title="整体思维导图"></a>整体思维导图</h2><p><img src="http://ww2.sinaimg.cn/large/9632d3f5jw1f905677xa0j21kw1qnh36.jpg" alt=""></p>
-<p>高清思维导图下载地址<br><a href="https://raw.githubusercontent.com/whong7/whong7.github.io/master/MindNotePictures/生命周期.png" target="_blank" rel="external">绘图.png</a></p>
-<p>MindNode源文件下载地址<br><a href="https://raw.githubusercontent.com/whong7/whong7.github.io/master/MindNote/%20生命周期.zip" target="_blank" rel="external">绘图.mindnode</a></p>
-<h2 id="反馈与建议"><a href="#反馈与建议" class="headerlink" title="反馈与建议"></a>反馈与建议</h2><ul>
-<li>微博：<a href="http://weibo.com/u/2519913461" target="_blank" rel="external">@whong77</a></li>
-<li>邮箱：<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#111;&#58;&#x77;&#104;&#x6f;&#110;&#103;&#x37;&#57;&#49;&#x31;&#x32;&#x30;&#55;&#x40;&#x31;&#54;&#51;&#x2e;&#99;&#x6f;&#x6d;">&#x77;&#104;&#x6f;&#110;&#103;&#x37;&#57;&#49;&#x31;&#x32;&#x30;&#55;&#x40;&#x31;&#54;&#51;&#x2e;&#99;&#x6f;&#x6d;</a></li>
+</li>
 </ul>
+<p> <img src="http://g.hiphotos.baidu.com/baike/s%3D220/sign=4f93e8cb75094b36df921cef93cc7c00/0823dd54564e9258af3790fa9f82d158ccbf4ea6.jpg" alt=""></p>
+<ul>
+<li>陀螺仪的测量是随时间累计的，要知道当前的角度，只需要将之前所有的输出数值积分即可。当然，陀螺仪只会输出当前旋转的变化值，比如说，如果一架飞机是以60度的倾斜角度径直飞行，此时陀螺仪的输出为0，因为当前就没有机体旋转。但是，你可以通过之前的输出累计计算出当前机体倾斜角度是多少。<br><img src="http://ww3.sinaimg.cn/large/9632d3f5jw1f91hzfgwxfj20a00bjaaq.jpg" alt=""></li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)gyroPush</div><div class="line">&#123;</div><div class="line">    <span class="comment">//陀螺仪push (频繁获取数据)</span></div><div class="line">    <span class="comment">//Gyro</span></div><div class="line">    <span class="comment">//1. 创建运动管理器</span></div><div class="line">    <span class="keyword">self</span>.motionMgr = [<span class="built_in">CMMotionManager</span> new];</div><div class="line"></div><div class="line">    <span class="comment">//2. 判断能否使用陀螺仪</span></div><div class="line">    <span class="keyword">if</span> (![<span class="keyword">self</span>.motionMgr isGyroAvailable]) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//3. 设置采样间隔(更新间隔/推送间隔) --&gt; push方式才需要设置</span></div><div class="line">    <span class="comment">//单位是秒</span></div><div class="line">    <span class="keyword">self</span>.motionMgr.gyroUpdateInterval = <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="comment">//4. 开始更新 --&gt; 如果是push方式, 那么使用带有bolck的方法</span></div><div class="line">    [<span class="keyword">self</span>.motionMgr startGyroUpdatesToQueue:[<span class="built_in">NSOperationQueue</span> mainQueue] withHandler:^(<span class="built_in">CMGyroData</span> * _Nullable gyroData, <span class="built_in">NSError</span> * _Nullable error) &#123;</div><div class="line">        <span class="built_in">CMRotationRate</span> rotationRate = gyroData.rotationRate;</div><div class="line"></div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"x: %f, y: %f, z: %f "</span>, rotationRate.x, rotationRate.y, rotationRate.z);</div><div class="line">    &#125;];</div><div class="line">&#125;</div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+<h3 id="磁力计-检测磁场的变化-–-gt-主要用于导航"><a href="#磁力计-检测磁场的变化-–-gt-主要用于导航" class="headerlink" title="磁力计: 检测磁场的变化  –&gt; 主要用于导航"></a>磁力计: 检测磁场的变化  –&gt; 主要用于导航</h3><ul>
+<li>感应周边磁场，盒盖锁屏</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)gyroPush</div><div class="line">&#123;</div><div class="line">-(<span class="keyword">void</span>)magnetometerPush&#123;</div><div class="line"></div><div class="line">    <span class="comment">//磁力计push (频繁获取数据)</span></div><div class="line">    <span class="comment">//Magnetometer</span></div><div class="line">    <span class="comment">//1. 创建运动管理器</span></div><div class="line">    <span class="keyword">self</span>.motionMgr = [<span class="built_in">CMMotionManager</span> new];</div><div class="line"></div><div class="line">    <span class="comment">//2. 判断能否使用磁力计</span></div><div class="line">    <span class="keyword">if</span> (![<span class="keyword">self</span>.motionMgr isMagnetometerAvailable]) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//3. 设置采样间隔(更新间隔/推送间隔) --&gt; push方式才需要设置</span></div><div class="line">    <span class="comment">//单位是秒</span></div><div class="line">    <span class="keyword">self</span>.motionMgr.magnetometerUpdateInterval = <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="comment">//4. 开始更新 --&gt; 如果是push方式, 那么使用带有bolck的方法</span></div><div class="line">    [<span class="keyword">self</span>.motionMgr startMagnetometerUpdatesToQueue:[<span class="built_in">NSOperationQueue</span> mainQueue] withHandler:^(<span class="built_in">CMMagnetometerData</span> * _Nullable magnetometerData, <span class="built_in">NSError</span> * _Nullable error) &#123;</div><div class="line"></div><div class="line">        <span class="comment">//单位: 特斯拉</span></div><div class="line">        <span class="built_in">CMMagneticField</span> magneticField = magnetometerData.magneticField;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"x: %f, y: %f, z: %f "</span>, magneticField.x, magneticField.y, magneticField.z);</div><div class="line">    &#125;];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -374,7 +395,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/生命周期/" rel="tag">#生命周期</a>
+            <a href="/tags/传感器/" rel="tag">#传感器</a>
           
         </div>
       
@@ -383,12 +404,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2015/06/27/传感器：加速计,陀螺仪,磁力计 pull获取方式/" rel="next" title="传感器：加速计,陀螺仪,磁力计 pull获取方式">
+                <i class="fa fa-chevron-left"></i> 传感器：加速计,陀螺仪,磁力计 pull获取方式
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/04/22/3.内存警告方法/" rel="prev" title="内存警告方法">
-                内存警告方法 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/07/20/视频截图，录制，压缩/" rel="prev" title="视频截图，录制，压缩方式">
+                视频截图，录制，压缩方式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -415,8 +440,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2014/04/19/2.控制器与视图的生命周期/"
-           data-title="控制器与视图的生命周期" data-url="http://whong7.github.io/2014/04/19/2.控制器与视图的生命周期/">
+      <div class="ds-thread" data-thread-key="2015/06/28/传感器：加速计,陀螺仪,磁力计 push获取方式/"
+           data-title="传感器：加速计,陀螺仪,磁力计 push获取方式 pull获取方式" data-url="http://whong7.github.io/2015/06/28/传感器：加速计,陀螺仪,磁力计 push获取方式/">
       </div>
     
   </div>
@@ -538,7 +563,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#控制器在导航控制器的生命周期"><span class="nav-number">1.</span> <span class="nav-text">控制器在导航控制器的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制器在标签控制器的生命周期"><span class="nav-number">2.</span> <span class="nav-text">控制器在标签控制器的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制器在nav的生命周期"><span class="nav-number">3.</span> <span class="nav-text">控制器在nav的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视图的生命周期方法"><span class="nav-number">4.</span> <span class="nav-text">视图的生命周期方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整体思维导图"><span class="nav-number">5.</span> <span class="nav-text">整体思维导图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反馈与建议"><span class="nav-number">6.</span> <span class="nav-text">反馈与建议</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#传感器：加速计-陀螺仪-磁力计-push获取方式"><span class="nav-number">1.</span> <span class="nav-text">传感器：加速计,陀螺仪,磁力计 push获取方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加速计"><span class="nav-number">1.1.</span> <span class="nav-text">加速计:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#陀螺仪-检测转动的角速度-–-gt-只有转动才会有值"><span class="nav-number">1.2.</span> <span class="nav-text">陀螺仪: 检测转动的角速度  –> 只有转动才会有值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#磁力计-检测磁场的变化-–-gt-主要用于导航"><span class="nav-number">1.3.</span> <span class="nav-text">磁力计: 检测磁场的变化  –> 主要用于导航</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

@@ -272,6 +272,374 @@
             
               
                 
+                <a class="post-title-link" href="/2015/07/20/视频截图，录制，压缩/" itemprop="url">
+                  视频截图，录制，压缩方式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-07-20T15:35:09+08:00" content="2015-07-20">
+              2015-07-20
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/07/20/视频截图，录制，压缩/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/20/视频截图，录制，压缩/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/07/20/视频截图，录制，压缩/" class="leancloud_visitors" data-flag-title="视频截图，录制，压缩方式">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<h3 id="视频截图"><a href="#视频截图" class="headerlink" title="视频截图:"></a>视频截图:</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"ViewController.h"</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;AVFoundation/AVFoundation.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> 1. 导入AVFountaion框架</div><div class="line"> 2. 创建图像资源生成器</div><div class="line"> 3. 调用方法, 来获取指定时间的截图</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> ()</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">weak</span>, <span class="keyword">nonatomic</span>) <span class="keyword">IBOutlet</span> <span class="built_in">UIImageView</span> *imageView;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line">    <span class="comment">// Do any additional setup after loading the view, typically from a nib.</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span>&lt;<span class="built_in">UITouch</span> *&gt; *)touches withEvent:(<span class="built_in">UIEvent</span> *)event</div><div class="line">&#123;</div><div class="line">    <span class="comment">//1. 获取URL</span></div><div class="line">    <span class="built_in">NSURL</span> *url = [[<span class="built_in">NSBundle</span> mainBundle] URLForResource:<span class="string">@"Cupid_高清.mp4"</span> withExtension:<span class="literal">nil</span>];</div><div class="line"></div><div class="line">    <span class="comment">//2. 创建资源 --&gt; 找视频</span></div><div class="line">    <span class="built_in">AVAsset</span> *asset = [<span class="built_in">AVAsset</span> assetWithURL:url];</div><div class="line"></div><div class="line">    <span class="comment">//3. 创建图像资源生成器</span></div><div class="line">    <span class="built_in">AVAssetImageGenerator</span> *generator = [<span class="built_in">AVAssetImageGenerator</span> assetImageGeneratorWithAsset:asset];</div><div class="line"></div><div class="line">    <span class="comment">//4. 创建CMTime: 专们用于表示影片时间的值</span></div><div class="line">    <span class="comment">//帧数: 1S 24帧.  15~30  3gp:10~15</span></div><div class="line">    <span class="comment">//影片截图: 用第几秒+第几帧, 这样来获取比较合适</span></div><div class="line"></div><div class="line">    <span class="comment">//value: 你要获取第几帧</span></div><div class="line">    <span class="comment">//timescale: 一秒有几帧</span></div><div class="line">    <span class="comment">//time的结果 = value / timescale 单位是秒+帧</span></div><div class="line"></div><div class="line">    <span class="built_in">CMTime</span> time = <span class="built_in">CMTimeMake</span>(<span class="number">1</span>, <span class="number">1</span>);</div><div class="line">    <span class="built_in">NSValue</span> *value = [<span class="built_in">NSValue</span> valueWithCMTime:time];</div><div class="line"></div><div class="line">    <span class="comment">//5. 指定时间, 异步生成图像</span></div><div class="line">    [generator generateCGImagesAsynchronouslyForTimes:@[value] completionHandler:^(<span class="built_in">CMTime</span> requestedTime, <span class="built_in">CGImageRef</span>  _Nullable image, <span class="built_in">CMTime</span> actualTime, <span class="built_in">AVAssetImageGeneratorResult</span> result, <span class="built_in">NSError</span> * _Nullable error) &#123;</div><div class="line"></div><div class="line">        <span class="comment">//这里不能使用桥接</span></div><div class="line">        <span class="comment">//self.imageView.image = (__bridge UIImage * _Nullable)(image);</span></div><div class="line"></div><div class="line">        <span class="comment">//6. 在主线程中更新UI</span></div><div class="line">        <span class="built_in">dispatch_sync</span>(dispatch_get_main_queue(), ^&#123;</div><div class="line">            <span class="keyword">self</span>.imageView.image = [<span class="built_in">UIImage</span> imageWithCGImage:image];</div><div class="line">        &#125;);</div><div class="line"></div><div class="line">    &#125;];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+<h3 id="视频录制"><a href="#视频录制" class="headerlink" title="视频录制"></a>视频录制</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"ViewController.h"</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;MobileCoreServices/MobileCoreServices.h&gt;</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;MediaPlayer/MediaPlayer.h&gt;</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;AssetsLibrary/AssetsLibrary.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> ()&lt;<span class="title">UINavigationControllerDelegate</span>, <span class="title">UIImagePickerControllerDelegate</span>&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>)  <span class="built_in">MPMoviePlayerController</span> *mpC;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line">    <span class="comment">// Do any additional setup after loading the view, typically from a nib.</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> 点击屏幕录制视频</div><div class="line"> 播放刚才录制的视频</div><div class="line"> 保存视频</div><div class="line"></div><div class="line"> iOS10注意添加授权Key</div><div class="line"> */</div><div class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span>&lt;<span class="built_in">UITouch</span> *&gt; *)touches withEvent:(<span class="built_in">UIEvent</span> *)event</div><div class="line">&#123;</div><div class="line">    <span class="comment">//1. 先判断源类型是否可用</span></div><div class="line">    <span class="keyword">if</span> (![<span class="built_in">UIImagePickerController</span> isSourceTypeAvailable:<span class="built_in">UIImagePickerControllerSourceTypePhotoLibrary</span>]) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="comment">//2. 创建</span></div><div class="line">    <span class="built_in">UIImagePickerController</span> *pickerC = [<span class="built_in">UIImagePickerController</span> new];</div><div class="line"></div><div class="line">    <span class="comment">//3. 设置源类型 (默认就是UIImagePickerControllerSourceTypePhotoLibrary)</span></div><div class="line">    <span class="comment">//PhotoLibrary: 选择视频</span></div><div class="line">    <span class="comment">//Camera: 录制视频</span></div><div class="line">    pickerC.sourceType = <span class="built_in">UIImagePickerControllerSourceTypeCamera</span>;</div><div class="line"></div><div class="line">    <span class="comment">//4. 设置媒体类型 默认是Image, kUTTypeImage = @"public.movie"</span></div><div class="line">    pickerC.mediaTypes = @[(<span class="built_in">NSString</span> *)kUTTypeMovie];</div><div class="line"></div><div class="line">    <span class="comment">//5. 设置代理</span></div><div class="line">    pickerC.delegate = <span class="keyword">self</span>;</div><div class="line"></div><div class="line">    <span class="comment">//6. 模态弹出控制器</span></div><div class="line">    [<span class="keyword">self</span> presentViewController:pickerC animated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark picker的代理方法</span></div><div class="line">- (<span class="keyword">void</span>)imagePickerController:(<span class="built_in">UIImagePickerController</span> *)picker didFinishPickingMediaWithInfo:(<span class="built_in">NSDictionary</span>&lt;<span class="built_in">NSString</span> *,<span class="keyword">id</span>&gt; *)info</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"info: %@"</span>, info);</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     UIImagePickerControllerMediaType = "public.movie";</div><div class="line">     UIImagePickerControllerMediaURL = "file:///private/var/mobile/Containers/Data/Application/0DF55A9B-89D5-4477-BE3A-6CBAB2912419/tmp/49794758578__D28D3F45-60D0-47AE-9789-04698E5808A6.MOV";</div><div class="line">     */</div><div class="line"></div><div class="line">    <span class="comment">//保存视频</span></div><div class="line">    <span class="comment">//此代理方法, 从相册选中一个照片/拍照/选中视频/录制视频都会走这个方法.</span></div><div class="line">    <span class="comment">//只有录制视频这种情况才需要保存视频</span></div><div class="line">    <span class="comment">//1. 保证媒体类型是视频 --&gt; Movie</span></div><div class="line">    <span class="built_in">NSString</span> *meidaTypeStr = info[<span class="built_in">UIImagePickerControllerMediaType</span>];</div><div class="line"></div><div class="line">    <span class="keyword">if</span> ([meidaTypeStr isEqualToString:<span class="string">@"public.movie"</span>]) &#123;</div><div class="line"></div><div class="line"></div><div class="line">        <span class="keyword">if</span> (<span class="keyword">self</span>.mpC == <span class="literal">nil</span>) &#123;</div><div class="line">            <span class="comment">//强引用, 设置Frame, 添加到View上, 调用播放方法</span></div><div class="line">            <span class="keyword">self</span>.mpC = [<span class="built_in">MPMoviePlayerController</span> new];</div><div class="line">            <span class="keyword">self</span>.mpC.view.frame = <span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">375</span>, <span class="number">500</span>);</div><div class="line">            [<span class="keyword">self</span>.view addSubview:<span class="keyword">self</span>.mpC.view];</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">        <span class="comment">//网址不一样. 播放方法</span></div><div class="line">        <span class="comment">//UIImagePickerControllerMediaURL: 是视频地址, 也需要保证媒体类型是视频</span></div><div class="line">        <span class="keyword">self</span>.mpC.contentURL = info[<span class="built_in">UIImagePickerControllerMediaURL</span>];</div><div class="line">        [<span class="keyword">self</span>.mpC play];</div><div class="line"></div><div class="line"></div><div class="line">        <span class="comment">//2. 保证是录制视频 (如果是选中了视频, 说明视频已经存在了. 如果你在保存, 就重复了)</span></div><div class="line">        <span class="comment">//说明现在是录制视频</span></div><div class="line">        <span class="keyword">if</span> (picker.sourceType == <span class="built_in">UIImagePickerControllerSourceTypeCamera</span>) &#123;</div><div class="line"></div><div class="line">            <span class="comment">//3. 保存</span></div><div class="line">            ALAssetsLibrary *al = [ALAssetsLibrary new];</div><div class="line"></div><div class="line">            <span class="comment">//保存视频到系统的默认相册中 --&gt; 只需要传入要保存的视频的URL地址即可</span></div><div class="line">            [al writeVideoAtPathToSavedPhotosAlbum:info[<span class="built_in">UIImagePickerControllerMediaURL</span>] completionBlock:<span class="literal">nil</span>];</div><div class="line"></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">//一旦实现了代理方法, 那么picker需要手动消失</span></div><div class="line">    [picker dismissViewControllerAnimated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+<h3 id="视频压缩"><a href="#视频压缩" class="headerlink" title="视频压缩"></a>视频压缩</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"ViewController.h"</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;MobileCoreServices/MobileCoreServices.h&gt;</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;AVFoundation/AVFoundation.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> ()&lt;<span class="title">UINavigationControllerDelegate</span>, <span class="title">UIImagePickerControllerDelegate</span>&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line">    <span class="comment">// Do any additional setup after loading the view, typically from a nib.</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">IBAction</span>)chooseVideoClick:(<span class="keyword">id</span>)sender &#123;</div><div class="line">    <span class="comment">/*</span></div><div class="line">     enum &#123;</div><div class="line">     UIImagePickerControllerSourceTypePhotoLibrary ,//来自图库</div><div class="line">     UIImagePickerControllerSourceTypeCamera ,//来自相机</div><div class="line">     UIImagePickerControllerSourceTypeSavedPhotosAlbum //来自相册</div><div class="line">     &#125;;</div><div class="line">     */</div><div class="line">    <span class="keyword">if</span> (![<span class="built_in">UIImagePickerController</span> isSourceTypeAvailable:<span class="built_in">UIImagePickerControllerSourceTypePhotoLibrary</span>]) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="built_in">UIImagePickerController</span> *picker = [<span class="built_in">UIImagePickerController</span> new];</div><div class="line"></div><div class="line">    <span class="comment">//可以控制是选择(PhotoLibrary)/拍摄(Camera)</span></div><div class="line">    picker.sourceType = <span class="built_in">UIImagePickerControllerSourceTypePhotoLibrary</span>;</div><div class="line"></div><div class="line">    <span class="comment">//可以控制是照片(kUTTypeImage)/视频(kUTTypeMovie)</span></div><div class="line">    picker.mediaTypes = @[(<span class="built_in">NSString</span> *)kUTTypeMovie];</div><div class="line"></div><div class="line">    picker.delegate = <span class="keyword">self</span>;</div><div class="line"></div><div class="line">    [<span class="keyword">self</span> presentViewController:picker animated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark 代理方法 --&gt; 获取视频的URL地址, 并进行压缩</span></div><div class="line">- (<span class="keyword">void</span>)imagePickerController:(<span class="built_in">UIImagePickerController</span> *)picker didFinishPickingMediaWithInfo:(<span class="built_in">NSDictionary</span>&lt;<span class="built_in">NSString</span> *,<span class="keyword">id</span>&gt; *)info</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"info: %@"</span>,info);</div><div class="line">    <span class="comment">/**</span></div><div class="line">     UIImagePickerControllerMediaURL = "file:///private/var/mobile/Containers/Data/Application/F7867122-B08D-46E9-86DD-09EC7BEF7208/tmp/trim.EF7DA639-689D-4C56-A12B-8DE97CC226C2.MOV";</div><div class="line">     UIImagePickerControllerReferenceURL = "assets-library://asset/asset.MOV?id=E00E435A-84F3-45CC-8604-D4981B1C89EB&amp;ext=MOV";</div><div class="line">     */</div><div class="line"></div><div class="line">    <span class="comment">//转换视频</span></div><div class="line">    [<span class="keyword">self</span> <span class="keyword">export</span>:info[<span class="built_in">UIImagePickerControllerMediaURL</span>]];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark 视频压缩代码 转换视频</span></div><div class="line">- (<span class="keyword">void</span>)<span class="keyword">export</span>:(<span class="built_in">NSURL</span> *)url</div><div class="line">&#123;</div><div class="line">    <span class="comment">//1. 创建资源类</span></div><div class="line">    <span class="built_in">AVAsset</span> *asset = [<span class="built_in">AVAsset</span> assetWithURL:url];</div><div class="line"></div><div class="line">    <span class="comment">//2. 创建资源转换会话类</span></div><div class="line">    <span class="comment">//presetName: 设置分辨率和质量  可以选择低或中质量</span></div><div class="line">    <span class="built_in">AVAssetExportSession</span> *exportSession = [<span class="built_in">AVAssetExportSession</span> exportSessionWithAsset:asset presetName:<span class="built_in">AVAssetExportPresetLowQuality</span>];</div><div class="line"></div><div class="line">    <span class="comment">//3. 转换的路径 从沙盒中指定路径 --&gt; 变成NSURL</span></div><div class="line">    <span class="comment">//文件重名, 不会默认覆盖</span></div><div class="line">    <span class="comment">//temp://video/abc.mp4</span></div><div class="line">    exportSession.outputURL = [<span class="built_in">NSURL</span> fileURLWithPath: [<span class="built_in">NSTemporaryDirectory</span>() stringByAppendingPathComponent:<span class="string">@"2.mp4"</span>]];</div><div class="line"></div><div class="line">    <span class="comment">//4. 转换的格式</span></div><div class="line">    exportSession.outputFileType = <span class="built_in">AVFileTypeMPEG4</span>;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     "com.apple.quicktime-movie"  --&gt; AVFileTypeQuickTimeMovie</div><div class="line">     "public.mpeg-4"    --&gt; AVFileTypeMPEG4</div><div class="line">     */</div><div class="line">    <span class="comment">//NSLog(@"session: %@", exportSession.supportedFileTypes);</span></div><div class="line"></div><div class="line">    <span class="comment">//5. 转换方法 , 转成功, 会调用里面的block</span></div><div class="line">    [exportSession exportAsynchronouslyWithCompletionHandler:^&#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"转换成功"</span>);</div><div class="line">        <span class="comment">//在这里执行发送视频的代码</span></div><div class="line">    &#125;];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/06/28/传感器：加速计,陀螺仪,磁力计 push获取方式/" itemprop="url">
+                  传感器：加速计,陀螺仪,磁力计 push获取方式 pull获取方式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-06-28T10:13:04+08:00" content="2015-06-28">
+              2015-06-28
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/06/28/传感器：加速计,陀螺仪,磁力计 push获取方式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/28/传感器：加速计,陀螺仪,磁力计 push获取方式/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/06/28/传感器：加速计,陀螺仪,磁力计 push获取方式/" class="leancloud_visitors" data-flag-title="传感器：加速计,陀螺仪,磁力计 push获取方式 pull获取方式">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<h2 id="传感器：加速计-陀螺仪-磁力计-push获取方式"><a href="#传感器：加速计-陀螺仪-磁力计-push获取方式" class="headerlink" title="传感器：加速计,陀螺仪,磁力计 push获取方式"></a>传感器：加速计,陀螺仪,磁力计 push获取方式</h2><ul>
+<li>获取方式分为2种: push(系统会按照一定的时间间隔, 不停的返回数据) / pull (在需要的时候再来获取数据)</li>
+</ul>
+<h3 id="加速计"><a href="#加速计" class="headerlink" title="加速计:"></a>加速计:</h3><ul>
+<li>检测力在某个方向上有作用 (检测到方向和大小) –&gt; 沿着轴上下快速运动</li>
+<li>加速度计的原理很简单，现在手机里面基本配备的都是3维线传感器，也就是说，用来测量x，y，z三个轴上的加速力。加速力就是当物体在加速过程中作用在物体上的力，就好比地球引力，也就是重力。</li>
+<li>可以用于监测设备的摇晃</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)accelerometerPush &#123;</div><div class="line">    <span class="comment">//加速器push (频繁获取数据)</span></div><div class="line">    <span class="comment">//Accelerometer</span></div><div class="line">    <span class="comment">//1. 创建运动管理器</span></div><div class="line">    <span class="keyword">self</span>.motionMgr = [<span class="built_in">CMMotionManager</span> new];</div><div class="line"></div><div class="line">    <span class="comment">//2. 判断能否使用加速计</span></div><div class="line">    <span class="keyword">if</span> (![<span class="keyword">self</span>.motionMgr isAccelerometerAvailable]) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//3. 设置采样间隔(更新间隔/推送间隔) --&gt; push方式才需要设置</span></div><div class="line">    <span class="comment">//单位是秒</span></div><div class="line">    <span class="keyword">self</span>.motionMgr.accelerometerUpdateInterval = <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="comment">//4. 开始更新 --&gt; 如果是push方式, 那么使用带有bolck的方法</span></div><div class="line">    [<span class="keyword">self</span>.motionMgr startAccelerometerUpdatesToQueue:[<span class="built_in">NSOperationQueue</span> mainQueue] withHandler:^(<span class="built_in">CMAccelerometerData</span> * _Nullable accelerometerData, <span class="built_in">NSError</span> * _Nullable error) &#123;</div><div class="line"></div><div class="line">        <span class="comment">/**</span></div><div class="line">         1. 哪个轴方向指向地面方向, 就会打印哪个轴方向的值.</div><div class="line">         2. 默认的大小 1~-1之间</div><div class="line">         3. 沿着轴方向运动, 会改变大小</div><div class="line"></div><div class="line">         如果要实现摇一摇, 可以判断三个轴的任何一个, 只要大于某个数值, 就可以判定发生了摇一摇</div><div class="line">         */</div><div class="line">        <span class="built_in">CMAcceleration</span> acceleration = accelerometerData.acceleration;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"x: %f, y: %f, z: %f "</span>, acceleration.x, acceleration.y, acceleration.z);</div><div class="line">    &#125;];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="陀螺仪-检测转动的角速度-–-gt-只有转动才会有值"><a href="#陀螺仪-检测转动的角速度-–-gt-只有转动才会有值" class="headerlink" title="陀螺仪: 检测转动的角速度  –&gt; 只有转动才会有值"></a>陀螺仪: 检测转动的角速度  –&gt; 只有转动才会有值</h3><ul>
+<li><p>陀螺仪原理是指陀螺仪工作的原理，螺旋仪是一种用来传感与维持方向的装置，基于角动量守恒的理论设计出来的。陀螺仪主要是由一个位于轴心且可旋转的转子构成。 陀螺仪一旦开始旋转，由于转子的角动量，陀螺仪有抗拒方向改变的趋向。</p>
+</li>
+<li><p>现象解释[百度百科]</p>
+<ul>
+<li>高速旋转的物体的旋转轴，对于改变其方向的外力作用有趋向于垂直方向的倾向。而且，旋转物体在横向倾斜时，重力会向增加倾斜的方向作用，而轴则向垂直方向运动，就产生了摇头的运动（岁差运动）。当陀螺经纬仪的陀螺旋转轴以水平轴旋转时，由于地球的旋转而受到铅直方向旋转力，陀螺的旋转体向水平面内的子午线方向产生岁差运动。当轴平行于子午线而静止时可加以应用。</li>
+<li>陀螺仪基本上就是运用物体高速旋转时，角动量很大，旋转轴会一直稳定指向一个方向的性质，所制造出来的定向仪器。不过它必需转得够快，或者惯量够大(也可以说是角动量要够大)。不然，只要一个很小的力矩，就会严重影响到它的稳定性。</li>
+</ul>
+</li>
+</ul>
+<p> <img src="http://g.hiphotos.baidu.com/baike/s%3D220/sign=4f93e8cb75094b36df921cef93cc7c00/0823dd54564e9258af3790fa9f82d158ccbf4ea6.jpg" alt=""></p>
+<ul>
+<li>陀螺仪的测量是随时间累计的，要知道当前的角度，只需要将之前所有的输出数值积分即可。当然，陀螺仪只会输出当前旋转的变化值，比如说，如果一架飞机是以60度的倾斜角度径直飞行，此时陀螺仪的输出为0，因为当前就没有机体旋转。但是，你可以通过之前的输出累计计算出当前机体倾斜角度是多少。<br><img src="http://ww3.sinaimg.cn/large/9632d3f5jw1f91hzfgwxfj20a00bjaaq.jpg" alt=""></li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)gyroPush</div><div class="line">&#123;</div><div class="line">    <span class="comment">//陀螺仪push (频繁获取数据)</span></div><div class="line">    <span class="comment">//Gyro</span></div><div class="line">    <span class="comment">//1. 创建运动管理器</span></div><div class="line">    <span class="keyword">self</span>.motionMgr = [<span class="built_in">CMMotionManager</span> new];</div><div class="line"></div><div class="line">    <span class="comment">//2. 判断能否使用陀螺仪</span></div><div class="line">    <span class="keyword">if</span> (![<span class="keyword">self</span>.motionMgr isGyroAvailable]) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//3. 设置采样间隔(更新间隔/推送间隔) --&gt; push方式才需要设置</span></div><div class="line">    <span class="comment">//单位是秒</span></div><div class="line">    <span class="keyword">self</span>.motionMgr.gyroUpdateInterval = <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="comment">//4. 开始更新 --&gt; 如果是push方式, 那么使用带有bolck的方法</span></div><div class="line">    [<span class="keyword">self</span>.motionMgr startGyroUpdatesToQueue:[<span class="built_in">NSOperationQueue</span> mainQueue] withHandler:^(<span class="built_in">CMGyroData</span> * _Nullable gyroData, <span class="built_in">NSError</span> * _Nullable error) &#123;</div><div class="line">        <span class="built_in">CMRotationRate</span> rotationRate = gyroData.rotationRate;</div><div class="line"></div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"x: %f, y: %f, z: %f "</span>, rotationRate.x, rotationRate.y, rotationRate.z);</div><div class="line">    &#125;];</div><div class="line">&#125;</div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+<h3 id="磁力计-检测磁场的变化-–-gt-主要用于导航"><a href="#磁力计-检测磁场的变化-–-gt-主要用于导航" class="headerlink" title="磁力计: 检测磁场的变化  –&gt; 主要用于导航"></a>磁力计: 检测磁场的变化  –&gt; 主要用于导航</h3><ul>
+<li>感应周边磁场，盒盖锁屏</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)gyroPush</div><div class="line">&#123;</div><div class="line">-(<span class="keyword">void</span>)magnetometerPush&#123;</div><div class="line"></div><div class="line">    <span class="comment">//磁力计push (频繁获取数据)</span></div><div class="line">    <span class="comment">//Magnetometer</span></div><div class="line">    <span class="comment">//1. 创建运动管理器</span></div><div class="line">    <span class="keyword">self</span>.motionMgr = [<span class="built_in">CMMotionManager</span> new];</div><div class="line"></div><div class="line">    <span class="comment">//2. 判断能否使用磁力计</span></div><div class="line">    <span class="keyword">if</span> (![<span class="keyword">self</span>.motionMgr isMagnetometerAvailable]) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//3. 设置采样间隔(更新间隔/推送间隔) --&gt; push方式才需要设置</span></div><div class="line">    <span class="comment">//单位是秒</span></div><div class="line">    <span class="keyword">self</span>.motionMgr.magnetometerUpdateInterval = <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="comment">//4. 开始更新 --&gt; 如果是push方式, 那么使用带有bolck的方法</span></div><div class="line">    [<span class="keyword">self</span>.motionMgr startMagnetometerUpdatesToQueue:[<span class="built_in">NSOperationQueue</span> mainQueue] withHandler:^(<span class="built_in">CMMagnetometerData</span> * _Nullable magnetometerData, <span class="built_in">NSError</span> * _Nullable error) &#123;</div><div class="line"></div><div class="line">        <span class="comment">//单位: 特斯拉</span></div><div class="line">        <span class="built_in">CMMagneticField</span> magneticField = magnetometerData.magneticField;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"x: %f, y: %f, z: %f "</span>, magneticField.x, magneticField.y, magneticField.z);</div><div class="line">    &#125;];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/06/27/传感器：加速计,陀螺仪,磁力计 pull获取方式/" itemprop="url">
+                  传感器：加速计,陀螺仪,磁力计 pull获取方式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-06-27T12:13:04+08:00" content="2015-06-27">
+              2015-06-27
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/06/27/传感器：加速计,陀螺仪,磁力计 pull获取方式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/27/传感器：加速计,陀螺仪,磁力计 pull获取方式/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/06/27/传感器：加速计,陀螺仪,磁力计 pull获取方式/" class="leancloud_visitors" data-flag-title="传感器：加速计,陀螺仪,磁力计 pull获取方式">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<h2 id="传感器：加速计-陀螺仪-磁力计-pull获取方式"><a href="#传感器：加速计-陀螺仪-磁力计-pull获取方式" class="headerlink" title="传感器：加速计,陀螺仪,磁力计 pull获取方式"></a>传感器：加速计,陀螺仪,磁力计 pull获取方式</h2><ul>
+<li>获取方式分为2种: push(系统会按照一定的时间间隔, 不停的返回数据) / pull (在需要的时候再来获取数据)</li>
+</ul>
+<ul>
+<li>陀螺仪,磁力计操作方法类似</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"ViewController.h"</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;CoreMotion/CoreMotion.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> ()</span></div><div class="line"></div><div class="line"><span class="comment">//运动管理器</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">CMMotionManager</span> *motionMgr;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     加速计: 检测力在某个方向上有作用 (检测到方向和大小) --&gt; 沿着轴上下快速运动</div><div class="line"></div><div class="line">    </div><div class="line">     */</div><div class="line"></div><div class="line">    <span class="comment">//加速器pull (在需要的时候再来获取数据)</span></div><div class="line">    <span class="comment">//Accelerometer</span></div><div class="line">    <span class="comment">//1. 创建运动管理器</span></div><div class="line">    <span class="keyword">self</span>.motionMgr = [<span class="built_in">CMMotionManager</span> new];</div><div class="line"></div><div class="line">    <span class="comment">//2. 判断能否使用加速计</span></div><div class="line">    <span class="keyword">if</span> (![<span class="keyword">self</span>.motionMgr isAccelerometerAvailable]) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//3. 开始更新</span></div><div class="line">    [<span class="keyword">self</span>.motionMgr startAccelerometerUpdates];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark 点击屏幕获取数组</span></div><div class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span>&lt;<span class="built_in">UITouch</span> *&gt; *)touches withEvent:(<span class="built_in">UIEvent</span> *)event</div><div class="line">&#123;</div><div class="line">    <span class="comment">//加速计 / 陀螺仪 / 磁力计, 在开始更新数据之后, 都会讲获取的数据, 保存到对应的属性中. 可以从属性中直接获取想要的数据</span></div><div class="line"></div><div class="line">    <span class="comment">//加速</span></div><div class="line">    <span class="built_in">CMAcceleration</span> acceleration = <span class="keyword">self</span>.motionMgr.accelerometerData.acceleration;</div><div class="line"></div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"x: %f, y: %f, z: %f "</span>, acceleration.x, acceleration.y, acceleration.z);</div><div class="line"></div><div class="line"><span class="comment">//    CMRotationRate rotationRate = self.motionMgr.gyroData.rotationRate;</span></div><div class="line"><span class="comment">//    NSLog(@"x: %f, y: %f, z: %f ", rotationRate.x, rotationRate.y, rotationRate.z);</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2014/12/27/1.控制器创建方式/" itemprop="url">
                   控制器创建方式
                 </a>
@@ -738,7 +1106,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -748,7 +1116,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
