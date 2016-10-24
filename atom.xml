@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://whong7.github.io/"/>
-  <updated>2016-10-23T01:55:12.000Z</updated>
+  <updated>2016-10-24T05:01:28.000Z</updated>
   <id>http://whong7.github.io/</id>
   
   <author>
@@ -14,6 +14,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SizeClass(Xcode8)</title>
+    <link href="http://whong7.github.io/2016/08/27/sizeClass/"/>
+    <id>http://whong7.github.io/2016/08/27/sizeClass/</id>
+    <published>2016-08-27T04:13:24.000Z</published>
+    <updated>2016-10-24T05:01:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="SizeClass-storyboard编辑"><a href="#SizeClass-storyboard编辑" class="headerlink" title="SizeClass storyboard编辑"></a>SizeClass storyboard编辑</h3><ul>
+<li>Size Class最大的帮助是,解决横屏适配和iPhone iPad共享一个设计板</li>
+<li>plus系列: 竖屏: CR  横屏:RC   /  非plus系统: 竖屏CR  横屏CC</li>
+</ul>
+<a id="more"></a>
+<p> <img src="http://cc.cocimg.com/api/uploads/20141217/1418795540826221.png" alt=""></p>
+<ul>
+<li><p>xcode 8 SizeClass 竖屏 设定如下图<br><img src="http://ww2.sinaimg.cn/large/9632d3f5gw1f9391n8t2qj21kw0zbduc.jpg" alt=""></p>
+</li>
+<li><p>xcode 8 SizeClass 横屏 设定如下图</p>
+<ul>
+<li>plus系统需要选择RC</li>
+<li>非plus系统需要选择CC</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://ww2.sinaimg.cn/large/9632d3f5gw1f9393jtfdcj21kw0tjtkx.jpg" alt=""></p>
+<ul>
+<li>运行结果如下，虚拟器 6s</li>
+</ul>
+<p><img src="http://ww3.sinaimg.cn/large/9632d3f5gw1f9399mjl5tg20gx0gdk2x.gif" alt=""></p>
+<h3 id="代码监听旋转方向"><a href="#代码监听旋转方向" class="headerlink" title="代码监听旋转方向"></a>代码监听旋转方向</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//previousTraitCollection: 转动之前的SizeClass</span></div><div class="line">- (<span class="keyword">void</span>)traitCollectionDidChange:(<span class="built_in">UITraitCollection</span> *)previousTraitCollection</div><div class="line">&#123;</div><div class="line">    <span class="comment">//NSLog(@"previousTraitCollection: %@", previousTraitCollection);</span></div><div class="line">    </div><div class="line">    <span class="comment">//代码获取当前方法的SizeCalss变化 --&gt; 目前的6S 高度会有R--&gt;C的变化</span></div><div class="line">    <span class="built_in">UIUserInterfaceSizeClass</span> hSizeClass = <span class="keyword">self</span>.traitCollection.verticalSizeClass;</div><div class="line">    <span class="keyword">if</span> (hSizeClass == <span class="built_in">UIUserInterfaceSizeClassCompact</span>) &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"横屏"</span>);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"竖屏"</span>);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"水平SizeClass: %zd"</span>, hSizeClass);</div><div class="line">    </div><div class="line">    <span class="comment">//_UITraitNameHorizontalSizeClass: 宽度 --&gt; w C</span></div><div class="line">    <span class="comment">//_UITraitNameVerticalSizeClass: 高度 --&gt; h R</span></div><div class="line">    <span class="comment">/**</span></div><div class="line">     &lt;UITraitCollection: 0x6100000c78c0; _UITraitNameUserInterfaceIdiom = Phone, _UITraitNameDisplayScale = 2.000000, _UITraitNameDisplayGamut = sRGB, _UITraitNameHorizontalSizeClass = Compact, _UITraitNameVerticalSizeClass = Regular, _UITraitNameTouchLevel = 0, _UITraitNameInteractionModel = 1, _UITraitNameUserInterfaceStyle = 1, _UITraitNameLayoutDirection = 0, _UITraitNameForceTouchCapability = 2, _UITraitNamePreferredContentSizeCategory = UICTContentSizeCategoryL&gt;</div><div class="line">     */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="demo下载地址"><a href="#demo下载地址" class="headerlink" title="demo下载地址"></a>demo下载地址</h3><p><a href="https://github.com/whong7/whong7.github.io/blob/master/demo/SizeClass%20测试.zip" target="_blank" rel="external">SizeClass.zip</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;SizeClass-storyboard编辑&quot;&gt;&lt;a href=&quot;#SizeClass-storyboard编辑&quot; class=&quot;headerlink&quot; title=&quot;SizeClass storyboard编辑&quot;&gt;&lt;/a&gt;SizeClass storyboard编辑&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Size Class最大的帮助是,解决横屏适配和iPhone iPad共享一个设计板&lt;/li&gt;
+&lt;li&gt;plus系列: 竖屏: CR  横屏:RC   /  非plus系统: 竖屏CR  横屏CC&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="UI" scheme="http://whong7.github.io/tags/UI/"/>
+    
+  </entry>
   
   <entry>
     <title>视频截图，录制，压缩方式</title>
@@ -449,7 +495,7 @@
 <p>MindNode源文件下载地址<br><a href="https://raw.githubusercontent.com/whong7/whong7.github.io/master/MindNote/绘图.zip" target="_blank" rel="external">绘图.mindnode</a></p>
 <h2 id="反馈与建议"><a href="#反馈与建议" class="headerlink" title="反馈与建议"></a>反馈与建议</h2><ul>
 <li>微博：<a href="http://weibo.com/u/2519913461" target="_blank" rel="external">@whong77</a></li>
-<li>邮箱：<a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#119;&#104;&#111;&#x6e;&#103;&#x37;&#x39;&#x31;&#49;&#50;&#x30;&#x37;&#x40;&#49;&#x36;&#x33;&#x2e;&#99;&#x6f;&#x6d;">&#119;&#104;&#111;&#x6e;&#103;&#x37;&#x39;&#x31;&#49;&#50;&#x30;&#x37;&#x40;&#49;&#x36;&#x33;&#x2e;&#99;&#x6f;&#x6d;</a></li>
+<li>邮箱：<a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#119;&#104;&#111;&#x6e;&#x67;&#x37;&#x39;&#x31;&#x31;&#x32;&#48;&#55;&#x40;&#49;&#x36;&#51;&#46;&#x63;&#111;&#109;">&#119;&#104;&#111;&#x6e;&#x67;&#x37;&#x39;&#x31;&#x31;&#x32;&#48;&#55;&#x40;&#49;&#x36;&#51;&#46;&#x63;&#111;&#109;</a></li>
 </ul>
 ]]></content>
     
@@ -529,7 +575,7 @@
 <p>MindNode源文件下载地址<br><a href="https://raw.githubusercontent.com/whong7/whong7.github.io/master/MindNote/%20生命周期.zip" target="_blank" rel="external">绘图.mindnode</a></p>
 <h2 id="反馈与建议"><a href="#反馈与建议" class="headerlink" title="反馈与建议"></a>反馈与建议</h2><ul>
 <li>微博：<a href="http://weibo.com/u/2519913461" target="_blank" rel="external">@whong77</a></li>
-<li>邮箱：<a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#111;&#x3a;&#x77;&#104;&#111;&#x6e;&#x67;&#x37;&#57;&#x31;&#49;&#50;&#x30;&#x37;&#64;&#49;&#54;&#x33;&#x2e;&#x63;&#x6f;&#109;">&#x77;&#104;&#111;&#x6e;&#x67;&#x37;&#57;&#x31;&#49;&#50;&#x30;&#x37;&#64;&#49;&#54;&#x33;&#x2e;&#x63;&#x6f;&#109;</a></li>
+<li>邮箱：<a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#58;&#119;&#104;&#111;&#x6e;&#103;&#55;&#x39;&#49;&#49;&#x32;&#48;&#55;&#64;&#49;&#x36;&#x33;&#x2e;&#x63;&#x6f;&#x6d;">&#119;&#104;&#111;&#x6e;&#103;&#55;&#x39;&#49;&#49;&#x32;&#48;&#55;&#64;&#49;&#x36;&#x33;&#x2e;&#x63;&#x6f;&#x6d;</a></li>
 </ul>
 ]]></content>
     
