@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="内存," />
+  <meta name="keywords" content="积累," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="内存警告方法1234567891011121314151617- (void)didReceiveMemoryWarning&amp;#123;    [super didReceiveMemoryWarning];    // Called when the parent application receives a memory warning.    // 这个方法在应用程序接受到内存警告的时候调用">
+<meta name="description" content="现在有大量的开源第三方库，大家几乎每个项目都有用到。而这些库基本都提供了非常友好的接口，供应用层使用。但是，考虑到版本升级，程序员的水平，甚至使用许可等方面的问题，我考虑对未来大多数要使用的第三方库进行二次封装。下面是我想到的基于多人开发，有可能发布多次升级版本的情况下的优缺点。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="内存警告方法">
-<meta property="og:url" content="http://whong7.github.io/2014/04/22/3.内存警告方法/index.html">
+<meta property="og:title" content="使用第三方开源库是否应该做二次封装（转）">
+<meta property="og:url" content="http://whong7.github.io/2016/02/14/使用第三方开源库是否应该做二次封装（转）/index.html">
 <meta property="og:site_name" content="A piece of pure land">
-<meta property="og:description" content="内存警告方法1234567891011121314151617- (void)didReceiveMemoryWarning&amp;#123;    [super didReceiveMemoryWarning];    // Called when the parent application receives a memory warning.    // 这个方法在应用程序接受到内存警告的时候调用">
-<meta property="og:updated_time" content="2016-10-21T11:58:50.000Z">
+<meta property="og:description" content="现在有大量的开源第三方库，大家几乎每个项目都有用到。而这些库基本都提供了非常友好的接口，供应用层使用。但是，考虑到版本升级，程序员的水平，甚至使用许可等方面的问题，我考虑对未来大多数要使用的第三方库进行二次封装。下面是我想到的基于多人开发，有可能发布多次升级版本的情况下的优缺点。">
+<meta property="og:updated_time" content="2016-10-25T04:42:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="内存警告方法">
-<meta name="twitter:description" content="内存警告方法1234567891011121314151617- (void)didReceiveMemoryWarning&amp;#123;    [super didReceiveMemoryWarning];    // Called when the parent application receives a memory warning.    // 这个方法在应用程序接受到内存警告的时候调用">
+<meta name="twitter:title" content="使用第三方开源库是否应该做二次封装（转）">
+<meta name="twitter:description" content="现在有大量的开源第三方库，大家几乎每个项目都有用到。而这些库基本都提供了非常友好的接口，供应用层使用。但是，考虑到版本升级，程序员的水平，甚至使用许可等方面的问题，我考虑对未来大多数要使用的第三方库进行二次封装。下面是我想到的基于多人开发，有可能发布多次升级版本的情况下的优缺点。">
 
 
 
@@ -114,10 +114,10 @@
 
 
 
-  <link rel="canonical" href="http://whong7.github.io/2014/04/22/3.内存警告方法/"/>
+  <link rel="canonical" href="http://whong7.github.io/2016/02/14/使用第三方开源库是否应该做二次封装（转）/"/>
 
 
-  <title> 内存警告方法 | A piece of pure land </title>
+  <title> 使用第三方开源库是否应该做二次封装（转） | A piece of pure land </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -270,7 +270,7 @@
             
             
               
-                内存警告方法
+                使用第三方开源库是否应该做二次封装（转）
               
             
           </h1>
@@ -282,8 +282,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-04-22T14:22:34+08:00" content="2014-04-22">
-              2014-04-22
+            <time itemprop="dateCreated" datetime="2016-02-14T22:38:09+08:00" content="2016-02-14">
+              2016-02-14
             </time>
           </span>
 
@@ -293,8 +293,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2014/04/22/3.内存警告方法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/04/22/3.内存警告方法/" itemprop="commentsCount"></span>
+                <a href="/2016/02/14/使用第三方开源库是否应该做二次封装（转）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/14/使用第三方开源库是否应该做二次封装（转）/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -304,7 +304,7 @@
 
           
           
-             <span id="/2014/04/22/3.内存警告方法/" class="leancloud_visitors" data-flag-title="内存警告方法">
+             <span id="/2016/02/14/使用第三方开源库是否应该做二次封装（转）/" class="leancloud_visitors" data-flag-title="使用第三方开源库是否应该做二次封装（转）">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -326,7 +326,14 @@
       
 
       
-        <h2 id="内存警告方法"><a href="#内存警告方法" class="headerlink" title="内存警告方法"></a>内存警告方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">- (void)didReceiveMemoryWarning</div><div class="line">&#123;</div><div class="line">    [super didReceiveMemoryWarning];</div><div class="line"></div><div class="line">    // Called when the parent application receives a memory warning.</div><div class="line">    // 这个方法在应用程序接受到内存警告的时候调用</div><div class="line">    // On iOS 6.0 it will no longer clear the view by default.</div><div class="line">    // 在6.0只有 不再默认清理 self.view</div><div class="line"></div><div class="line">    // 当这个view是否正在显示</div><div class="line">    // 这个view是否已经被加载</div><div class="line"></div><div class="line">    if (self.isViewLoaded &amp;&amp; self.view.window == nil) &#123;</div><div class="line">        [self setView:nil];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 处理当前控制器强引用的属性</div></pre></td></tr></table></figure>
+        <p>现在有大量的开源第三方库，大家几乎每个项目都有用到。<br>而这些库基本都提供了非常友好的接口，供应用层使用。<br>但是，考虑到版本升级，程序员的水平，甚至使用许可等方面的问题，我考虑对未来大多数要使用的第三方库进行二次封装。<br>下面是我想到的基于多人开发，有可能发布多次升级版本的情况下的优缺点。</p>
+<a id="more"></a>
+<h3 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h3><p>1：当自己的软件版本升级时，可能会出现需要更换第三方库的情况，一个库的使用不能满足新的需求，这时，如果使用了二次封装，那么库的更改和自己编写的应用层就可以脱离，只需要改写二次封装就可以实现。避免了走入应用层，改写大量的代码甚至软件流程和架构。<br>2：当第三方库发生官方升级和出现了官方对已知局限性及BUG的修订时，只需要在二次封装的接口层改动即可。<br>3：当需求必须对第三方库添加额外功能时，可以添加在二次封装层，避免了对第三方库本身的修改，减少了潜在危险。<br>4：新开发人员只需要对二次封装学习就能快速上手，因为二次封装是之前开发人员留下的成果，公司内部有丰富的资料和统一的编码风格，相对于第三方库本身学习要容易和快捷。<br>5：大家补充下。</p>
+<h3 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h3><p>1：额外工作量：多数第三方库有比较友好的接口，添加一个二次封装会导致开发人员的首次开发中投入相对于直接使用第三方库较多的时间和精力。<br>2：针对优点3——直接修改第三方库：<br>  1．代码编写数量少：对库自身代码的改动往往只需要简单的代码就能实现外部改动需要较多代码数量的需求。<br>  2．运行效率高：嵌入在第三方库内部空间内的功能，必然要比在第三方库外添加的功能运行效率高。</p>
+<h3 id="个人理解："><a href="#个人理解：" class="headerlink" title="个人理解："></a>个人理解：</h3><p>如果是还有人维护的第三方开源库，项目组人力不足的情况下，不进行二次封装，也不会有很大的风险。</p>
+<p>如果开源库已经没有人维护，或者遇到问题响应速度非常慢，还是需要考虑进行二次封装。</p>
+<p>总的来说，我喜欢进行二次封装，自己掌握主动。</p>
+<p>原文地址：<a href="http://blog.csdn.net/pizi0475/article/details/7771811" target="_blank" rel="external">http://blog.csdn.net/pizi0475/article/details/7771811</a></p>
 
       
     </div>
@@ -349,7 +356,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/内存/" rel="tag">#内存</a>
+            <a href="/tags/积累/" rel="tag">#积累</a>
           
         </div>
       
@@ -358,16 +365,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/04/19/2.控制器与视图的生命周期/" rel="next" title="控制器与视图的生命周期">
-                <i class="fa fa-chevron-left"></i> 控制器与视图的生命周期
+              <a href="/2015/07/20/视频截图，录制，压缩/" rel="next" title="视频截图，录制，压缩方式">
+                <i class="fa fa-chevron-left"></i> 视频截图，录制，压缩方式
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2014/12/22/图像绘制/" rel="prev" title="图像绘制">
-                图像绘制 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/27/sizeClass/" rel="prev" title="SizeClass(Xcode8)">
+                SizeClass(Xcode8) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -394,8 +401,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2014/04/22/3.内存警告方法/"
-           data-title="内存警告方法" data-url="http://whong7.github.io/2014/04/22/3.内存警告方法/">
+      <div class="ds-thread" data-thread-key="2016/02/14/使用第三方开源库是否应该做二次封装（转）/"
+           data-title="使用第三方开源库是否应该做二次封装（转）" data-url="http://whong7.github.io/2016/02/14/使用第三方开源库是否应该做二次封装（转）/">
       </div>
     
   </div>
@@ -508,7 +515,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内存警告方法"><span class="nav-number">1.</span> <span class="nav-text">内存警告方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#优点："><span class="nav-number">1.</span> <span class="nav-text">优点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点："><span class="nav-number">2.</span> <span class="nav-text">缺点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#个人理解："><span class="nav-number">3.</span> <span class="nav-text">个人理解：</span></a></li></ol></div>
             
           </div>
         </section>
