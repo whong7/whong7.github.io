@@ -62,6 +62,31 @@
   </entry>
   
   <entry>
+    <title>截屏 &amp; 图片缩放（Swift）</title>
+    <link href="http://whong7.github.io/2016/07/14/%E6%88%AA%E5%B1%8F%20&amp;%20%E5%9B%BE%E7%89%87%E7%BC%A9%E6%94%BE%EF%BC%88Swift%EF%BC%89/"/>
+    <id>http://whong7.github.io/2016/07/14/截屏 &amp; 图片缩放（Swift）/</id>
+    <published>2016-07-14T04:28:05.000Z</published>
+    <updated>2016-10-25T12:34:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>截屏的功能:</strong></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">private func getScreenSnap() -&gt; <span class="built_in">UIImage</span>? &#123;</div><div class="line"></div><div class="line">    <span class="comment">// 先获取到window</span></div><div class="line">    let window = <span class="built_in">UIApplication</span>.shared.keyWindow!</div><div class="line"></div><div class="line">    <span class="comment">// 开启上下文</span></div><div class="line">    <span class="comment">// 如果最后一参数传入0的话，会按照屏幕的真实大小来截取，就是不会截取缩放之后的内容</span></div><div class="line">    <span class="built_in">UIGraphicsBeginImageContextWithOptions</span>(window.bounds.size, <span class="literal">false</span>, <span class="number">0</span>)</div><div class="line"></div><div class="line">    <span class="comment">// 将window的内容渲染到上下文中</span></div><div class="line">    window.drawHierarchy(<span class="keyword">in</span>: window.bounds, afterScreenUpdates: <span class="literal">false</span>)</div><div class="line"></div><div class="line">    <span class="comment">// 取到上下文中的图片</span></div><div class="line">    let image = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>()</div><div class="line">    <span class="comment">// 关闭上下文</span></div><div class="line">    <span class="built_in">UIGraphicsEndImageContext</span>()</div><div class="line">    <span class="comment">// 返回结果</span></div><div class="line"></div><div class="line">    <span class="keyword">return</span> image</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>缩放到指定的宽度:</strong></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">func scaleTo(width: <span class="built_in">CGFloat</span>) -&gt; <span class="built_in">UIImage</span> &#123;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> <span class="keyword">self</span>.size.width &lt; width &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">self</span></div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 根据宽度求出等比例缩放之后的高度</span></div><div class="line">    let height = <span class="keyword">self</span>.size.height * (width / <span class="keyword">self</span>.size.width)</div><div class="line">    <span class="comment">// 定义一个范围</span></div><div class="line">    let rect = <span class="built_in">CGRect</span>(x: <span class="number">0</span>, y: <span class="number">0</span>, width: width, height: height)</div><div class="line">    <span class="comment">// 开启上下文</span></div><div class="line">    <span class="built_in">UIGraphicsBeginImageContext</span>(rect.size)</div><div class="line">    <span class="comment">// 会将当前图片的所有内容完整的画到上下文中</span></div><div class="line">    <span class="keyword">self</span>.draw(<span class="keyword">in</span>: rect)</div><div class="line">    <span class="comment">// 取值</span></div><div class="line">    let result = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>()!</div><div class="line">    <span class="comment">// 关闭上下文</span></div><div class="line">    <span class="built_in">UIGraphicsEndImageContext</span>()</div><div class="line">    <span class="keyword">return</span> result</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;截屏的功能:&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight objc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="UI" scheme="http://whong7.github.io/tags/UI/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使用第三方开源库是否应该做二次封装（转）</title>
     <link href="http://whong7.github.io/2016/02/14/%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BC%80%E6%BA%90%E5%BA%93%E6%98%AF%E5%90%A6%E5%BA%94%E8%AF%A5%E5%81%9A%E4%BA%8C%E6%AC%A1%E5%B0%81%E8%A3%85%EF%BC%88%E8%BD%AC%EF%BC%89/"/>
     <id>http://whong7.github.io/2016/02/14/使用第三方开源库是否应该做二次封装（转）/</id>
@@ -523,7 +548,7 @@
 <p>MindNode源文件下载地址<br><a href="https://raw.githubusercontent.com/whong7/whong7.github.io/master/MindNote/绘图.zip" target="_blank" rel="external">绘图.mindnode</a></p>
 <h2 id="反馈与建议"><a href="#反馈与建议" class="headerlink" title="反馈与建议"></a>反馈与建议</h2><ul>
 <li>微博：<a href="http://weibo.com/u/2519913461" target="_blank" rel="external">@whong77</a></li>
-<li>邮箱：<a href="&#109;&#97;&#x69;&#x6c;&#x74;&#111;&#x3a;&#x77;&#x68;&#x6f;&#x6e;&#x67;&#x37;&#x39;&#x31;&#x31;&#50;&#x30;&#55;&#x40;&#x31;&#54;&#51;&#46;&#99;&#x6f;&#x6d;">&#x77;&#x68;&#x6f;&#x6e;&#x67;&#x37;&#x39;&#x31;&#x31;&#50;&#x30;&#55;&#x40;&#x31;&#54;&#51;&#46;&#99;&#x6f;&#x6d;</a></li>
+<li>邮箱：<a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#x77;&#x68;&#x6f;&#110;&#103;&#55;&#x39;&#x31;&#49;&#x32;&#48;&#x37;&#x40;&#x31;&#54;&#x33;&#x2e;&#x63;&#111;&#109;">&#x77;&#x68;&#x6f;&#110;&#103;&#55;&#x39;&#x31;&#49;&#x32;&#48;&#x37;&#x40;&#x31;&#54;&#x33;&#x2e;&#x63;&#111;&#109;</a></li>
 </ul>
 ]]></content>
     
@@ -603,7 +628,7 @@
 <p>MindNode源文件下载地址<br><a href="https://raw.githubusercontent.com/whong7/whong7.github.io/master/MindNote/%20生命周期.zip" target="_blank" rel="external">绘图.mindnode</a></p>
 <h2 id="反馈与建议"><a href="#反馈与建议" class="headerlink" title="反馈与建议"></a>反馈与建议</h2><ul>
 <li>微博：<a href="http://weibo.com/u/2519913461" target="_blank" rel="external">@whong77</a></li>
-<li>邮箱：<a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#x77;&#x68;&#111;&#110;&#x67;&#x37;&#57;&#x31;&#49;&#x32;&#48;&#55;&#64;&#49;&#x36;&#x33;&#46;&#99;&#111;&#109;">&#x77;&#x68;&#111;&#110;&#x67;&#x37;&#57;&#x31;&#49;&#x32;&#48;&#55;&#64;&#49;&#x36;&#x33;&#46;&#99;&#111;&#109;</a></li>
+<li>邮箱：<a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#119;&#104;&#x6f;&#x6e;&#103;&#55;&#x39;&#x31;&#49;&#x32;&#x30;&#55;&#x40;&#x31;&#x36;&#51;&#46;&#99;&#x6f;&#x6d;">&#119;&#104;&#x6f;&#x6e;&#103;&#55;&#x39;&#x31;&#49;&#x32;&#x30;&#55;&#x40;&#x31;&#x36;&#51;&#46;&#99;&#x6f;&#x6d;</a></li>
 </ul>
 ]]></content>
     
