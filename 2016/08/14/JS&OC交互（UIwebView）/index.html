@@ -84,22 +84,19 @@
 
 
 
-<meta name="description" content="oc调用js在网页加载完毕的时候修改网页内容
-1234567891011121314151617181920212223242526#import &quot;ViewController.h&quot;@interface ViewController ()&amp;lt;UIWebViewDelegate&amp;gt;@property (weak, nonatomic) IBOutlet UIWebView *webView">
+<meta name="description" content="oc调用js在网页加载完毕的时候修改网页内容">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS&OC交互（UIwebView）">
 <meta property="og:url" content="http://whong7.github.io/2016/08/14/JS&OC交互（UIwebView）/index.html">
 <meta property="og:site_name" content="A piece of pure land">
-<meta property="og:description" content="oc调用js在网页加载完毕的时候修改网页内容
-1234567891011121314151617181920212223242526#import &quot;ViewController.h&quot;@interface ViewController ()&amp;lt;UIWebViewDelegate&amp;gt;@property (weak, nonatomic) IBOutlet UIWebView *webView">
+<meta property="og:description" content="oc调用js在网页加载完毕的时候修改网页内容">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/9632d3f5jw1f9835ekarcg20bd0ko4mw.gif">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/9632d3f5jw1f9837rko6fg20bd0koe81.gif">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/9632d3f5jw1f983fzz2u2j20du0ne78j.jpg">
-<meta property="og:updated_time" content="2016-10-28T09:08:26.000Z">
+<meta property="og:updated_time" content="2016-10-28T09:50:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS&OC交互（UIwebView）">
-<meta name="twitter:description" content="oc调用js在网页加载完毕的时候修改网页内容
-1234567891011121314151617181920212223242526#import &quot;ViewController.h&quot;@interface ViewController ()&amp;lt;UIWebViewDelegate&amp;gt;@property (weak, nonatomic) IBOutlet UIWebView *webView">
+<meta name="twitter:description" content="oc调用js在网页加载完毕的时候修改网页内容">
 <meta name="twitter:image" content="http://ww4.sinaimg.cn/large/9632d3f5jw1f9835ekarcg20bd0ko4mw.gif">
 
 
@@ -334,6 +331,7 @@
 
       
         <h1 id="oc调用js"><a href="#oc调用js" class="headerlink" title="oc调用js"></a>oc调用js</h1><p>在网页加载完毕的时候修改网页内容</p>
+<a id="more"></a>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"ViewController.h"</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> ()&lt;<span class="title">UIWebViewDelegate</span>&gt;</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">weak</span>, <span class="keyword">nonatomic</span>) <span class="keyword">IBOutlet</span> <span class="built_in">UIWebView</span> *webView;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line">    <span class="built_in">NSURLRequest</span> *request = [<span class="built_in">NSURLRequest</span> requestWithURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://m.maoyan.com/newGuide/wcqp"</span>]];</div><div class="line">    [<span class="keyword">self</span>.webView loadRequest:request];</div><div class="line">    <span class="keyword">self</span>.webView.delegate = <span class="keyword">self</span>;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - UIWebViewDelegate</span></div><div class="line">- (<span class="keyword">void</span>)webViewDidFinishLoad:(<span class="built_in">UIWebView</span> *)webView&#123;</div><div class="line">    <span class="comment">// 使用 OC 的代码去执行JS的代码.让webView里面的内容进行改变</span></div><div class="line">    <span class="comment">// 后面执行的js代码不用记,到时候咨询前端的程序员就可以了</span></div><div class="line">    <span class="comment">// 移除头</span></div><div class="line">    [<span class="keyword">self</span>.webView stringByEvaluatingJavaScriptFromString:<span class="string">@"var hd = document.getElementById('hd');hd.parentElement.removeChild(hd);"</span>];</div><div class="line">    <span class="comment">// 移除尾</span></div><div class="line">    [<span class="keyword">self</span>.webView stringByEvaluatingJavaScriptFromString:<span class="string">@"var ft = document.getElementById('ft');ft.parentElement.removeChild(ft);"</span>];</div><div class="line">&#125;&#125;</div></pre></td></tr></table></figure>
 <p><strong>调用js语句之前：</strong><br>需要删除 网页头部视图 与 网页尾部视图<br><img src="http://ww4.sinaimg.cn/large/9632d3f5jw1f9835ekarcg20bd0ko4mw.gif" alt=""></p>
 <p><strong>调用js语句之后：</strong></p>
