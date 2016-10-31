@@ -400,8 +400,8 @@
             
               
                 
-                <a class="post-title-link" href="/2014/04/22/3.内存警告方法/" itemprop="url">
-                  内存警告方法
+                <a class="post-title-link" href="/2014/11/21/layer简介和基本属性/" itemprop="url">
+                  layer简介和基本属性
                 </a>
               
             
@@ -414,8 +414,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-04-22T14:22:34+08:00" content="2014-04-22">
-              2014-04-22
+            <time itemprop="dateCreated" datetime="2014-11-21T15:32:18+08:00" content="2014-11-21">
+              2014-11-21
             </time>
           </span>
 
@@ -425,8 +425,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2014/04/22/3.内存警告方法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/04/22/3.内存警告方法/" itemprop="commentsCount"></span>
+                <a href="/2014/11/21/layer简介和基本属性/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/11/21/layer简介和基本属性/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -436,7 +436,7 @@
 
           
           
-             <span id="/2014/04/22/3.内存警告方法/" class="leancloud_visitors" data-flag-title="内存警告方法">
+             <span id="/2014/11/21/layer简介和基本属性/" class="leancloud_visitors" data-flag-title="layer简介和基本属性">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -460,7 +460,24 @@
       
         
           
-            <h2 id="内存警告方法"><a href="#内存警告方法" class="headerlink" title="内存警告方法"></a>内存警告方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">- (void)didReceiveMemoryWarning</div><div class="line">&#123;</div><div class="line">    [super didReceiveMemoryWarning];</div><div class="line"></div><div class="line">    // Called when the parent application receives a memory warning.</div><div class="line">    // 这个方法在应用程序接受到内存警告的时候调用</div><div class="line">    // On iOS 6.0 it will no longer clear the view by default.</div><div class="line">    // 在6.0只有 不再默认清理 self.view</div><div class="line"></div><div class="line">    // 当这个view是否正在显示</div><div class="line">    // 这个view是否已经被加载</div><div class="line"></div><div class="line">    if (self.isViewLoaded &amp;&amp; self.view.window == nil) &#123;</div><div class="line">        [self setView:nil];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 处理当前控制器强引用的属性</div></pre></td></tr></table></figure>
+            <a id="more"></a>
+<p>##layer简介和基本属性</p>
+<ul>
+<li>CALayer 是 UIView 的一部分</li>
+<li>layer是负责显示的,view是负责处理事件的</li>
+<li>layer在显示反面上 一定会比view强大</li>
+<li><p>view之所有能够设置 frame color 相关的属性,本质上是在给这个view的layer进行设置</p>
+<ul>
+<li>边框</li>
+<li>阴影</li>
+<li>圆角</li>
+<li>bounds</li>
+<li>postion属性和view.center的关系</li>
+<li>设置内容(图片)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)viewDidLoad</div><div class="line">&#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line">    <span class="comment">// Do any additional setup after loading the view, typically from a nib.</span></div><div class="line"></div><div class="line">    <span class="built_in">UIView</span>* redView = [[<span class="built_in">UIView</span> alloc] init];</div><div class="line">    redView.frame = <span class="built_in">CGRectMake</span>(<span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span>);</div><div class="line">    redView.backgroundColor = [<span class="built_in">UIColor</span> redColor];</div><div class="line">    [<span class="keyword">self</span>.view addSubview:redView];</div><div class="line"></div><div class="line">    <span class="keyword">self</span>.redView = redView;</div><div class="line"></div><div class="line">    <span class="comment">// 边框</span></div><div class="line">    redView.layer.borderWidth = <span class="number">10</span>;</div><div class="line">    redView.layer.borderColor = [<span class="built_in">UIColor</span> blackColor].CGColor;</div><div class="line"></div><div class="line">    <span class="comment">// 阴影</span></div><div class="line">    redView.layer.shadowColor = [<span class="built_in">UIColor</span> yellowColor].CGColor;</div><div class="line">    <span class="comment">//    redView.layer.shadowOffset = CGSizeMake(100, 100);</span></div><div class="line">    redView.layer.shadowOpacity = <span class="number">1</span>; <span class="comment">// 设置layer的阴影一定要设置透明度</span></div><div class="line">    redView.layer.shadowRadius = <span class="number">50</span>;</div><div class="line"></div><div class="line">    <span class="comment">// 咻一咻设置圆角</span></div><div class="line">    redView.layer.cornerRadius = <span class="number">50</span>;</div><div class="line">    redView.layer.masksToBounds = <span class="literal">YES</span>;</div><div class="line"></div><div class="line">    <span class="comment">// bounds 大小</span></div><div class="line">    redView.layer.bounds = <span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">200</span>, <span class="number">200</span>);</div><div class="line"></div><div class="line">    <span class="comment">// position 位置(默认是中心点)</span></div><div class="line"><span class="comment">//        redView.layer.position = CGPointMake(0, 0);</span></div><div class="line"></div><div class="line">    <span class="comment">// 内容</span></div><div class="line">    <span class="comment">// 如果想把c转成oc的东西, 那么需要一个'桥接' 在桥接的后面 写上需要转化的类型</span></div><div class="line">      <span class="comment">//If you are using the layer to display a static image, you can set this property to the CGImageRef containing the image you want to display.</span></div><div class="line">        redView.layer.contents = (__bridge <span class="keyword">id</span>)([<span class="built_in">UIImage</span> imageNamed:<span class="string">@"me"</span>].CGImage);</div><div class="line"></div><div class="line"><span class="comment">//    redView.layer.backgroundColor = [UIColor yellowColor].CGColor;</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span>&lt;<span class="built_in">UITouch</span>*&gt;*)touches withEvent:(<span class="built_in">UIEvent</span>*)event</div><div class="line">&#123;</div><div class="line"></div><div class="line">    <span class="comment">// 获取手指的位置</span></div><div class="line">    <span class="built_in">CGPoint</span> p = [touches.anyObject locationInView:<span class="keyword">self</span>.view];</div><div class="line"></div><div class="line">    <span class="keyword">self</span>.redView.layer.position = p;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)didReceiveMemoryWarning</div><div class="line">&#123;</div><div class="line">    [<span class="keyword">super</span> didReceiveMemoryWarning];</div><div class="line">    <span class="comment">// Dispose of any resources that can be recreated.</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -510,8 +527,8 @@
             
               
                 
-                <a class="post-title-link" href="/2014/04/19/2.控制器与视图的生命周期/" itemprop="url">
-                  控制器与视图的生命周期
+                <a class="post-title-link" href="/2014/11/15/绘制柱状图、饼状图/" itemprop="url">
+                  绘制柱状图、饼状图
                 </a>
               
             
@@ -524,8 +541,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-04-19T16:31:02+08:00" content="2014-04-19">
-              2014-04-19
+            <time itemprop="dateCreated" datetime="2014-11-15T11:39:28+08:00" content="2014-11-15">
+              2014-11-15
             </time>
           </span>
 
@@ -535,8 +552,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2014/04/19/2.控制器与视图的生命周期/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/04/19/2.控制器与视图的生命周期/" itemprop="commentsCount"></span>
+                <a href="/2014/11/15/绘制柱状图、饼状图/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/11/15/绘制柱状图、饼状图/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -546,7 +563,7 @@
 
           
           
-             <span id="/2014/04/19/2.控制器与视图的生命周期/" class="leancloud_visitors" data-flag-title="控制器与视图的生命周期">
+             <span id="/2014/11/15/绘制柱状图、饼状图/" class="leancloud_visitors" data-flag-title="绘制柱状图、饼状图">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -569,9 +586,259 @@
 
       
         
-          <h2 id="控制器在导航控制器的生命周期"><a href="#控制器在导航控制器的生命周期" class="headerlink" title="控制器在导航控制器的生命周期"></a>控制器在导航控制器的生命周期</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// 控制器在nav中 push的时候 的过程</div><div class="line">// one 将要消失</div><div class="line">// two view加载完成</div><div class="line">// two 将要显示</div><div class="line">// one 已经消失</div><div class="line">// two 已经显示</div><div class="line"></div><div class="line">// 控制器在nav中 拖拽返回的时候</div><div class="line">// 拖拽的时候  two 将要消失 one 将要显示</div><div class="line">// 松手返回到上一个页面 two 已经消失 one 已经显示</div><div class="line"></div><div class="line">// 控制器在nav中 拖拽返回的时候</div><div class="line">// 拖拽的时候  two 将要消失 one 将要显示</div><div class="line">// 松手没有返回上一个页面  one 将要消失 one 已经消失 two 将要显示 two 已经显示</div></pre></td></tr></table></figure>
+          <p>##柱状图</p>
+<ul>
+<li><p>步骤:</p>
+<ul>
+<li>要有数据(数据就是柱子和高度的比例)</li>
+<li>先写一个,最后把[0]改成i即可</li>
+<li>技巧:计算frame的时候,先写宽高,因为很多时候 x和y 是根据旷告计算的</li>
+<li>使用oc的方式,rect的方法,把xywh传入 然后渲染</li>
+<li>最后,嵌套for循环.</li>
+</ul>
+</li>
+<li><p>注意: setNeedsDisplayInRect 表示刷新指定的区域,但是,当这个方法调用的时候, drawRect方法的rect参数会跟着改变.所有,在drawRect方法中,尽量不要使用rect做参考.    </p>
+</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)drawRect:(<span class="built_in">CGRect</span>)rect</div><div class="line">&#123;</div><div class="line"></div><div class="line">    <span class="built_in">NSArray</span> *data = @[@<span class="number">0.2</span>,@<span class="number">0.5</span>,@<span class="number">0.2</span>,@<span class="number">0.8</span>,@<span class="number">0.3</span>,@<span class="number">0.9</span>];</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;data.count; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">CGFloat</span> w = <span class="number">20</span>;</div><div class="line">        <span class="built_in">CGFloat</span> h = <span class="keyword">self</span>.bounds.size.height * [data[i] floatValue];</div><div class="line">        <span class="built_in">CGFloat</span> x = i*<span class="number">2</span>*w;</div><div class="line">        <span class="built_in">CGFloat</span> y = <span class="keyword">self</span>.bounds.size.height - h;</div><div class="line"></div><div class="line">        <span class="built_in">UIBezierPath</span> *path = [<span class="built_in">UIBezierPath</span> bezierPathWithRect:<span class="built_in">CGRectMake</span>(x, y, w, h)];</div><div class="line"></div><div class="line">        [[<span class="built_in">UIColor</span> randomColor]set];</div><div class="line"></div><div class="line">        [path fill];</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,<span class="built_in">NSStringFromCGRect</span>(rect));</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">-(<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span>&lt;<span class="built_in">UITouch</span> *&gt; *)touches withEvent:(<span class="built_in">UIEvent</span> *)event</div><div class="line">&#123;</div><div class="line"><span class="comment">//    [self setNeedsDisplay];</span></div><div class="line">    [<span class="keyword">self</span> setNeedsDisplayInRect:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">200</span>, <span class="number">400</span>)];<span class="comment">//会改变drawRect:(CGRect)rect</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2014/04/19/2.控制器与视图的生命周期/#more" rel="contents">
+            <a class="btn" href="/2014/11/15/绘制柱状图、饼状图/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2014/11/15/自定义进度条-扇形进度/" itemprop="url">
+                  自定义进度条-扇形进度
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2014-11-15T11:39:28+08:00" content="2014-11-15">
+              2014-11-15
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2014/11/15/自定义进度条-扇形进度/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/11/15/自定义进度条-扇形进度/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2014/11/15/自定义进度条-扇形进度/" class="leancloud_visitors" data-flag-title="自定义进度条-扇形进度">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>##自定义进度条-扇形进度</p>
+<ul>
+<li>先使用一个假的数据用来测试</li>
+<li>起始位置和结束位置 开始 分别是 0 / :2 <em> M_PI </em> progress</li>
+<li>如果想让这个圆 从十二点钟方向开始画, 需要让其实和结束分辨 减去m_pi_2即可</li>
+<li>测试假数据,如果没问题,考虑把progress抛出去</li>
+<li>把progress声明在.h, 然后把slider的value赋值给这个view的progress属性</li>
+<li>在这个属性的set方法中,刷新(表示只要用户给我新值 我就应该刷新)</li>
+</ul>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014/11/15/自定义进度条-扇形进度/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2014/11/13/手势识别/" itemprop="url">
+                  手势识别
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2014-11-13T16:38:25+08:00" content="2014-11-13">
+              2014-11-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2014/11/13/手势识别/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/11/13/手势识别/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2014/11/13/手势识别/" class="leancloud_visitors" data-flag-title="手势识别">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>##手势识别-UITapGestureRecognizer(轻敲)</p>
+<ul>
+<li>两个属性: 几根手指点几下</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line"></div><div class="line">  <span class="comment">//1.创建手势对象</span></div><div class="line">    <span class="built_in">UITapGestureRecognizer</span> *tap = [[<span class="built_in">UITapGestureRecognizer</span> alloc]initWithTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(tapGesture:)];</div><div class="line"></div><div class="line">    <span class="comment">//要求两根手指点击两下</span></div><div class="line">    tap.numberOfTapsRequired = <span class="number">2</span>;<span class="comment">//点几下</span></div><div class="line">    tap.numberOfTouchesRequired = <span class="number">2</span>;<span class="comment">//几根手指</span></div><div class="line"></div><div class="line"></div><div class="line">  <span class="comment">//2.添加到需要使用收拾的对象上</span></div><div class="line">    [<span class="keyword">self</span>.imageView addGestureRecognizer:tap];</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"> <span class="comment">//3.实现收拾的操作（这个手势怎么用）</span></div><div class="line">-(<span class="keyword">void</span>)tapGesture:(<span class="built_in">UITapGestureRecognizer</span> *)sender</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"tapGesture"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014/11/13/手势识别/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -605,7 +872,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -646,7 +913,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
