@@ -92,7 +92,7 @@
 <meta property="og:description" content="oc调用js">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/9632d3f5jw1f9849e6x9pj20of0d2tbi.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/9632d3f5jw1f984heendgg20ko0oa1kx.gif">
-<meta property="og:updated_time" content="2016-10-28T16:44:22.000Z">
+<meta property="og:updated_time" content="2016-11-07T12:28:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS&OC交互（WKWebView）">
 <meta name="twitter:description" content="oc调用js">
@@ -345,6 +345,7 @@
 <p><strong>js代码：tools.js</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">wh_imageAourceFromPoint</span>(<span class="params">x,y</span>)</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">var</span> element = <span class="built_in">document</span>.elementFromPoint(x,y);</div><div class="line">    <span class="keyword">if</span>(element.tagName == <span class="string">'IMG'</span> &amp;&amp; element.src)&#123;</div><div class="line">        <span class="keyword">var</span> rect = element.getBoundingClientRect();</div><div class="line">        alert(rect.top + <span class="string">'|'</span> + rect.left + <span class="string">'|'</span> + rect.right + <span class="string">'|'</span> +rect.height);</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> element.src;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">wh_hello</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"hello world"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h1 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h1><p><img src="http://ww2.sinaimg.cn/large/9632d3f5jw1f984heendgg20ko0oa1kx.gif" alt=""></p>
+<p><a href="https://github.com/whong7/whong7.github.io/raw/master/demo/WKWebView.zip" target="_blank" rel="external">demo下载</a></p>
 
       
     </div>
