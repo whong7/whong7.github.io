@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="交互," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,21 +84,15 @@
 
 
 
-<meta name="description" content="oc调用js代码：
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152#import &quot;ViewController.h&quot;#import &amp;lt;JavaScriptCore/JavaScriptCore.h&amp;gt;@interface ViewControl">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JS&OC交互（UIwebView、JSContext）">
-<meta property="og:url" content="http://whong7.github.io/2016/08/14/JS&OC交互（UIwebView、JSContext）/index.html">
+<meta name="description" content="梦想在编程，生活去运行">
+<meta property="og:type" content="website">
+<meta property="og:title" content="A piece of pure land">
+<meta property="og:url" content="http://whong7.github.io/page/5/index.html">
 <meta property="og:site_name" content="A piece of pure land">
-<meta property="og:description" content="oc调用js代码：
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152#import &quot;ViewController.h&quot;#import &amp;lt;JavaScriptCore/JavaScriptCore.h&amp;gt;@interface ViewControl">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/9632d3f5jw1f983zdu1nwg20bj0n27aw.gif">
-<meta property="og:updated_time" content="2016-10-28T16:45:39.000Z">
+<meta property="og:description" content="梦想在编程，生活去运行">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS&OC交互（UIwebView、JSContext）">
-<meta name="twitter:description" content="oc调用js代码：
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152#import &quot;ViewController.h&quot;#import &amp;lt;JavaScriptCore/JavaScriptCore.h&amp;gt;@interface ViewControl">
-<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/9632d3f5jw1f983zdu1nwg20bj0n27aw.gif">
+<meta name="twitter:title" content="A piece of pure land">
+<meta name="twitter:description" content="梦想在编程，生活去运行">
 
 
 
@@ -119,10 +113,10 @@
 
 
 
-  <link rel="canonical" href="http://whong7.github.io/2016/08/14/JS&OC交互（UIwebView、JSContext）/"/>
+  <link rel="canonical" href="http://whong7.github.io/page/5/"/>
 
 
-  <title> JS&OC交互（UIwebView、JSContext） | A piece of pure land </title>
+  <title> A piece of pure land </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -153,7 +147,9 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -253,9 +249,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
   
@@ -275,7 +271,10 @@
             
             
               
-                JS&OC交互（UIwebView、JSContext）
+                
+                <a class="post-title-link" href="/2014/04/19/2.控制器与视图的生命周期/" itemprop="url">
+                  控制器与视图的生命周期
+                </a>
               
             
           </h1>
@@ -287,8 +286,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-14T18:18:05+08:00" content="2016-08-14">
-              2016-08-14
+            <time itemprop="dateCreated" datetime="2014-04-19T16:31:02+08:00" content="2014-04-19">
+              2014-04-19
             </time>
           </span>
 
@@ -298,8 +297,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/14/JS&OC交互（UIwebView、JSContext）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/14/JS&OC交互（UIwebView、JSContext）/" itemprop="commentsCount"></span>
+                <a href="/2014/04/19/2.控制器与视图的生命周期/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/04/19/2.控制器与视图的生命周期/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -309,7 +308,7 @@
 
           
           
-             <span id="/2016/08/14/JS&OC交互（UIwebView、JSContext）/" class="leancloud_visitors" data-flag-title="JS&OC交互（UIwebView、JSContext）">
+             <span id="/2014/04/19/2.控制器与视图的生命周期/" class="leancloud_visitors" data-flag-title="控制器与视图的生命周期">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -331,70 +330,46 @@
       
 
       
-        <h1 id="oc调用js"><a href="#oc调用js" class="headerlink" title="oc调用js"></a>oc调用js</h1><p><strong>代码：</strong></p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"ViewController.h"</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;JavaScriptCore/JavaScriptCore.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> ()</span></div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">weak</span>, <span class="keyword">nonatomic</span>) <span class="keyword">IBOutlet</span> <span class="built_in">UIWebView</span> *webView;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line">    </div><div class="line">    <span class="built_in">NSString</span> *path = [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:<span class="string">@"JSContextDemo.html"</span> ofType:<span class="literal">nil</span>];</div><div class="line">    <span class="built_in">NSURLRequest</span> *request = [[<span class="built_in">NSURLRequest</span> alloc] initWithURL:[<span class="built_in">NSURL</span> URLWithString:path]];</div><div class="line">    [_webView loadRequest:request];</div><div class="line">    </div><div class="line">    <span class="meta">#pragma mark - JS调用OC的方法</span></div><div class="line">    <span class="comment">// 拿到JS的上下文</span></div><div class="line">    JSContext *context = [<span class="keyword">self</span>.webView valueForKeyPath:<span class="string">@"documentView.webView.mainFrame.javaScriptContext"</span>];</div><div class="line">    </div><div class="line">    <span class="comment">/**</span></div><div class="line">     1.找到网页分享标签点击时调用的函数名</div><div class="line">     2.定义好JS要调用的OC的代码块</div><div class="line">    */</div><div class="line">    context[<span class="string">@"share"</span>] = ^() &#123;</div><div class="line">        </div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"在这里面实现OC的分享的操作"</span>);</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="meta">#pragma mark - OC调用JS的点击事件</span></div><div class="line">- (<span class="keyword">IBAction</span>)OC_invokJS:(<span class="keyword">id</span>)sender &#123;</div><div class="line">    </div><div class="line">    <span class="comment">// 拿到JS的上下文</span></div><div class="line">    JSContext *context = [<span class="keyword">self</span>.webView valueForKeyPath:<span class="string">@"documentView.webView.mainFrame.javaScriptContext"</span>];</div><div class="line">    </div><div class="line">    <span class="comment">// 直接调用JS的函数,还可以向函数里面传入需要的参数.在XCode中向JS中的alert传入需要的message</span></div><div class="line">    <span class="built_in">NSString</span> *textJS = <span class="string">@"showAlert('这个message是XCode中传入的')"</span>;</div><div class="line">    </div><div class="line">    <span class="comment">// 执行这个JS代码</span></div><div class="line">    [context evaluateScript:textJS];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)didReceiveMemoryWarning &#123;</div><div class="line">    [<span class="keyword">super</span> didReceiveMemoryWarning];</div><div class="line">    <span class="comment">// Dispose of any resources that can be recreated.</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
-<a id="more"></a>
-<p><strong>JSContextDemo.html文件：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">    &lt;header&gt;</div><div class="line">        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;</div><div class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">        </div><div class="line">            // 分享标签的点击事件</div><div class="line">            function shareBtnClick() &#123;</div><div class="line">                // 定义一个分享函数,作为页面分享操作的标记,类似于自定义协议头一样的</div><div class="line">                share();</div><div class="line">            &#125;</div><div class="line">        </div><div class="line">            // JS的这个方法是准备好的给OC调用的,而且OC那边还可以传参数进来</div><div class="line">            function showAlert(message)&#123;</div><div class="line">                alert(message);</div><div class="line">            &#125;</div><div class="line">        </div><div class="line">        &lt;/script&gt;</div><div class="line">    &lt;/header&gt;</div><div class="line">    </div><div class="line">    &lt;body&gt;</div><div class="line">        </div><div class="line">        &lt;h2&gt; JSContextDemo &lt;/h2&gt;</div><div class="line">        </div><div class="line">        &lt;br/&gt;</div><div class="line">        </div><div class="line">        &lt;!--    分享按钮    --&gt;</div><div class="line">        &lt;button type=&quot;button&quot; onclick=&quot;shareBtnClick()&quot;&gt;分享&lt;/button&gt;</div><div class="line">        </div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p><img src="http://ww4.sinaimg.cn/large/9632d3f5jw1f983zdu1nwg20bj0n27aw.gif" alt=""></p>
-
+        
+          <h2 id="控制器在导航控制器的生命周期"><a href="#控制器在导航控制器的生命周期" class="headerlink" title="控制器在导航控制器的生命周期"></a>控制器在导航控制器的生命周期</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// 控制器在nav中 push的时候 的过程</div><div class="line">// one 将要消失</div><div class="line">// two view加载完成</div><div class="line">// two 将要显示</div><div class="line">// one 已经消失</div><div class="line">// two 已经显示</div><div class="line"></div><div class="line">// 控制器在nav中 拖拽返回的时候</div><div class="line">// 拖拽的时候  two 将要消失 one 将要显示</div><div class="line">// 松手返回到上一个页面 two 已经消失 one 已经显示</div><div class="line"></div><div class="line">// 控制器在nav中 拖拽返回的时候</div><div class="line">// 拖拽的时候  two 将要消失 one 将要显示</div><div class="line">// 松手没有返回上一个页面  one 将要消失 one 已经消失 two 将要显示 two 已经显示</div></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014/04/19/2.控制器与视图的生命周期/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
       
     </div>
 
     <div>
       
-        
-
-      
     </div>
 
     <div>
-      
-        
-
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/交互/" rel="tag">#交互</a>
-          
-        </div>
+
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/08/14/JS&OC交互（UIwebView）/" rel="next" title="JS&OC交互（UIwebView）">
-                <i class="fa fa-chevron-left"></i> JS&OC交互（UIwebView）
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/21/nav边缘回退手势 替换为 全屏幕回退手势 /" rel="prev" title="nav边缘回退手势 替换为 全屏幕回退手势">
-                nav边缘回退手势 替换为 全屏幕回退手势 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+  </nav>
+
 
 
           </div>
@@ -402,14 +377,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="2016/08/14/JS&OC交互（UIwebView、JSContext）/"
-           data-title="JS&OC交互（UIwebView、JSContext）" data-url="http://whong7.github.io/2016/08/14/JS&OC交互（UIwebView、JSContext）/">
-      </div>
-    
-  </div>
-
 
         </div>
         
@@ -429,17 +396,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.JPG"
@@ -511,17 +469,6 @@
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#oc调用js"><span class="nav-number">1.</span> <span class="nav-text">oc调用js</span></a></li></ol></div>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -625,10 +572,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
-
-
 
   
 
