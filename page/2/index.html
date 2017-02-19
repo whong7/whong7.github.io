@@ -272,119 +272,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/14/JS&OC交互（UIwebView、JSContext）/" itemprop="url">
-                  JS&OC交互（UIwebView、JSContext）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-14T18:18:05+08:00" content="2016-08-14">
-              2016-08-14
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/14/JS&OC交互（UIwebView、JSContext）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/14/JS&OC交互（UIwebView、JSContext）/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/08/14/JS&OC交互（UIwebView、JSContext）/" class="leancloud_visitors" data-flag-title="JS&OC交互（UIwebView、JSContext）">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="oc调用js"><a href="#oc调用js" class="headerlink" title="oc调用js"></a>oc调用js</h1><p><strong>代码：</strong></p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"ViewController.h"</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;JavaScriptCore/JavaScriptCore.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> ()</span></div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">weak</span>, <span class="keyword">nonatomic</span>) <span class="keyword">IBOutlet</span> <span class="built_in">UIWebView</span> *webView;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line">    </div><div class="line">    <span class="built_in">NSString</span> *path = [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:<span class="string">@"JSContextDemo.html"</span> ofType:<span class="literal">nil</span>];</div><div class="line">    <span class="built_in">NSURLRequest</span> *request = [[<span class="built_in">NSURLRequest</span> alloc] initWithURL:[<span class="built_in">NSURL</span> URLWithString:path]];</div><div class="line">    [_webView loadRequest:request];</div><div class="line">    </div><div class="line">    <span class="meta">#pragma mark - JS调用OC的方法</span></div><div class="line">    <span class="comment">// 拿到JS的上下文</span></div><div class="line">    JSContext *context = [<span class="keyword">self</span>.webView valueForKeyPath:<span class="string">@"documentView.webView.mainFrame.javaScriptContext"</span>];</div><div class="line">    </div><div class="line">    <span class="comment">/**</div><div class="line">     1.找到网页分享标签点击时调用的函数名</div><div class="line">     2.定义好JS要调用的OC的代码块</div><div class="line">    */</span></div><div class="line">    context[<span class="string">@"share"</span>] = ^() &#123;</div><div class="line">        </div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"在这里面实现OC的分享的操作"</span>);</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="meta">#pragma mark - OC调用JS的点击事件</span></div><div class="line">- (<span class="keyword">IBAction</span>)OC_invokJS:(<span class="keyword">id</span>)sender &#123;</div><div class="line">    </div><div class="line">    <span class="comment">// 拿到JS的上下文</span></div><div class="line">    JSContext *context = [<span class="keyword">self</span>.webView valueForKeyPath:<span class="string">@"documentView.webView.mainFrame.javaScriptContext"</span>];</div><div class="line">    </div><div class="line">    <span class="comment">// 直接调用JS的函数,还可以向函数里面传入需要的参数.在XCode中向JS中的alert传入需要的message</span></div><div class="line">    <span class="built_in">NSString</span> *textJS = <span class="string">@"showAlert('这个message是XCode中传入的')"</span>;</div><div class="line">    </div><div class="line">    <span class="comment">// 执行这个JS代码</span></div><div class="line">    [context evaluateScript:textJS];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)didReceiveMemoryWarning &#123;</div><div class="line">    [<span class="keyword">super</span> didReceiveMemoryWarning];</div><div class="line">    <span class="comment">// Dispose of any resources that can be recreated.</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/08/14/JS&OC交互（UIwebView、JSContext）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-tags " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/08/14/JS&OC交互（UIwebView）/" itemprop="url">
                   JS&OC交互（UIwebView）
                 </a>
@@ -813,6 +700,126 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/06/28/传感器：加速计,陀螺仪,磁力计 push获取方式/" itemprop="url">
+                  传感器：加速计,陀螺仪,磁力计 push获取方式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-06-28T10:13:04+08:00" content="2015-06-28">
+              2015-06-28
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/06/28/传感器：加速计,陀螺仪,磁力计 push获取方式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/28/传感器：加速计,陀螺仪,磁力计 push获取方式/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/06/28/传感器：加速计,陀螺仪,磁力计 push获取方式/" class="leancloud_visitors" data-flag-title="传感器：加速计,陀螺仪,磁力计 push获取方式">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="传感器：加速计-陀螺仪-磁力计-push获取方式"><a href="#传感器：加速计-陀螺仪-磁力计-push获取方式" class="headerlink" title="传感器：加速计,陀螺仪,磁力计 push获取方式"></a>传感器：加速计,陀螺仪,磁力计 push获取方式</h2><ul>
+<li>获取方式分为2种: push(系统会按照一定的时间间隔, 不停的返回数据) / pull (在需要的时候再来获取数据)</li>
+</ul>
+<h3 id="加速计"><a href="#加速计" class="headerlink" title="加速计:"></a>加速计:</h3><ul>
+<li>检测力在某个方向上有作用 (检测到方向和大小) –&gt; 沿着轴上下快速运动</li>
+<li>加速度计的原理很简单，现在手机里面基本配备的都是3维线传感器，也就是说，用来测量x，y，z三个轴上的加速力。加速力就是当物体在加速过程中作用在物体上的力，就好比地球引力，也就是重力。</li>
+<li>可以用于监测设备的摇晃</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)accelerometerPush &#123;</div><div class="line">    <span class="comment">//加速器push (频繁获取数据)</span></div><div class="line">    <span class="comment">//Accelerometer</span></div><div class="line">    <span class="comment">//1. 创建运动管理器</span></div><div class="line">    <span class="keyword">self</span>.motionMgr = [<span class="built_in">CMMotionManager</span> new];</div><div class="line"></div><div class="line">    <span class="comment">//2. 判断能否使用加速计</span></div><div class="line">    <span class="keyword">if</span> (![<span class="keyword">self</span>.motionMgr isAccelerometerAvailable]) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//3. 设置采样间隔(更新间隔/推送间隔) --&gt; push方式才需要设置</span></div><div class="line">    <span class="comment">//单位是秒</span></div><div class="line">    <span class="keyword">self</span>.motionMgr.accelerometerUpdateInterval = <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="comment">//4. 开始更新 --&gt; 如果是push方式, 那么使用带有bolck的方法</span></div><div class="line">    [<span class="keyword">self</span>.motionMgr startAccelerometerUpdatesToQueue:[<span class="built_in">NSOperationQueue</span> mainQueue] withHandler:^(<span class="built_in">CMAccelerometerData</span> * _Nullable accelerometerData, <span class="built_in">NSError</span> * _Nullable error) &#123;</div><div class="line"></div><div class="line">        <span class="comment">/**</div><div class="line">         1. 哪个轴方向指向地面方向, 就会打印哪个轴方向的值.</div><div class="line">         2. 默认的大小 1~-1之间</div><div class="line">         3. 沿着轴方向运动, 会改变大小</div><div class="line"></div><div class="line">         如果要实现摇一摇, 可以判断三个轴的任何一个, 只要大于某个数值, 就可以判定发生了摇一摇</div><div class="line">         */</span></div><div class="line">        <span class="built_in">CMAcceleration</span> acceleration = accelerometerData.acceleration;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"x: %f, y: %f, z: %f "</span>, acceleration.x, acceleration.y, acceleration.z);</div><div class="line">    &#125;];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/06/28/传感器：加速计,陀螺仪,磁力计 push获取方式/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -858,7 +865,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
