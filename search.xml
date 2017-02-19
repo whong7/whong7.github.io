@@ -4,6 +4,45 @@
   
     
     <entry>
+      <title><![CDATA[策略模式]]></title>
+      <url>http://whong7.github.io/2016/10/27/1.%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</url>
+      <content type="html"><![CDATA[<hr>
+<h3 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h3><p>定义了<strong>算法族</strong>，分别封装起来，让他们之间可以相互代替，此模式让算法的变化独立于使用算法的客户</p>
+<ul>
+<li>策略模式核心是对算法的封装</li>
+<li>专注于实现算法（策略）的选择，支持运行时动态改变策略</li>
+<li>具体实现是把变化的部分找出来，定义为接口，每个接口对应一组算法，每一个都是一种策略</li>
+<li>同一接口下的算法是可以相互替换的</li>
+<li>算法是独立于客户代码的，也就是对算法封装的具体体现</li>
+</ul>
+<h3 id="使用情形"><a href="#使用情形" class="headerlink" title="使用情形"></a>使用情形</h3><ul>
+<li><strong>父类</strong>中的 部分 方法，会因 <strong>子类</strong> 的实现而有区别，单纯的继承并不能很好的解决问题，会导致需求修改时：父类和子类都需要修改。</li>
+<li><strong>做法：</strong>抽象超类中，会变化的部分取出并“封装”起来，好让其他部分不会受到影响。</li>
+<li><strong>结果：</strong>代码变化引起的不经意后果变少，系统变得更有弹性。</li>
+</ul>
+<a id="more"></a>
+<h3 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h3><ul>
+<li>找出应用中可能需要变化之处，把它们独立出来，不要和那些不需要变化的代码混在一起，以便以后可以轻易的改动或拓展此部分，而不影响不需要变化的其他部分</li>
+<li>针对接口编程，而不是针对实现编程：将行为通过接口实现，而不是绑定到父类中</li>
+<li>多用组合，少用继承</li>
+</ul>
+<h3 id="示例问题"><a href="#示例问题" class="headerlink" title="示例问题"></a>示例问题</h3><p>现有100种Duck，叫声、飞行都是不同的。于是我们定义了100个类来表示100种不同类型的Duck。我们发现Duck问题中最难处理的部分就是fly、quack这两个行为，一旦发生变化我们就需要修改具体Duck类，甚至是Duck基类，不仅需要花费大量的时间，而且所有具体Duck类中都实现了fly与quack方法，显得很臃肿。还有最重要的问题，我们无法动态地修改Duck的行为，比如小Duck游得慢叫声小，长大后游得快叫声大，也无法应对行为变化问题。。。。这一系列的问题想向我们说明一点：这从一开始就是一个糟糕的设计。</p>
+<h3 id="如何应用策略模式？"><a href="#如何应用策略模式？" class="headerlink" title="如何应用策略模式？"></a>如何应用策略模式？</h3><p>策略模式要求把变化的部分封装起来，首先，我们要找到代码中频频发生变化的部分<br>在上一个例子中，变化的部分是什么？<br>1.fly行为<br>2.quack行为<br>3.其它可能存在的行为<br>…<br>下面我们把这些行为封装起来</p>
+<h4 id="将行为封装起来"><a href="#将行为封装起来" class="headerlink" title="将行为封装起来"></a>将行为封装起来</h4><p><strong><em>fly行为</em></strong></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> UIKit</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">FlyBehavior</span>: <span class="title">NSObject</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">fly</span><span class="params">()</span></span>&#123;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">FlyWithWings</span>: <span class="title">FlyBehavior</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">fly</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="built_in">print</span>(<span class="string">"I'm flying"</span>)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">FlyNoWay</span>: <span class="title">FlyBehavior</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">fly</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="built_in">print</span>(<span class="string">"I can't fly"</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong><em>quack行为</em></strong></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> UIKit</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">QuackBehavior</span>: <span class="title">NSObject</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">quack</span><span class="params">()</span></span>&#123;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Quack</span>: <span class="title">QuackBehavior</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">quack</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="built_in">print</span>(<span class="string">"Quack"</span>)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MuteQuack</span>: <span class="title">QuackBehavior</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">quack</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="built_in">print</span>(<span class="string">"Slience"</span>)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Squeak</span>: <span class="title">QuackBehavior</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">quack</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="built_in">print</span>(<span class="string">"Squeak"</span>)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="封装好“变化”之后，我们的Duck基类也要做相应改变："><a href="#封装好“变化”之后，我们的Duck基类也要做相应改变：" class="headerlink" title="封装好“变化”之后，我们的Duck基类也要做相应改变："></a>封装好“变化”之后，我们的Duck基类也要做相应改变：</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> UIKit</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Duck</span>: <span class="title">NSObject</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">var</span> flybehavior: <span class="type">FlyBehavior</span>?</div><div class="line">    <span class="keyword">var</span> quackBehavior: <span class="type">QuackBehavior</span>?</div><div class="line">  </div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">performFly</span><span class="params">()</span></span> &#123;</div><div class="line">        flybehavior?.fly()</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">performQuack</span><span class="params">()</span></span>&#123;</div><div class="line">        quackBehavior?.quack()</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">swim</span><span class="params">()</span></span>&#123;</div><div class="line">        </div><div class="line">        <span class="built_in">print</span>(<span class="string">"swiming"</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="现在来看看我们新的具体Duck类"><a href="#现在来看看我们新的具体Duck类" class="headerlink" title="现在来看看我们新的具体Duck类"></a>现在来看看我们新的具体Duck类</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MallardDuck</span>: <span class="title">Duck</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">override</span> <span class="keyword">init</span>() &#123;</div><div class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>()</div><div class="line">        flybehavior = <span class="type">FlyWithWings</span>()</div><div class="line">        quackBehavior = <span class="type">Quack</span>()</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="效果示例"><a href="#效果示例" class="headerlink" title="效果示例"></a>效果示例</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> UIKit</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="keyword">super</span>.viewDidLoad()</div><div class="line">        </div><div class="line">        <span class="comment">//test</span></div><div class="line">        <span class="keyword">let</span> mallard:<span class="type">Duck</span> = <span class="type">MallardDuck</span>()</div><div class="line">        mallard.performQuack()</div><div class="line">        mallard.performFly()</div><div class="line">        <span class="comment">//模型可以动态的改变飞行行为，如果把行为的实现绑死在鸭子勒种，无法做到这样</span></div><div class="line">        mallard.flybehavior = <span class="type">FlyNoWay</span>()</div><div class="line">        mallard.performFly()</div><div class="line">        </div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">didReceiveMemoryWarning</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="keyword">super</span>.didReceiveMemoryWarning()</div><div class="line">        <span class="comment">// Dispose of any resources that can be recreated.</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">输出结果：</div><div class="line"><span class="type">Quack</span></div><div class="line"><span class="type">I'm</span> flying</div><div class="line"><span class="type">I</span> can't fly</div></pre></td></tr></table></figure>
+<p><a href="https://github.com/whong7/DesignPatterns/raw/master/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F%EF%BC%88Strategy%20Pattern%EF%BC%89/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F.zip" target="_blank" rel="external">demo下载</a></p>
+<h3 id="思维导图解析"><a href="#思维导图解析" class="headerlink" title="思维导图解析"></a>思维导图解析</h3><p><img src="https://ws1.sinaimg.cn/large/9632d3f5gy1fctuasn7bqj21kw0scatg" alt=""></p>
+<p><a href="https://github.com/whong7/DesignPatterns/raw/master/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AC%94%E8%AE%B0/1.%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F.png" target="_blank" rel="external">思维导图下载</a></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>策略模式的核心是要把频繁发生变化的部分封装起来，作用是把变化部分的影响隔离开，避免局部的变化对其它fixed部分造成影响，设计时可能需要更多的时间，但便于维护、复用与扩展，在本例中，Fly、Quack行为都可以在新的类（如Pig）中复用；一旦行为发生变化我们只需要修改各个行为接口，最多再对Duck基类做简单修改就可以从容地应对变化了。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[JS&OC交互（WKWebView）]]></title>
       <url>http://whong7.github.io/2016/10/24/JS&OC%E4%BA%A4%E4%BA%92%EF%BC%88WKWebView%EF%BC%89/</url>
       <content type="html"><![CDATA[<h1 id="oc调用js"><a href="#oc调用js" class="headerlink" title="oc调用js"></a>oc调用js</h1><p><img src="http://ww1.sinaimg.cn/large/9632d3f5jw1f9849e6x9pj20of0d2tbi.jpg" alt=""></p>
@@ -96,6 +135,152 @@
 <p>NSLog输出：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">2016-08-14 23:01:35.703 oc与js互调[40973:1822781] http://m.maoyan.com/newGuide/wcqp?uuid=82981ACB37B65C58C702647A8D18849A9A0962CE44E9F6BAD28B0A4B06BB8314&amp;utm_term=7.1.1&amp;utm_source=AppStore&amp;utm_content=82981ACB37B65C58C702647A8D18849A9A0962CE44E9F6BAD28B0A4B06BB8314&amp;version_name=7.1.1&amp;utm_medium=iphone&amp;lat=40.058798&amp;utm_campaign=AmovieBmovieH0&amp;pushToken=548bf2eb%201d53e305%20b09aafda%20299abdf7%20680c708f%20c404644d%20fbf0c996%20632dc364&amp;lng=116.335873&amp;f=ios&amp;cityId=1&amp;ci=1&amp;msid=D061DF57-2504-45E7-B9DB-34DD13A838892016-08-14-%E4%B8%8A%E5%8D%889-30800</div><div class="line">2016-08-14 23:01:44.603 oc与js互调[40973:1822781] meituanmovie://www.meituan.com/movie_schedule?id=247713&amp;nm=%E5%8D%B1%E5%9F%8E&amp;index=reserve</div><div class="line">2016-08-14 23:01:44.604 oc与js互调[40973:1822781] 打开原生页面,参数是:id=247713&amp;nm=%E5%8D%B1%E5%9F%8E&amp;index=reserve</div></pre></td></tr></table></figure>
 <p><img src="http://ww1.sinaimg.cn/large/9632d3f5jw1f983fzz2u2j20du0ne78j.jpg" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[设计模式]]></title>
+      <url>http://whong7.github.io/2016/07/24/0.%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
+      <content type="html"><![CDATA[<hr>
+<h3 id="什么是设计模式？"><a href="#什么是设计模式？" class="headerlink" title="什么是设计模式？"></a>什么是设计模式？</h3><ul>
+<li>自问：设计模式是什么？</li>
+<li>自答：设计模式是由代码结构优化经验萃取出来的理论知识，应用成熟的设计模式能够增强代码的可复用性、可扩展性与可维护性。</li>
+<li>自问：你好像很专业的样子，那好，既然设计模式有这么多好处，那是不是应用了设计模式的设计都是好设计？</li>
+<li>自答：当然不是，我们不能为了使用模式而使用模式。设计模式可不能滥用，毕竟应用设计模式必须要作出一些牺牲（比如增加类结构的复杂性…），所以滥用设计模式的话是会出事的。而且，就算我们有了锤子，也不能把所有问题都看作钉子吧？</li>
+</ul>
+<h3 id="要不要使用设计模式？"><a href="#要不要使用设计模式？" class="headerlink" title="要不要使用设计模式？"></a>要不要使用设计模式？</h3><ul>
+<li>这是个值得思考的问题，毕竟现在我们已经拥有了一把锤子，要不要用它当然成了问题，毕竟不是所有的问题都可以用锤子来解决。退一步讲，即便所有问题都能用锤子解决，我们也不确定使用锤子是不是最好的解决方案（拔钉子的话，可能用钳子更好些…）</li>
+<li>当我们拿着某个设计模式想放进我们的代码中时，最好权衡一下利弊，诚然，设计模式具有的设计上的弹性一定会给我们之后的维护变更带来些便利。但是利与弊到底哪个更多一些，我们需要先回答几个问题再做决定：<ul>
+<li>我们的项目是不是几乎不涉及维护或者没有后续版本，那么我们引入设计模式还有必要吗？</li>
+<li>我们项目的规模是不是大到了不用设计模式不行的地步？</li>
+<li>这个设计模式用在这里合适吗？有没有更合适的？</li>
+<li>非要用设计模式吗？可不可以用几个简单的设计原则来代替？</li>
+<li>引入设计模式之后，代码结构的复杂度大大增加，重构的成本我们可以接受吗？</li>
+<li>如果深思熟虑之后，还是觉得使用设计模式比较好，那么，放心去用吧，之后好好享受设计模式带来的好处吧</li>
+</ul>
+</li>
+</ul>
+<h3 id="设计原则总结"><a href="#设计原则总结" class="headerlink" title="设计原则总结"></a>设计原则总结</h3><p>设计原则都是一些简单的指导意见，没有固定的实现，因而设计原则也更加灵活，常见的设计原则如下：</p>
+<ul>
+<li>封装变化（把易于发生变化的部分抽出来，以减少其变化对其它部分的影响）</li>
+<li>多用组合，少用继承（组合比继承更有弹性）</li>
+<li>针对接口编程，不针对实现编程（使用接口可以避免直接依赖具体类）</li>
+<li>为交互对象之间的松耦合设计而努力（更松的耦合意味着更多的弹性）</li>
+<li>类应该对扩展开放，对修改关闭（open-close原则）</li>
+<li>依赖抽象，不要依赖具体类（减少对具体类的直接依赖）</li>
+<li>只和朋友交谈（密友原则）</li>
+<li>别找我，我会找你（Don’t call me, I will call you back.安卓开发的大原则）</li>
+<li>类应该只有一个改变的理由（单一责任原则）</li>
+<li>能用设计原则解决的问题就不要用设计模式（杀鸡焉用宰牛刀…），因为设计原则实现起来更加灵活，更加轻巧（不用去考虑模式的条条框框…）</li>
+</ul>
+<h3 id="设计模式总结"><a href="#设计模式总结" class="headerlink" title="设计模式总结"></a>设计模式总结</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>策略模式（Strategy）</td>
+<td>把可以替换的算法步骤封装成一个个算法族，供运行时动态选择</td>
+</tr>
+<tr>
+<td>观察者模式（Observer）</td>
+<td>定义并维护对象之间的一对多关系</td>
+</tr>
+<tr>
+<td>装饰者模式（Decorator）</td>
+<td>建立拥有共同超类的装饰者与被装饰者来实现功能的动态扩展</td>
+</tr>
+<tr>
+<td>工厂模式（Factory）</td>
+<td>封装对象的创建过程，包括工厂方法模式和抽象工厂模式</td>
+</tr>
+<tr>
+<td>单件（例）模式（Singleton）</td>
+<td>用来创建唯一的对象（比如数据库连接对象，线程池对象等等）</td>
+</tr>
+<tr>
+<td>命令模式（Command）</td>
+<td>封装方法调用细节，解耦请求者与执行者</td>
+</tr>
+<tr>
+<td>适配器模式（Adapter）</td>
+<td>用来实现不同接口间的转换</td>
+</tr>
+<tr>
+<td>外观模式（Facade）</td>
+<td>为复杂的子系统提供简单易用的高层接口</td>
+</tr>
+<tr>
+<td>模版方法模式（Template Method）</td>
+<td>用来封装算法骨架（流程），某些步骤由子类实现</td>
+</tr>
+<tr>
+<td>迭代器模式（Iterator）</td>
+<td>用来封装遍历细节</td>
+</tr>
+<tr>
+<td>组合模式（Composite）</td>
+<td>提供一种层级结构，使得我们能够忽略对象与对象集合间的差异，一视同仁地对待它们</td>
+</tr>
+<tr>
+<td>状态模式（State）</td>
+<td>把所有动作都封装在状态对象中，状态持有者将行为委托给当前状态对象</td>
+</tr>
+<tr>
+<td>代理模式（Proxy）</td>
+<td>通过插入第三方（代理对象）来分离调用者和被调用者（不同于执行者）</td>
+</tr>
+<tr>
+<td>复合模式（Compound）</td>
+<td>复合模式（Compound）    将多个模式组合结合起来形成一个“框架”，以解决一般性问题</td>
+</tr>
+<tr>
+<td>桥接模式（Bridge）</td>
+<td>将抽象的控制类与具体实现类通过组合解耦，使得抽象层类与实现层类可以对立与对方而变化</td>
+</tr>
+<tr>
+<td>生成器模式（Builder）</td>
+<td>用来封装组合结构（树形结构）的构造过程，与迭代器模式类似，都隐藏了组合结构的内部实现，只提供一组用于创建组合结构的接口</td>
+</tr>
+<tr>
+<td>责任链模式（Chain of Responsibility）</td>
+<td>让一个请求可以被一组接收者顺序处理，类似于Android处理请求的方式：一个接收者捕获请求后可以return true消费掉请求，也可以return false传递给接收者队列中的下一个接收者（观察者）</td>
+</tr>
+<tr>
+<td>蝇量模式（Flyweight）</td>
+<td>抽象出对象管理层来统一管理大量的同类型对象，以减少运行时对象实例的个数，减少内存消耗</td>
+</tr>
+<tr>
+<td>解释器模式（Interpreter）</td>
+<td>用来为简单语言创建解释器，将语法规则直接映射为各个类，结构简单，但效率较低</td>
+</tr>
+<tr>
+<td>中介者模式（Mediator）</td>
+<td>引入中介者来封装多个对象间的复杂交互，以降低同级（在类结构统一层次上的）对象间的依赖</td>
+</tr>
+<tr>
+<td>备忘录模式（Memento）</td>
+<td>支持对象状态的保存与恢复，并将对象状态数据封装起来，独立于客户代码以提供保护（Java中可以结合序列化反序列化技术来实现该模式）</td>
+</tr>
+<tr>
+<td>原型模式（Prototype）</td>
+<td>以现有的对象为原型，通过clone得到新的对象（以简化新对象的创建过程）</td>
+</tr>
+<tr>
+<td>访问者模式（Visitor）</td>
+<td>为组合结构添加新的操作，而不需要频繁的改变组合结构</td>
+</tr>
+</tbody>
+</table>
+<h3 id="面向对象的设计（Object-Oriented-Design）"><a href="#面向对象的设计（Object-Oriented-Design）" class="headerlink" title="面向对象的设计（Object Oriented Design）"></a>面向对象的设计（Object Oriented Design）</h3><p>一直伴随着OOD的问题就是“折衷”（或者说是“取舍”），最简单的例子——要不要用设计模式？</p>
+<ul>
+<li>用，意味着将产生复杂的类关系，多层的抽象，我们将牺牲易读性换取易扩展性、易维护性或者其它特性</li>
+<li>不用，意味着我们不需要对现有代码进行重构（或者不用去在复杂的设计上耗费过多的时间），但使用设计模式的所有好处我们就都享受不到了</li>
+<li>二者选其一，这就是一个“取舍”，或者创造第三个选项（比如使用设计原则），这就是一个“折衷”</li>
+</ul>
 ]]></content>
     </entry>
     
@@ -459,7 +644,7 @@
 <p>MindNode源文件下载地址<br><a href="https://raw.githubusercontent.com/whong7/whong7.github.io/master/MindNote/绘图.zip" target="_blank" rel="external">绘图.mindnode</a></p>
 <h2 id="反馈与建议"><a href="#反馈与建议" class="headerlink" title="反馈与建议"></a>反馈与建议</h2><ul>
 <li>微博：<a href="http://weibo.com/u/2519913461" target="_blank" rel="external">@whong77</a></li>
-<li>邮箱：<a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#58;&#119;&#104;&#x6f;&#x6e;&#x67;&#55;&#57;&#x31;&#49;&#50;&#x30;&#x37;&#64;&#x31;&#x36;&#51;&#46;&#99;&#111;&#109;">&#119;&#104;&#x6f;&#x6e;&#x67;&#55;&#57;&#x31;&#49;&#50;&#x30;&#x37;&#64;&#x31;&#x36;&#51;&#46;&#99;&#111;&#109;</a></li>
+<li>邮箱：<a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#119;&#x68;&#111;&#x6e;&#x67;&#x37;&#x39;&#49;&#x31;&#50;&#48;&#x37;&#x40;&#49;&#x36;&#x33;&#x2e;&#99;&#111;&#x6d;">&#119;&#x68;&#111;&#x6e;&#x67;&#x37;&#x39;&#49;&#x31;&#50;&#48;&#x37;&#x40;&#49;&#x36;&#x33;&#x2e;&#99;&#111;&#x6d;</a></li>
 </ul>
 ]]></content>
     </entry>
@@ -684,7 +869,7 @@
 <p>MindNode源文件下载地址<br><a href="https://raw.githubusercontent.com/whong7/whong7.github.io/master/MindNote/%20生命周期.zip" target="_blank" rel="external">绘图.mindnode</a></p>
 <h2 id="反馈与建议"><a href="#反馈与建议" class="headerlink" title="反馈与建议"></a>反馈与建议</h2><ul>
 <li>微博：<a href="http://weibo.com/u/2519913461" target="_blank" rel="external">@whong77</a></li>
-<li>邮箱：<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#x77;&#x68;&#x6f;&#110;&#103;&#55;&#x39;&#49;&#49;&#x32;&#48;&#55;&#x40;&#x31;&#x36;&#51;&#x2e;&#99;&#111;&#x6d;">&#x77;&#x68;&#x6f;&#110;&#103;&#55;&#x39;&#49;&#49;&#x32;&#48;&#55;&#x40;&#x31;&#x36;&#51;&#x2e;&#99;&#111;&#x6d;</a></li>
+<li>邮箱：<a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#x77;&#104;&#111;&#x6e;&#x67;&#55;&#x39;&#x31;&#49;&#x32;&#48;&#55;&#x40;&#49;&#54;&#51;&#46;&#99;&#111;&#x6d;">&#x77;&#104;&#111;&#x6e;&#x67;&#55;&#x39;&#x31;&#49;&#x32;&#48;&#55;&#x40;&#49;&#54;&#51;&#46;&#99;&#111;&#x6d;</a></li>
 </ul>
 ]]></content>
     </entry>
