@@ -88,7 +88,7 @@
     <link href="http://whong7.github.io/2016/10/25/0.%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     <id>http://whong7.github.io/2016/10/25/0.设计模式/</id>
     <published>2016-10-25T08:23:04.000Z</published>
-    <updated>2017-02-19T05:27:13.000Z</updated>
+    <updated>2017-02-19T05:31:07.000Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <h3 id="什么是设计模式？"><a href="#什么是设计模式？" class="headerlink" title="什么是设计模式？"></a>什么是设计模式？</h3><ul>
@@ -97,6 +97,7 @@
 <li>自问：你好像很专业的样子，那好，既然设计模式有这么多好处，那是不是应用了设计模式的设计都是好设计？</li>
 <li>自答：当然不是，我们不能为了使用模式而使用模式。设计模式可不能滥用，毕竟应用设计模式必须要作出一些牺牲（比如增加类结构的复杂性…），所以滥用设计模式的话是会出事的。而且，就算我们有了锤子，也不能把所有问题都看作钉子吧？</li>
 </ul>
+<a id="more"></a>
 <h3 id="要不要使用设计模式？"><a href="#要不要使用设计模式？" class="headerlink" title="要不要使用设计模式？"></a>要不要使用设计模式？</h3><ul>
 <li>这是个值得思考的问题，毕竟现在我们已经拥有了一把锤子，要不要用它当然成了问题，毕竟不是所有的问题都可以用锤子来解决。退一步讲，即便所有问题都能用锤子解决，我们也不确定使用锤子是不是最好的解决方案（拔钉子的话，可能用钳子更好些…）</li>
 <li>当我们拿着某个设计模式想放进我们的代码中时，最好权衡一下利弊，诚然，设计模式具有的设计上的弹性一定会给我们之后的维护变更带来些便利。但是利与弊到底哪个更多一些，我们需要先回答几个问题再做决定：<ul>
@@ -237,7 +238,10 @@
       &lt;hr&gt;
 &lt;h3 id=&quot;什么是设计模式？&quot;&gt;&lt;a href=&quot;#什么是设计模式？&quot; class=&quot;headerlink&quot; title=&quot;什么是设计模式？&quot;&gt;&lt;/a&gt;什么是设计模式？&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;自问：设计模式是什么？&lt;/li&gt;
-&lt;li&gt;自答：设计模式是由代码结构优
+&lt;li&gt;自答：设计模式是由代码结构优化经验萃取出来的理论知识，应用成熟的设计模式能够增强代码的可复用性、可扩展性与可维护性。&lt;/li&gt;
+&lt;li&gt;自问：你好像很专业的样子，那好，既然设计模式有这么多好处，那是不是应用了设计模式的设计都是好设计？&lt;/li&gt;
+&lt;li&gt;自答：当然不是，我们不能为了使用模式而使用模式。设计模式可不能滥用，毕竟应用设计模式必须要作出一些牺牲（比如增加类结构的复杂性…），所以滥用设计模式的话是会出事的。而且，就算我们有了锤子，也不能把所有问题都看作钉子吧？&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -909,7 +913,7 @@
 <p>MindNode源文件下载地址<br><a href="https://raw.githubusercontent.com/whong7/whong7.github.io/master/MindNote/绘图.zip" target="_blank" rel="external">绘图.mindnode</a></p>
 <h2 id="反馈与建议"><a href="#反馈与建议" class="headerlink" title="反馈与建议"></a>反馈与建议</h2><ul>
 <li>微博：<a href="http://weibo.com/u/2519913461" target="_blank" rel="external">@whong77</a></li>
-<li>邮箱：<a href="&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#58;&#x77;&#x68;&#x6f;&#x6e;&#x67;&#x37;&#57;&#x31;&#49;&#50;&#48;&#55;&#x40;&#49;&#54;&#51;&#x2e;&#99;&#x6f;&#x6d;">&#x77;&#x68;&#x6f;&#x6e;&#x67;&#x37;&#57;&#x31;&#49;&#50;&#48;&#55;&#x40;&#49;&#54;&#51;&#x2e;&#99;&#x6f;&#x6d;</a></li>
+<li>邮箱：<a href="&#109;&#97;&#105;&#x6c;&#116;&#x6f;&#58;&#x77;&#104;&#111;&#110;&#103;&#x37;&#57;&#49;&#x31;&#50;&#48;&#55;&#x40;&#49;&#54;&#51;&#x2e;&#99;&#x6f;&#109;">&#x77;&#104;&#111;&#110;&#103;&#x37;&#57;&#49;&#x31;&#50;&#48;&#55;&#x40;&#49;&#54;&#51;&#x2e;&#99;&#x6f;&#109;</a></li>
 </ul>
 ]]></content>
     
@@ -984,6 +988,47 @@
   </entry>
   
   <entry>
+    <title>自定义进度条-扇形进度</title>
+    <link href="http://whong7.github.io/2014/11/15/%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BF%9B%E5%BA%A6%E6%9D%A1-%E6%89%87%E5%BD%A2%E8%BF%9B%E5%BA%A6/"/>
+    <id>http://whong7.github.io/2014/11/15/自定义进度条-扇形进度/</id>
+    <published>2014-11-15T03:39:28.000Z</published>
+    <updated>2016-11-07T12:22:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>##自定义进度条-扇形进度</p>
+<ul>
+<li>先使用一个假的数据用来测试</li>
+<li>起始位置和结束位置 开始 分别是 0 / :2 <em> M_PI </em> progress</li>
+<li>如果想让这个圆 从十二点钟方向开始画, 需要让其实和结束分辨 减去m_pi_2即可</li>
+<li>测试假数据,如果没问题,考虑把progress抛出去</li>
+<li>把progress声明在.h, 然后把slider的value赋值给这个view的progress属性</li>
+<li>在这个属性的set方法中,刷新(表示只要用户给我新值 我就应该刷新)</li>
+</ul>
+<a id="more"></a>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)setProgress:(<span class="built_in">CGFloat</span>)progress</div><div class="line">&#123;</div><div class="line">    _progress = progress;</div><div class="line"></div><div class="line">    <span class="comment">//只要用户给我新值，就要刷新</span></div><div class="line">    [<span class="keyword">self</span> setNeedsDisplay];</div><div class="line">&#125;</div><div class="line"></div><div class="line">-(<span class="keyword">void</span>)drawRect:(<span class="built_in">CGRect</span>)rect</div><div class="line">&#123;</div><div class="line">    <span class="comment">//画扇形</span></div><div class="line">    <span class="built_in">UIBezierPath</span> *path = [<span class="built_in">UIBezierPath</span> bezierPathWithArcCenter:<span class="built_in">CGPointMake</span>(<span class="number">150</span>, <span class="number">150</span>) radius:<span class="number">100</span> startAngle:<span class="number">0</span>-M_PI_2 endAngle:<span class="number">2</span>*M_PI*<span class="keyword">self</span>.progress-M_PI_2 clockwise:<span class="number">1</span>];</div><div class="line">    <span class="comment">//画扇形 需要 往圆心连线</span></div><div class="line">    [path addLineToPoint:<span class="built_in">CGPointMake</span>(<span class="number">150</span>, <span class="number">150</span>)];</div><div class="line">    <span class="comment">//上颜色</span></div><div class="line">    [[<span class="built_in">UIColor</span> randomColor]set];</div><div class="line">    <span class="comment">//渲染</span></div><div class="line">    [path fill];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://ww4.sinaimg.cn/large/9632d3f5jw1f9btlx6oz8g20bj0jyaam.gif" alt=""></p>
+<h2 id="demo下载"><a href="#demo下载" class="headerlink" title="demo下载"></a>demo下载</h2><p><a href="https://github.com/whong7/whong7.github.io/raw/master/demo/柱状图.zip" target="_blank" rel="external">自定义进度条</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##自定义进度条-扇形进度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;先使用一个假的数据用来测试&lt;/li&gt;
+&lt;li&gt;起始位置和结束位置 开始 分别是 0 / :2 &lt;em&gt; M_PI &lt;/em&gt; progress&lt;/li&gt;
+&lt;li&gt;如果想让这个圆 从十二点钟方向开始画, 需要让其实和结束分辨 减去m_pi_2即可&lt;/li&gt;
+&lt;li&gt;测试假数据,如果没问题,考虑把progress抛出去&lt;/li&gt;
+&lt;li&gt;把progress声明在.h, 然后把slider的value赋值给这个view的progress属性&lt;/li&gt;
+&lt;li&gt;在这个属性的set方法中,刷新(表示只要用户给我新值 我就应该刷新)&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="交互" scheme="http://whong7.github.io/tags/%E4%BA%A4%E4%BA%92/"/>
+    
+  </entry>
+  
+  <entry>
     <title>绘制柱状图、饼状图</title>
     <link href="http://whong7.github.io/2014/11/15/%E7%BB%98%E5%88%B6%E6%9F%B1%E7%8A%B6%E5%9B%BE%E3%80%81%E9%A5%BC%E7%8A%B6%E5%9B%BE/"/>
     <id>http://whong7.github.io/2014/11/15/绘制柱状图、饼状图/</id>
@@ -1037,47 +1082,6 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;figure class=&quot;highlight objc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;-(&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt;)drawRect:(&lt;span class=&quot;built_in&quot;&gt;CGRect&lt;/span&gt;)rect&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;NSArray&lt;/span&gt; *data = @[@&lt;span class=&quot;number&quot;&gt;0.2&lt;/span&gt;,@&lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt;,@&lt;span class=&quot;number&quot;&gt;0.2&lt;/span&gt;,@&lt;span class=&quot;number&quot;&gt;0.8&lt;/span&gt;,@&lt;span class=&quot;number&quot;&gt;0.3&lt;/span&gt;,@&lt;span class=&quot;number&quot;&gt;0.9&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i&amp;lt;data.count; i++)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;CGFloat&lt;/span&gt; w = &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;CGFloat&lt;/span&gt; h = &lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;.bounds.size.height * [data[i] floatValue];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;CGFloat&lt;/span&gt; x = i*&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;*w;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;CGFloat&lt;/span&gt; y = &lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;.bounds.size.height - h;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;UIBezierPath&lt;/span&gt; *path = [&lt;span class=&quot;built_in&quot;&gt;UIBezierPath&lt;/span&gt; bezierPathWithRect:&lt;span class=&quot;built_in&quot;&gt;CGRectMake&lt;/span&gt;(x, y, w, h)];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        [[&lt;span class=&quot;built_in&quot;&gt;UIColor&lt;/span&gt; randomColor]set];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        [path fill];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;NSLog&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;@&quot;%@&quot;&lt;/span&gt;,&lt;span class=&quot;built_in&quot;&gt;NSStringFromCGRect&lt;/span&gt;(rect));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-(&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt;)touchesBegan:(&lt;span class=&quot;built_in&quot;&gt;NSSet&lt;/span&gt;&amp;lt;&lt;span class=&quot;built_in&quot;&gt;UITouch&lt;/span&gt; *&amp;gt; *)touches withEvent:(&lt;span class=&quot;built_in&quot;&gt;UIEvent&lt;/span&gt; *)event&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//    [self setNeedsDisplay];&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    [&lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt; setNeedsDisplayInRect:&lt;span class=&quot;built_in&quot;&gt;CGRectMake&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;400&lt;/span&gt;)];&lt;span class=&quot;comment&quot;&gt;//会改变drawRect:(CGRect)rect&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="交互" scheme="http://whong7.github.io/tags/%E4%BA%A4%E4%BA%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自定义进度条-扇形进度</title>
-    <link href="http://whong7.github.io/2014/11/15/%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BF%9B%E5%BA%A6%E6%9D%A1-%E6%89%87%E5%BD%A2%E8%BF%9B%E5%BA%A6/"/>
-    <id>http://whong7.github.io/2014/11/15/自定义进度条-扇形进度/</id>
-    <published>2014-11-15T03:39:28.000Z</published>
-    <updated>2016-11-07T12:22:57.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>##自定义进度条-扇形进度</p>
-<ul>
-<li>先使用一个假的数据用来测试</li>
-<li>起始位置和结束位置 开始 分别是 0 / :2 <em> M_PI </em> progress</li>
-<li>如果想让这个圆 从十二点钟方向开始画, 需要让其实和结束分辨 减去m_pi_2即可</li>
-<li>测试假数据,如果没问题,考虑把progress抛出去</li>
-<li>把progress声明在.h, 然后把slider的value赋值给这个view的progress属性</li>
-<li>在这个属性的set方法中,刷新(表示只要用户给我新值 我就应该刷新)</li>
-</ul>
-<a id="more"></a>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)setProgress:(<span class="built_in">CGFloat</span>)progress</div><div class="line">&#123;</div><div class="line">    _progress = progress;</div><div class="line"></div><div class="line">    <span class="comment">//只要用户给我新值，就要刷新</span></div><div class="line">    [<span class="keyword">self</span> setNeedsDisplay];</div><div class="line">&#125;</div><div class="line"></div><div class="line">-(<span class="keyword">void</span>)drawRect:(<span class="built_in">CGRect</span>)rect</div><div class="line">&#123;</div><div class="line">    <span class="comment">//画扇形</span></div><div class="line">    <span class="built_in">UIBezierPath</span> *path = [<span class="built_in">UIBezierPath</span> bezierPathWithArcCenter:<span class="built_in">CGPointMake</span>(<span class="number">150</span>, <span class="number">150</span>) radius:<span class="number">100</span> startAngle:<span class="number">0</span>-M_PI_2 endAngle:<span class="number">2</span>*M_PI*<span class="keyword">self</span>.progress-M_PI_2 clockwise:<span class="number">1</span>];</div><div class="line">    <span class="comment">//画扇形 需要 往圆心连线</span></div><div class="line">    [path addLineToPoint:<span class="built_in">CGPointMake</span>(<span class="number">150</span>, <span class="number">150</span>)];</div><div class="line">    <span class="comment">//上颜色</span></div><div class="line">    [[<span class="built_in">UIColor</span> randomColor]set];</div><div class="line">    <span class="comment">//渲染</span></div><div class="line">    [path fill];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><img src="http://ww4.sinaimg.cn/large/9632d3f5jw1f9btlx6oz8g20bj0jyaam.gif" alt=""></p>
-<h2 id="demo下载"><a href="#demo下载" class="headerlink" title="demo下载"></a>demo下载</h2><p><a href="https://github.com/whong7/whong7.github.io/raw/master/demo/柱状图.zip" target="_blank" rel="external">自定义进度条</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;##自定义进度条-扇形进度&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;先使用一个假的数据用来测试&lt;/li&gt;
-&lt;li&gt;起始位置和结束位置 开始 分别是 0 / :2 &lt;em&gt; M_PI &lt;/em&gt; progress&lt;/li&gt;
-&lt;li&gt;如果想让这个圆 从十二点钟方向开始画, 需要让其实和结束分辨 减去m_pi_2即可&lt;/li&gt;
-&lt;li&gt;测试假数据,如果没问题,考虑把progress抛出去&lt;/li&gt;
-&lt;li&gt;把progress声明在.h, 然后把slider的value赋值给这个view的progress属性&lt;/li&gt;
-&lt;li&gt;在这个属性的set方法中,刷新(表示只要用户给我新值 我就应该刷新)&lt;/li&gt;
-&lt;/ul&gt;
     
     </summary>
     
