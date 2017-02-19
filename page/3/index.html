@@ -272,122 +272,6 @@
             
               
                 
-                <a class="post-title-link" href="/2015/06/27/传感器：加速计,陀螺仪,磁力计 pull获取方式/" itemprop="url">
-                  传感器：加速计,陀螺仪,磁力计 pull获取方式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-06-27T12:13:04+08:00" content="2015-06-27">
-              2015-06-27
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/06/27/传感器：加速计,陀螺仪,磁力计 pull获取方式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/27/传感器：加速计,陀螺仪,磁力计 pull获取方式/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2015/06/27/传感器：加速计,陀螺仪,磁力计 pull获取方式/" class="leancloud_visitors" data-flag-title="传感器：加速计,陀螺仪,磁力计 pull获取方式">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="传感器：加速计-陀螺仪-磁力计-pull获取方式"><a href="#传感器：加速计-陀螺仪-磁力计-pull获取方式" class="headerlink" title="传感器：加速计,陀螺仪,磁力计 pull获取方式"></a>传感器：加速计,陀螺仪,磁力计 pull获取方式</h2><ul>
-<li>获取方式分为2种: push(系统会按照一定的时间间隔, 不停的返回数据) / pull (在需要的时候再来获取数据)</li>
-</ul>
-<ul>
-<li>陀螺仪,磁力计操作方法类似</li>
-</ul>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"ViewController.h"</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;CoreMotion/CoreMotion.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> ()</span></div><div class="line"></div><div class="line"><span class="comment">//运动管理器</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">CMMotionManager</span> *motionMgr;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     加速计: 检测力在某个方向上有作用 (检测到方向和大小) --&gt; 沿着轴上下快速运动</div><div class="line"></div><div class="line">    </div><div class="line">     */</div><div class="line"></div><div class="line">    <span class="comment">//加速器pull (在需要的时候再来获取数据)</span></div><div class="line">    <span class="comment">//Accelerometer</span></div><div class="line">    <span class="comment">//1. 创建运动管理器</span></div><div class="line">    <span class="keyword">self</span>.motionMgr = [<span class="built_in">CMMotionManager</span> new];</div><div class="line"></div><div class="line">    <span class="comment">//2. 判断能否使用加速计</span></div><div class="line">    <span class="keyword">if</span> (![<span class="keyword">self</span>.motionMgr isAccelerometerAvailable]) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//3. 开始更新</span></div><div class="line">    [<span class="keyword">self</span>.motionMgr startAccelerometerUpdates];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark 点击屏幕获取数组</span></div><div class="line">- (<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span>&lt;<span class="built_in">UITouch</span> *&gt; *)touches withEvent:(<span class="built_in">UIEvent</span> *)event</div><div class="line">&#123;</div><div class="line">    <span class="comment">//加速计 / 陀螺仪 / 磁力计, 在开始更新数据之后, 都会讲获取的数据, 保存到对应的属性中. 可以从属性中直接获取想要的数据</span></div><div class="line"></div><div class="line">    <span class="comment">//加速</span></div><div class="line">    <span class="built_in">CMAcceleration</span> acceleration = <span class="keyword">self</span>.motionMgr.accelerometerData.acceleration;</div><div class="line"></div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"x: %f, y: %f, z: %f "</span>, acceleration.x, acceleration.y, acceleration.z);</div><div class="line"></div><div class="line"><span class="comment">//    CMRotationRate rotationRate = self.motionMgr.gyroData.rotationRate;</span></div><div class="line"><span class="comment">//    NSLog(@"x: %f, y: %f, z: %f ", rotationRate.x, rotationRate.y, rotationRate.z);</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-tags " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2014/12/27/1.控制器创建方式/" itemprop="url">
                   控制器创建方式
                 </a>
@@ -785,6 +669,132 @@
             
               
                 
+                <a class="post-title-link" href="/2014/11/15/绘制柱状图、饼状图/" itemprop="url">
+                  绘制柱状图、饼状图
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2014-11-15T11:39:28+08:00" content="2014-11-15">
+              2014-11-15
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2014/11/15/绘制柱状图、饼状图/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/11/15/绘制柱状图、饼状图/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2014/11/15/绘制柱状图、饼状图/" class="leancloud_visitors" data-flag-title="绘制柱状图、饼状图">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>##柱状图</p>
+<ul>
+<li><p>步骤:</p>
+<ul>
+<li>要有数据(数据就是柱子和高度的比例)</li>
+<li>先写一个,最后把[0]改成i即可</li>
+<li>技巧:计算frame的时候,先写宽高,因为很多时候 x和y 是根据旷告计算的</li>
+<li>使用oc的方式,rect的方法,把xywh传入 然后渲染</li>
+<li>最后,嵌套for循环.</li>
+</ul>
+</li>
+<li><p>注意: setNeedsDisplayInRect 表示刷新指定的区域,但是,当这个方法调用的时候, drawRect方法的rect参数会跟着改变.所有,在drawRect方法中,尽量不要使用rect做参考.    </p>
+</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)drawRect:(<span class="built_in">CGRect</span>)rect</div><div class="line">&#123;</div><div class="line"></div><div class="line">    <span class="built_in">NSArray</span> *data = @[@<span class="number">0.2</span>,@<span class="number">0.5</span>,@<span class="number">0.2</span>,@<span class="number">0.8</span>,@<span class="number">0.3</span>,@<span class="number">0.9</span>];</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;data.count; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">CGFloat</span> w = <span class="number">20</span>;</div><div class="line">        <span class="built_in">CGFloat</span> h = <span class="keyword">self</span>.bounds.size.height * [data[i] floatValue];</div><div class="line">        <span class="built_in">CGFloat</span> x = i*<span class="number">2</span>*w;</div><div class="line">        <span class="built_in">CGFloat</span> y = <span class="keyword">self</span>.bounds.size.height - h;</div><div class="line"></div><div class="line">        <span class="built_in">UIBezierPath</span> *path = [<span class="built_in">UIBezierPath</span> bezierPathWithRect:<span class="built_in">CGRectMake</span>(x, y, w, h)];</div><div class="line"></div><div class="line">        [[<span class="built_in">UIColor</span> randomColor]set];</div><div class="line"></div><div class="line">        [path fill];</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,<span class="built_in">NSStringFromCGRect</span>(rect));</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">-(<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span>&lt;<span class="built_in">UITouch</span> *&gt; *)touches withEvent:(<span class="built_in">UIEvent</span> *)event</div><div class="line">&#123;</div><div class="line"><span class="comment">//    [self setNeedsDisplay];</span></div><div class="line">    [<span class="keyword">self</span> setNeedsDisplayInRect:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">200</span>, <span class="number">400</span>)];<span class="comment">//会改变drawRect:(CGRect)rect</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014/11/15/绘制柱状图、饼状图/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2014/11/15/自定义进度条-扇形进度/" itemprop="url">
                   自定义进度条-扇形进度
                 </a>
@@ -888,7 +898,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -929,7 +939,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -939,7 +949,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
